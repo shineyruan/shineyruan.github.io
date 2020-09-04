@@ -22,18 +22,24 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
-  <meta name="description" content="Code and Photography.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ryan&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/06/index.html">
+  <meta name="description" content="This project was served as the Undergraduate Major Design Experience at UM-SJTU Joint Institute, Shanghai Jiao Tong University.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Real-Time On-Device Flow Statistics Detection and Prediction">
+<meta property="og:url" content="http://yoursite.com/2020/08/29/450proj/index.html">
 <meta property="og:site_name" content="Ryan&#39;s Blog">
-<meta property="og:description" content="Code and Photography.">
+<meta property="og:description" content="This project was served as the Undergraduate Major Design Experience at UM-SJTU Joint Institute, Shanghai Jiao Tong University.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/450_MorphologicalAnalysis.png">
+<meta property="article:published_time" content="2020-08-29T17:40:39.000Z">
+<meta property="article:modified_time" content="2020-09-04T17:53:18.869Z">
 <meta property="article:author" content="Zhihao (Ryan) Ruan">
+<meta property="article:tag" content="computer vision">
+<meta property="article:tag" content="raspberry pi">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/450_MorphologicalAnalysis.png">
 
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/06/">
+<link rel="canonical" href="http://yoursite.com/2020/08/29/450proj/">
 
 
 <script class="page-configurations">
@@ -41,12 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | Ryan's Blog</title>
+  <title>Real-Time On-Device Flow Statistics Detection and Prediction | Ryan's Blog</title>
   
 
 
@@ -210,7 +216,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -222,6 +228,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Background-The-Impact-of-COVID-19"><span class="nav-number">1.</span> <span class="nav-text">Background: The Impact of COVID-19</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concept-Generation"><span class="nav-number">2.</span> <span class="nav-text">Concept Generation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-Technologies"><span class="nav-number">3.</span> <span class="nav-text">Key Technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Detector-MobileNet-SSD"><span class="nav-number">3.1.</span> <span class="nav-text">Object Detector: MobileNet-SSD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Tracker-Kalman-Filter"><span class="nav-number">3.2.</span> <span class="nav-text">Object Tracker: Kalman Filter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-Code"><span class="nav-number">4.</span> <span class="nav-text">Source Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Acknowledgements"><span class="nav-number">5.</span> <span class="nav-text">Acknowledgements</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -312,57 +319,149 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/450proj/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Zhihao (Ryan) Ruan">
+      <meta itemprop="description" content="Code and Photography.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryan's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Real-Time On-Device Flow Statistics Detection and Prediction
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-08-29 13:40:39" itemprop="dateCreated datePublished" datetime="2020-08-29T13:40:39-04:00">2020-08-29</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2020-09-04 13:53:18" itemprop="dateModified" datetime="2020-09-04T13:53:18-04:00">2020-09-04</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Projects/" itemprop="url" rel="index"><span itemprop="name">Projects</span></a>
+        </span>
+    </span>
+
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 20 posts in total. Keep on posting.</span>
+    <span id="/2020/08/29/450proj/" class="post-meta-item leancloud_visitors" data-flag-title="Real-Time On-Device Flow Statistics Detection and Prediction" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
       </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>3.8k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><strong><em>This project was served as the Undergraduate Major Design Experience at UM-SJTU Joint Institute, Shanghai Jiao Tong University.</em></strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kMHzTvTi0Lc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<a id="more"></a>
+<h1 id="Background-The-Impact-of-COVID-19"><a href="#Background-The-Impact-of-COVID-19" class="headerlink" title="Background: The Impact of COVID-19"></a>Background: The Impact of COVID-19</h1><p>The outbreak of novel coronavirus COVID-19 in 2020 has brought huge attention to the administration of human society. “Social distancing” has been advocated as a very effective method to fight the virus. In order to facilitate the implementation of social distancing, we propose an idea of building a portable device that is capable of <em>detect and predict flow statistics in real time</em>, in order to provide insights and suggestions for traffic management. </p>
+<p>With the development of computer vision technology, nowadays it has become much easier and cheaper to put cameras into all parts of industry to perform a variety of detection tasks. In order to make our product cost-efficient, we also decided to take the advantage of computer vision and developed a <em>vision-based</em> solution for real-time flow detection. To ensure that our product is portable to use, we also settled down the plan that our whole system should be running on a Raspberry Pi.</p>
+<h1 id="Concept-Generation"><a href="#Concept-Generation" class="headerlink" title="Concept Generation"></a>Concept Generation</h1><p><p align="center"></p><br>    <img src="/images/450_MorphologicalAnalysis.png" alt="Morphological chart." width="500"><span class="image-caption">Morphological chart.</span></p>
+<p>What constitutes to our product? First, in order to satisfy the basic requirements, our final product must be capable of detecting human traffic flow (i.e. pedestrians) through cameras. Therefore, there must be some part transforming the live video stream into detection results. As a result, we name this part an <strong>object detector.</strong> Second, we need to make sure that our system is capable of assigning “identities” to objects in the camera frame so that it could detect which person leaves the frame and which person enters the frame and we call this part an <strong>object tracker.</strong> Third, we wish to store a fixed amount of history data so that we could utilize it to predict future flow statistics changes. This means that we also need a <strong>back-end server.</strong> Last but not least, we’ll have to display our flow analysis results somewhere. We decided to host them on a self-designed <strong>front-end website.</strong></p>
+<p>From the above morphological analysis, we settled down the final configuration of our product: an object detector, an object tracker, a back-end server, and a front-end website.</p>
+<h1 id="Key-Technologies"><a href="#Key-Technologies" class="headerlink" title="Key Technologies"></a>Key Technologies</h1><p>After we settled down the big picture of our project, we then proceeded to conduct tests and develop the final product. After several months of discussions and developments, our final product have utilized the following technologies.</p>
+<h2 id="Object-Detector-MobileNet-SSD"><a href="#Object-Detector-MobileNet-SSD" class="headerlink" title="Object Detector: MobileNet-SSD"></a>Object Detector: MobileNet-SSD</h2><p>Deep Neural Networks (DNNs) are the first solution we have thought of for object detection. It has multiple advantages over other techniques such as traditional computer vision methods, including better robustness and lower implementational cost. </p>
+<p>However, not all DNNs are suitable for our project. In fact, most of the state-of-the-art DNN detectors require a lot of computing resources such as high-performance deep learning graphics cards and are generally run on big enterprise servers. Therefore, we have to select the DNN with a relatively high performance and the least required computing resources.</p>
+<p>Finally, <a href="https://arxiv.org/abs/1801.04381">MobileNet v2</a>-based <a href="https://link.springer.com/chapter/10.1007/978-3-319-46448-0_2">Single Shot MultiBox Detector</a> (MobileNet-SSD) becomes our final solution, because it is accurate, lightweight, and was specifically designed for mobile devices. </p>
+<h2 id="Object-Tracker-Kalman-Filter"><a href="#Object-Tracker-Kalman-Filter" class="headerlink" title="Object Tracker: Kalman Filter"></a>Object Tracker: Kalman Filter</h2><p>Kalman filter is a probabilistic model that has been widely used in control theories and applications. Particularly, it has its own <em>states</em> that are hidden from the outer world and only certain state properties can be <em>observed</em> by outer worlds through sensors. The main task of the model is to use a certain amount of observations to predict the next states of the model. Hence, we can utilize this property of Kalman filter and construct one Kalman filter for each object that we’re going to track. Once the Kalman filter is constructed, we can utilize the prediction of its position in the next frame and cross-check with the detection results of the next frame to determine whether this object is “disappeared.”</p>
+<h1 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h1><p>Unfortunately, due to confidentiality agreement, the source code for this project is not available for now. However, users can always visit our front-end website <a href="https://www.umji-flowdetection.com/">https://www.umji-flowdetection.com/</a> for further reference. </p>
+<h1 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements"></a>Acknowledgements</h1><p>For the entire work, I would like to express special thanks to:</p>
+<ul>
+<li>our sponsors: Allen Zhu and Allan Zhu from UM-SJTU Joint Institute in Shanghai Jiao Tong University</li>
+<li>my teammates: Jiayu Yi, Zekun LI, Zhikai Chen and Zihao Shen</li>
+<li>my own passion!</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-06-17T21:27:13-04:00"
-              content="2020-06-17">
-          06-17
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/06/17/ve320/" itemprop="url">
-            <span itemprop="name">Introduction to Semiconductor Devices</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/computer-vision/" rel="tag"># computer vision</a>
+              <a href="/tags/raspberry-pi/" rel="tag"># raspberry pi</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/06/17/ve320/" rel="prev" title="Introduction to Semiconductor Devices">
+                  <i class="fa fa-chevron-left"></i> Introduction to Semiconductor Devices
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
       
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -564,9 +663,30 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   
 
   
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.css">
+
+<script>
+NexT.utils.loadComments('#gitalk-container', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'ab214030e1d59c6fc45b',
+      clientSecret: 'd7010cdc7b5d905fbb2ed091fa5d15b96a3dd65b',
+      repo        : 'shineyruan.github.io',
+      owner       : 'shineyruan',
+      admin       : ['shineyruan'],
+      id          : '6c3f305e7672aedc13ddfc70409d4be8',
+        language: 'en',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
