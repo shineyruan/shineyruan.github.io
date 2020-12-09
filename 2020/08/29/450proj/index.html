@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.2.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-ZR.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-ZR.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-ZR.png">
@@ -14,15 +16,14 @@
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inter:300,300italic,400,400italic,700,700italic|Source+Sans+Pro:300,300italic,400,400italic,700,700italic|Source+Code+Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
-
-  <meta name="description" content="This project was served as the Undergraduate Major Design Experience at UM-SJTU Joint Institute, Shanghai Jiao Tong University.">
+<meta name="description" content="This project was served as the Undergraduate Major Design Experience at UM-SJTU Joint Institute, Shanghai Jiao Tong University.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Real-Time On-Device Flow Statistics Detection and Prediction">
 <meta property="og:url" content="http://yoursite.com/2020/08/29/450proj/index.html">
@@ -51,12 +52,8 @@
     lang   : 'en'
   };
 </script>
-
-  <title>Real-Time On-Device Flow Statistics Detection and Prediction | Ryan's Blog</title>
+<title>Real-Time On-Device Flow Statistics Detection and Prediction | Ryan's Blog</title>
   
-
-
-
 
 
 
@@ -132,46 +129,14 @@
 
 <nav class="site-nav">
   <ul class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
-        <li class="menu-item menu-item-quick-view">
-
-    <a href="/allposts/" rel="section"><i class="fa fa-bookmark fa-fw"></i>Quick View</a>
-
-  </li>
-        <li class="menu-item menu-item-projects-(english)">
-
-    <a href="/categories/Projects/" rel="section"><i class="fa fa-briefcase fa-fw"></i>Projects (English)</a>
-
-  </li>
-        <li class="menu-item menu-item-tutorials-(english)">
-
-    <a href="/categories/Tutorials/" rel="section"><i class="fa fa-book fa-fw"></i>Tutorials (English)</a>
-
-  </li>
-        <li class="menu-item menu-item-travel-journals-(中文)">
-
-    <a href="/categories/Travel-Journals/" rel="section"><i class="fa fa-car fa-fw"></i>Travel Journals (中文)</a>
-
-  </li>
-        <li class="menu-item menu-item-my-gallery-(english)">
-
-    <a href="/categories/My-Gallery/" rel="section"><i class="fa fa-image fa-fw"></i>My Gallery (English)</a>
-
-  </li>
-        <li class="menu-item menu-item-timeline">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Timeline</a>
-
-  </li>
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-quick-view"><a href="/allposts/" rel="section"><i class="fa fa-bookmark fa-fw"></i>Quick View</a></li>
+        <li class="menu-item menu-item-projects-(english)"><a href="/categories/Projects/" rel="section"><i class="fa fa-briefcase fa-fw"></i>Projects (English)</a></li>
+        <li class="menu-item menu-item-tutorials-(english)"><a href="/categories/Tutorials/" rel="section"><i class="fa fa-book fa-fw"></i>Tutorials (English)</a></li>
+        <li class="menu-item menu-item-travel-journals-(中文)"><a href="/categories/Travel-Journals/" rel="section"><i class="fa fa-car fa-fw"></i>Travel Journals (中文)</a></li>
+        <li class="menu-item menu-item-my-gallery-(english)"><a href="/categories/My-Gallery/" rel="section"><i class="fa fa-image fa-fw"></i>My Gallery (English)</a></li>
+        <li class="menu-item menu-item-timeline"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Timeline</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -182,8 +147,7 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
@@ -196,7 +160,7 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div class="search-result-container">
+<div class="search-result-container no-result">
   <div class="search-result-icon">
     <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
@@ -226,24 +190,25 @@
         </li>
       </ul>
 
-      <!--noindex-->
-      <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Background-The-Impact-of-COVID-19"><span class="nav-number">1.</span> <span class="nav-text">Background: The Impact of COVID-19</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concept-Generation"><span class="nav-number">2.</span> <span class="nav-text">Concept Generation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-Technologies"><span class="nav-number">3.</span> <span class="nav-text">Key Technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Detector-MobileNet-SSD"><span class="nav-number">3.1.</span> <span class="nav-text">Object Detector: MobileNet-SSD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Tracker-Kalman-Filter"><span class="nav-number">3.2.</span> <span class="nav-text">Object Tracker: Kalman Filter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Source-Code"><span class="nav-number">4.</span> <span class="nav-text">Source Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Acknowledgements"><span class="nav-number">5.</span> <span class="nav-text">Acknowledgements</span></a></li></ol></div>
-      </section>
-      <!--/noindex-->
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <section class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#background-the-impact-of-covid-19"><span class="nav-number">1.</span> <span class="nav-text"> Background: The Impact of COVID-19</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#concept-generation"><span class="nav-number">2.</span> <span class="nav-text"> Concept Generation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#key-technologies"><span class="nav-number">3.</span> <span class="nav-text"> Key Technologies</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#object-detector-mobilenet-ssd"><span class="nav-number">3.1.</span> <span class="nav-text"> Object Detector: MobileNet-SSD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#object-tracker-kalman-filter"><span class="nav-number">3.2.</span> <span class="nav-text"> Object Tracker: Kalman Filter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#source-code"><span class="nav-number">4.</span> <span class="nav-text"> Source Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#acknowledgements"><span class="nav-number">5.</span> <span class="nav-text"> Acknowledgements</span></a></li></ol></div>
+        </section>
+        <!--/noindex-->
 
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <section class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Zhihao (Ryan) Ruan"
       src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Zhihao (Ryan) Ruan</p>
   <div class="site-description" itemprop="description">Code and Photography.</div>
 </div>
-<div class="site-state-wrap animated">
+<div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -254,12 +219,12 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
-  <div class="links-of-author animated">
+  <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
         <a href="https://github.com/shineyruan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;shineyruan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
@@ -281,7 +246,7 @@
   </div>
 
 
-  <div class="links-of-blogroll animated">
+  <div class="links-of-blogroll site-overview-item animated">
     <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
       My Close Collaborators
     </div>
@@ -298,7 +263,8 @@
     </ul>
   </div>
 
-      </section>
+        </section>
+      </div>
     </div>
   </aside>
   <div class="sidebar-dimmer"></div>
@@ -320,14 +286,16 @@
 
 
     <div class="main-inner post posts-expand">
-      
 
-      
 
-    
+  
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/450proj/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -339,9 +307,6 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Ryan's Blog">
     </span>
-
-    
-    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           Real-Time On-Device Flow Statistics Detection and Prediction
@@ -407,22 +372,29 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><strong><em>This project was served as the Undergraduate Major Design Experience at UM-SJTU Joint Institute, Shanghai Jiao Tong University.</em></strong></p>
+        <p><em><strong>This project was served as the Undergraduate Major Design Experience at UM-SJTU Joint Institute, Shanghai Jiao Tong University.</strong></em></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kMHzTvTi0Lc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 <a id="more"></a>
-<h1 id="Background-The-Impact-of-COVID-19"><a href="#Background-The-Impact-of-COVID-19" class="headerlink" title="Background: The Impact of COVID-19"></a>Background: The Impact of COVID-19</h1><p>The outbreak of novel coronavirus COVID-19 in 2020 has brought huge attention to the administration of human society. “Social distancing” has been advocated as a very effective method to fight the virus. In order to facilitate the implementation of social distancing, we propose an idea of building a portable device that is capable of <em>detect and predict flow statistics in real time</em>, in order to provide insights and suggestions for traffic management. </p>
+<h1 id="background-the-impact-of-covid-19"><a class="markdownIt-Anchor" href="#background-the-impact-of-covid-19"></a> Background: The Impact of COVID-19</h1>
+<p>The outbreak of novel coronavirus COVID-19 in 2020 has brought huge attention to the administration of human society. “Social distancing” has been advocated as a very effective method to fight the virus. In order to facilitate the implementation of social distancing, we propose an idea of building a portable device that is capable of <em>detect and predict flow statistics in real time</em>, in order to provide insights and suggestions for traffic management.</p>
 <p>With the development of computer vision technology, nowadays it has become much easier and cheaper to put cameras into all parts of industry to perform a variety of detection tasks. In order to make our product cost-efficient, we also decided to take the advantage of computer vision and developed a <em>vision-based</em> solution for real-time flow detection. To ensure that our product is portable to use, we also settled down the plan that our whole system should be running on a Raspberry Pi.</p>
-<h1 id="Concept-Generation"><a href="#Concept-Generation" class="headerlink" title="Concept Generation"></a>Concept Generation</h1><p><p align="center"></p><br>    <img src="/images/450_MorphologicalAnalysis.png" alt="Morphological chart." width="500"><span class="image-caption">Morphological chart.</span></p>
+<h1 id="concept-generation"><a class="markdownIt-Anchor" href="#concept-generation"></a> Concept Generation</h1>
+<p align="center"></p>
+    <img src="/images/450_MorphologicalAnalysis.png" alt="Morphological chart." width="500"><span class="image-caption">Morphological chart.</span>
 <p>What constitutes to our product? First, in order to satisfy the basic requirements, our final product must be capable of detecting human traffic flow (i.e. pedestrians) through cameras. Therefore, there must be some part transforming the live video stream into detection results. As a result, we name this part an <strong>object detector.</strong> Second, we need to make sure that our system is capable of assigning “identities” to objects in the camera frame so that it could detect which person leaves the frame and which person enters the frame and we call this part an <strong>object tracker.</strong> Third, we wish to store a fixed amount of history data so that we could utilize it to predict future flow statistics changes. This means that we also need a <strong>back-end server.</strong> Last but not least, we’ll have to display our flow analysis results somewhere. We decided to host them on a self-designed <strong>front-end website.</strong></p>
 <p>From the above morphological analysis, we settled down the final configuration of our product: an object detector, an object tracker, a back-end server, and a front-end website.</p>
-<h1 id="Key-Technologies"><a href="#Key-Technologies" class="headerlink" title="Key Technologies"></a>Key Technologies</h1><p>After we settled down the big picture of our project, we then proceeded to conduct tests and develop the final product. After several months of discussions and developments, our final product have utilized the following technologies.</p>
-<h2 id="Object-Detector-MobileNet-SSD"><a href="#Object-Detector-MobileNet-SSD" class="headerlink" title="Object Detector: MobileNet-SSD"></a>Object Detector: MobileNet-SSD</h2><p>Deep Neural Networks (DNNs) are the first solution we have thought of for object detection. It has multiple advantages over other techniques such as traditional computer vision methods, including better robustness and lower implementational cost. </p>
+<h1 id="key-technologies"><a class="markdownIt-Anchor" href="#key-technologies"></a> Key Technologies</h1>
+<p>After we settled down the big picture of our project, we then proceeded to conduct tests and develop the final product. After several months of discussions and developments, our final product have utilized the following technologies.</p>
+<h2 id="object-detector-mobilenet-ssd"><a class="markdownIt-Anchor" href="#object-detector-mobilenet-ssd"></a> Object Detector: MobileNet-SSD</h2>
+<p>Deep Neural Networks (DNNs) are the first solution we have thought of for object detection. It has multiple advantages over other techniques such as traditional computer vision methods, including better robustness and lower implementational cost.</p>
 <p>However, not all DNNs are suitable for our project. In fact, most of the state-of-the-art DNN detectors require a lot of computing resources such as high-performance deep learning graphics cards and are generally run on big enterprise servers. Therefore, we have to select the DNN with a relatively high performance and the least required computing resources.</p>
-<p>Finally, <a href="https://arxiv.org/abs/1801.04381">MobileNet v2</a>-based <a href="https://link.springer.com/chapter/10.1007/978-3-319-46448-0_2">Single Shot MultiBox Detector</a> (MobileNet-SSD) becomes our final solution, because it is accurate, lightweight, and was specifically designed for mobile devices. </p>
-<h2 id="Object-Tracker-Kalman-Filter"><a href="#Object-Tracker-Kalman-Filter" class="headerlink" title="Object Tracker: Kalman Filter"></a>Object Tracker: Kalman Filter</h2><p>Kalman filter is a probabilistic model that has been widely used in control theories and applications. Particularly, it has its own <em>states</em> that are hidden from the outer world and only certain state properties can be <em>observed</em> by outer worlds through sensors. The main task of the model is to use a certain amount of observations to predict the next states of the model. Hence, we can utilize this property of Kalman filter and construct one Kalman filter for each object that we’re going to track. Once the Kalman filter is constructed, we can utilize the prediction of its position in the next frame and cross-check with the detection results of the next frame to determine whether this object is “disappeared.”</p>
-<h1 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h1><p>Unfortunately, due to confidentiality agreement, the source code for this project is not available for now. However, users can always visit our front-end website <a href="https://www.umji-flowdetection.com/">https://www.umji-flowdetection.com/</a> for further reference. </p>
-<h1 id="Acknowledgements"><a href="#Acknowledgements" class="headerlink" title="Acknowledgements"></a>Acknowledgements</h1><p>For the entire work, I would like to express special thanks to:</p>
+<p>Finally, <a href="https://arxiv.org/abs/1801.04381">MobileNet v2</a>-based <a href="https://link.springer.com/chapter/10.1007/978-3-319-46448-0_2">Single Shot MultiBox Detector</a> (MobileNet-SSD) becomes our final solution, because it is accurate, lightweight, and was specifically designed for mobile devices.</p>
+<h2 id="object-tracker-kalman-filter"><a class="markdownIt-Anchor" href="#object-tracker-kalman-filter"></a> Object Tracker: Kalman Filter</h2>
+<p>Kalman filter is a probabilistic model that has been widely used in control theories and applications. Particularly, it has its own <em>states</em> that are hidden from the outer world and only certain state properties can be <em>observed</em> by outer worlds through sensors. The main task of the model is to use a certain amount of observations to predict the next states of the model. Hence, we can utilize this property of Kalman filter and construct one Kalman filter for each object that we’re going to track. Once the Kalman filter is constructed, we can utilize the prediction of its position in the next frame and cross-check with the detection results of the next frame to determine whether this object is “disappeared.”</p>
+<h1 id="source-code"><a class="markdownIt-Anchor" href="#source-code"></a> Source Code</h1>
+<p>Unfortunately, due to confidentiality agreement, the source code for this project is not available for now. However, users can always visit our front-end website <a href="https://www.umji-flowdetection.com/">https://www.umji-flowdetection.com/</a> for further reference.</p>
+<h1 id="acknowledgements"><a class="markdownIt-Anchor" href="#acknowledgements"></a> Acknowledgements</h1>
+<p>For the entire work, I would like to express special thanks to:</p>
 <ul>
 <li>our sponsors: Allen Zhu and Allan Zhu from UM-SJTU Joint Institute in Shanghai Jiao Tong University</li>
 <li>my teammates: Jiayu Yi, Zekun LI, Zhikai Chen and Zihao Shen</li>
@@ -450,17 +422,20 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2020/12/09/560proj/" rel="next" title="Mini Minecraft Game Programming">
+                  Mini Minecraft Game Programming <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
   </article>
-  
-  
-  
+</div>
 
 
 
-      
+
+
+
     <div class="comments" id="gitalk-container"></div>
 
 <script>
@@ -484,18 +459,14 @@
     });
   }
 </script>
-
-    </div>
+</div>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-      
 
-      
 
 <div class="copyright">
-  
   &copy; 2018 – 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
@@ -508,13 +479,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">65k</span>
+    <span title="Symbols count total">66k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">59 mins.</span>
+    <span title="Reading time total">1:01</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
@@ -524,51 +495,38 @@
   </footer>
 
   
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
-
-
-
-  <script src="/js/local-search.js"></script>
-
-
-
-
-
+<script src="/js/local-search.js"></script>
 
 
 
 <script>
-document.querySelectorAll('.pdfobject-container').forEach(element => {
-  const url = element.dataset.target;
-  const pdfOpenParams = {
-    navpanes : 0,
-    toolbar  : 0,
-    statusbar: 0,
-    pagemode : 'thumbs',
-    view     : 'FitH'
-  };
-  const pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
-  const fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
-
-  if (NexT.utils.supportsPDFs()) {
-    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
-  } else {
-    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
-  }
-});
+if (document.querySelectorAll('.pdf-container').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2.2.4/pdfobject.min.js', () => {
+    document.querySelectorAll('.pdf-container').forEach(element => {
+      PDFObject.embed(element.dataset.target, element, {
+        pdfOpenParams: {
+          navpanes : 0,
+          toolbar  : 0,
+          statusbar: 0,
+          pagemode : 'thumbs',
+          view     : 'FitH'
+        },
+        PDFJS_URL: '/lib/pdf/web/viewer.html',
+        height   : element.dataset.height
+      });
+    });
+  }, window.PDFObject);
+}
 </script>
 
 
 
-
   
-
-
-
 
 
 
@@ -645,7 +603,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
       }
     }
 
-    const api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+    const api_server = app_id.slice(-9) === '-MdYXbMMI' ? `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com` : server_url;
 
     if (api_server) {
       fetchData(api_server);
@@ -660,19 +618,15 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 </script>
 
 
-  
-
-  
-      <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 
-  
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
 
 <script>
 NexT.utils.loadComments('#gitalk-container', () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
       clientID    : 'ab214030e1d59c6fc45b',
       clientSecret: 'd7010cdc7b5d905fbb2ed091fa5d15b96a3dd65b',
