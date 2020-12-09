@@ -1206,7 +1206,7 @@ M1001 80H400000v40H1017z'/></svg></span></span></span><span class="vlist-s">​<
       </tags>
   </entry>
   <entry>
-    <title>Mini Minecraft Game Programming</title>
+    <title>Minecraft Game Programming</title>
     <url>/2020/12/09/560proj/</url>
     <content><![CDATA[<p>In the fall of 2020, I finally had a chance to explore the field of computer graphics at University of Pennsylvania, and did a very interesting course project which builds a simplified Minecraft from scratch. This game is built on OpenGL 3.2 with Qt 5.15.0. Through building this game, I learned a lot about OpenGL rendering pipeline, game engine &amp; texture mapping.</p>
 <h1 id="demo-video"><a class="markdownIt-Anchor" href="#demo-video"></a> Demo Video</h1>
