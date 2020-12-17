@@ -63,6 +63,22 @@
       </tags>
   </entry>
   <entry>
+    <title>Minecraft Game Programming</title>
+    <url>/2020/12/09/560proj/</url>
+    <content><![CDATA[<p>In the fall of 2020, I finally had a chance to explore the field of computer graphics at University of Pennsylvania, and did a very interesting course project which builds a simplified Minecraft from scratch. This game is built on OpenGL 3.2 with Qt 5.15.0. Through building this game, I learned a lot about OpenGL rendering pipeline, game engine &amp; texture mapping.</p>
+<h1 id="demo-video"><a class="markdownIt-Anchor" href="#demo-video"></a> Demo Video</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l_YViGj6_Qc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a id="more"></a>
+<p>To be continued…</p>
+]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
+      <tags>
+        <tag>computer graphics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ann Arbor, MI</title>
     <url>/2019/04/09/Ann-Arbor/</url>
     <content><![CDATA[<p>Ann Arbor is the place for me to pursue my second bachelor’s degree in the University of Michigan. It is a small but lovely town located in the south of the State of Michigan. While I was taking classes and working on the campus, I would also like to record those tiny little pieces of happiness in daily life with my lenses. These pictures help to keep my precious memories.</p>
@@ -1203,22 +1219,6 @@ M1001 80H400000v40H1017z'/></svg></span></span></span><span class="vlist-s">​<
       </categories>
       <tags>
         <tag>embedded systems</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Minecraft Game Programming</title>
-    <url>/2020/12/09/560proj/</url>
-    <content><![CDATA[<p>In the fall of 2020, I finally had a chance to explore the field of computer graphics at University of Pennsylvania, and did a very interesting course project which builds a simplified Minecraft from scratch. This game is built on OpenGL 3.2 with Qt 5.15.0. Through building this game, I learned a lot about OpenGL rendering pipeline, game engine &amp; texture mapping.</p>
-<h1 id="demo-video"><a class="markdownIt-Anchor" href="#demo-video"></a> Demo Video</h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l_YViGj6_Qc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<a id="more"></a>
-<p>To be continued…</p>
-]]></content>
-      <categories>
-        <category>Projects</category>
-      </categories>
-      <tags>
-        <tag>computer graphics</tag>
       </tags>
   </entry>
 </search>
