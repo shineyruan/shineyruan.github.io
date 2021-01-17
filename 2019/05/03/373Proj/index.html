@@ -14,14 +14,14 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inter:300,300italic,400,400italic,700,700italic|Source+Sans+Pro:300,300italic,400,400italic,700,700italic|Source+Code+Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inter:300,300italic,400,400italic,700,700italic%7CSource+Sans+Pro:300,300italic,400,400italic,700,700italic%7CSource+Code+Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 <meta name="description" content="Probably one of the best interactive game projects I have seen in the class. [Prof. Alanson Sample and Prof. Matt SmithUniversity of Michigan]  &gt;&gt;&gt; This project is developed together with Reg">
 <meta property="og:type" content="article">
@@ -69,6 +69,7 @@
 
 
 
+
   <noscript>
   <style>
   body { margin-top: 2rem; }
@@ -113,7 +114,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
         <span class="toggle-line"></span>
@@ -168,7 +169,7 @@
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
@@ -184,7 +185,7 @@
 </div>
         
   
-  <div class="toggle sidebar-toggle">
+  <div class="toggle sidebar-toggle" role="button">
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
     <span class="toggle-line"></span>
@@ -204,12 +205,12 @@
 
       <div class="sidebar-panel-container">
         <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
+        <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#background-interactive-gaming"><span class="nav-number">1.</span> <span class="nav-text"> Background: Interactive Gaming</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#game-rules"><span class="nav-number">2.</span> <span class="nav-text"> Game Rules</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#demo-videos"><span class="nav-number">3.</span> <span class="nav-text"> Demo Videos</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#technical-details"><span class="nav-number">4.</span> <span class="nav-text"> Technical Details</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#component-overview"><span class="nav-number">4.1.</span> <span class="nav-text"> Component Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code-environments"><span class="nav-number">4.2.</span> <span class="nav-text"> Code Environments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#memory-mapped-io-advanced-peripheral-bus"><span class="nav-number">4.3.</span> <span class="nav-text"> Memory-mapped I&#x2F;O &amp; Advanced Peripheral Bus</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#implementation-in-verilog"><span class="nav-number">4.3.1.</span> <span class="nav-text"> Implementation in Verilog</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vga"><span class="nav-number">4.4.</span> <span class="nav-text"> VGA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basics"><span class="nav-number">4.4.1.</span> <span class="nav-text"> Basics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#implementation"><span class="nav-number">4.4.2.</span> <span class="nav-text"> Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#moving-tiles"><span class="nav-number">4.4.2.1.</span> <span class="nav-text"> Moving Tiles</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#score-health-point"><span class="nav-number">4.4.2.2.</span> <span class="nav-text"> Score &amp; Health Point</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#showing-more-complicated-graphs"><span class="nav-number">4.4.3.</span> <span class="nav-text"> Showing More Complicated Graphs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nintendo-controller"><span class="nav-number">4.5.</span> <span class="nav-text"> Nintendo Controller</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#interfacing-the-nintendo-nes-controller"><span class="nav-number">4.5.1.</span> <span class="nav-text"> Interfacing the Nintendo NES controller</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lcd-display"><span class="nav-number">4.6.</span> <span class="nav-text"> LCD Display</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#constructing-the-user-menu"><span class="nav-number">4.6.1.</span> <span class="nav-text"> Constructing the User Menu</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pixy-camera"><span class="nav-number">4.7.</span> <span class="nav-text"> Pixy Camera</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#porting-guidelines"><span class="nav-number">4.7.1.</span> <span class="nav-text"> Porting Guidelines</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-serial-protocol"><span class="nav-number">4.7.2.</span> <span class="nav-text"> The Serial Protocol</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sound-board"><span class="nav-number">4.8.</span> <span class="nav-text"> Sound Board</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#source-code"><span class="nav-number">5.</span> <span class="nav-text"> Source Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#acknowledgements"><span class="nav-number">6.</span> <span class="nav-text"> Acknowledgements</span></a></li></ol></div>
-        </section>
+        </div>
         <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Zhihao (Ryan) Ruan"
       src="/images/avatar.jpg">
@@ -275,7 +276,7 @@
     </ul>
   </div>
 
-        </section>
+        </div>
       </div>
     </div>
   </aside>
@@ -285,7 +286,7 @@
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
@@ -681,7 +682,7 @@
 
 
 
-    <div class="comments" id="gitalk-container"></div>
+    <div class="comments gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -744,7 +745,6 @@
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
-
 <script src="/js/local-search.js"></script>
 
 
@@ -772,7 +772,6 @@ if (document.querySelectorAll('.pdf-container').length) {
 
 
   
-
 
 
 <script>
@@ -870,7 +869,7 @@ if (document.querySelectorAll('.pdf-container').length) {
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
 
 <script>
-NexT.utils.loadComments('#gitalk-container', () => {
+NexT.utils.loadComments('.gitalk-container', () => {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
       clientID    : 'ab214030e1d59c6fc45b',
@@ -882,7 +881,7 @@ NexT.utils.loadComments('#gitalk-container', () => {
         language: 'en',
       distractionFreeMode: true
     });
-    gitalk.render('gitalk-container');
+    gitalk.render(document.querySelector('.gitalk-container'));
   }, window.Gitalk);
 });
 </script>
