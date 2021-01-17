@@ -30,11 +30,13 @@
 <meta property="og:site_name" content="Ryan&#39;s Blog">
 <meta property="og:description" content="In the fall of 2020, I finally had a chance to explore the field of computer graphics at University of Pennsylvania, and did a very interesting course project which builds a simplified Minecraft from">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/minecraft.png">
 <meta property="article:published_time" content="2020-12-09T19:30:11.000Z">
-<meta property="article:modified_time" content="2020-12-09T19:39:51.102Z">
+<meta property="article:modified_time" content="2021-01-17T06:50:00.268Z">
 <meta property="article:author" content="Zhihao (Ryan) Ruan">
 <meta property="article:tag" content="computer graphics">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/minecraft.png">
 
 
 <link rel="canonical" href="http://yoursite.com/2020/12/09/560proj/">
@@ -191,7 +193,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#demo-video"><span class="nav-number">1.</span> <span class="nav-text"> Demo Video</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#demo-video"><span class="nav-number">1.</span> <span class="nav-text"> Demo Video</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#overview"><span class="nav-number">2.</span> <span class="nav-text"> Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#blocks"><span class="nav-number">2.1.</span> <span class="nav-text"> Blocks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chunks"><span class="nav-number">2.2.</span> <span class="nav-text"> Chunks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#terrains-terrain-generation-zones"><span class="nav-number">2.3.</span> <span class="nav-text"> Terrains, Terrain Generation Zones</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -317,10 +319,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2020-12-09 14:30:11 / Modified: 14:39:51" itemprop="dateCreated datePublished" datetime="2020-12-09T14:30:11-05:00">2020-12-09</time>
+      <time title="Created: 2020-12-09 14:30:11" itemprop="dateCreated datePublished" datetime="2020-12-09T14:30:11-05:00">2020-12-09</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-01-17 01:50:00" itemprop="dateModified" datetime="2021-01-17T01:50:00-05:00">2021-01-17</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -346,14 +354,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>331</span>
+      <span>3.7k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
@@ -368,7 +376,36 @@
 <h1 id="demo-video"><a class="markdownIt-Anchor" href="#demo-video"></a> Demo Video</h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l_YViGj6_Qc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <a id="more"></a>
-<p>To be continued…</p>
+<h1 id="overview"><a class="markdownIt-Anchor" href="#overview"></a> Overview</h1>
+<p>Minecraft is originally well-known for its block-like structure. Everything is made of blocks, including mountains, trees, grasses, people, cows, zombies, etc. Although it might seem a little bit weird, this actually creates a really amazing, retro vibe as if you were playing those good old, low-resolution video games in the 70s and 80s. What’s more, I personally think that using different types of blocks to create a huge variety of objects from scratch is one of the essence of Minecraft. It is exactly because of the set-up of blocks that players can easily make things on their own.</p>
+<p><img src="/images/minecraft.png" alt="Minecraft (Java edition) main menu." /><span class="image-caption">Minecraft (Java edition) main menu.</span></p>
+<h2 id="blocks"><a class="markdownIt-Anchor" href="#blocks"></a> Blocks</h2>
+<p>Minecraft is a game only built upon <code>Block</code>s. Each block is defined to be a 1x1 cube in 3D space. All <code>Block</code>s can only be arranged adjacent to each other without any translation or rotation. Now you may wonder: aren’t there items such as leaves, torches, ladders, sticks in Minecraft that don’t look like a cube? Well, yes, but these are considered to be <em>specially-shaped blocks</em>. There are still many <em>regular-shaped blocks</em> such as stones, dirt, ice that look exactly like a 3D cube. Those specially-shaped blocks are <strong>only treated in their special shapes when rendering game graphics,</strong> but when it comes to the deep low-level gaming logic, such as finding the state of the block (occupied/unoccupied) or the center position of the block, etc., these specially-shaped blocks are treated just like the regular ones!</p>
+<p>Minecraft has lots of different types of blocks. Passionate Minecraft gamers also keeps adding new types of blocks to the original game to make it more playable. For my own Minecraft game, I have currently only created the following types of blocks:</p>
+<p>Regular blocks (3D cubic shape):</p>
+<ul>
+<li><code>CLOUD</code></li>
+<li><code>GRASS</code></li>
+<li><code>DIRT</code></li>
+<li><code>STONE</code></li>
+<li><code>SNOW</code> (actually corresponds to snow blocks in original Minecraft)</li>
+<li><code>ICE</code></li>
+<li><code>REDSTONE_LAMP</code></li>
+<li>…</li>
+</ul>
+<p>Specially-shaped blocks:</p>
+<ul>
+<li><code>REDSTONE_TORCH</code></li>
+<li><code>LEVER</code></li>
+<li><code>REDSTONE_WIRE</code></li>
+<li>…</li>
+</ul>
+<p>In additional to the regular biomes such as grasslands, mountains, forests in original Minecraft, we also created a new biome called <em>Heaven</em>. Heaven consists of <code>CLOUD</code> as the ground, and we used <code>QUARTZ</code>, <code>GOLD</code> and <code>QUARTZ_BRICK</code> to build a very large temple for God in Heaven. For details, please see our demo video!</p>
+<h2 id="chunks"><a class="markdownIt-Anchor" href="#chunks"></a> Chunks</h2>
+<p>Minecraft has a very huge map. It is impossible for the game to load all the maps into PC memory every time on start-up. Hence, it is critical for Minecraft to come up with a plan to only load the surrounding map at the player’s location. In fact, Minecraft actually divides the entire map into <code>Chunks</code>, where each <code>Chunk</code> consists of 16x256x16 blocks (<em>x, y, z</em> direction, respectively; <em>y</em> is the direction pointing “upwards” <em>i.e.,</em> to the sky). Upon rendering, each <code>Chunk</code> would be the <strong>smallest unit for rendering.</strong> This mean that Minecraft doesn’t render the surface of all blocks one by one. Instead, only rendering the surface (the boundary between an opaque block (<code>STONE</code>, <code>DIRT</code>, <code>SNOW</code>, etc.) and a transparent block (<code>EMPTY</code>, <code>WATER</code>, <code>ICE</code>, etc.)) of an entire <code>Chunk</code> would be much more efficient and make the game more responsive.</p>
+<h2 id="terrains-terrain-generation-zones"><a class="markdownIt-Anchor" href="#terrains-terrain-generation-zones"></a> Terrains, Terrain Generation Zones</h2>
+<p>When it comes to map loading, it is easy to discover that only loading one chunk (16x16 blocks in <em>x, z</em> direction) at a time reveals way too little information of the player’s surroundings. A simple solution is that we can group <code>Chunk</code>s together and form <code>Terrain</code>s. As a result, each <code>Terrain</code> is defined to have 4x4 <code>Chunk</code>s in the <em>x</em>, <em>z</em> direction (64x64 blocks; 64x256x64 blocks for <em>x</em>, <em>y</em>, <em>z</em>). Furthermore, 5x5 <code>Terrain</code>s form a <em>terrain generation zone.</em> In this way, we can now always <strong>keep loading the terrain generation zone centered at the chunk where player is standing,</strong> which means we load 20x20 <code>Chunks</code> surrounding the player. Once the player moves off a <code>Chunk</code>, we keep loading new neighboring <code>Chunks</code> to the PC memory and remove those chunks that are no longer considered to be in the new terrain generation zone from the PC memory. By such means we maintain a constant amount of memory usage throughout the game while keeping the player well informed of the surrounding terrain.</p>
+<p><em>To be continued…</em></p>
 
     </div>
 
@@ -444,13 +481,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">66k</span>
+    <span title="Symbols count total">69k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:01</span>
+    <span title="Reading time total">1:03</span>
   </span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
