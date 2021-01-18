@@ -1,536 +1,1099 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
+
+
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.3.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="A Short Story about Me, Ryan&#39;s Blog">
+    <meta name="description" content="MSE Robotics @Penn &#39;22, BSE CS @UMich &#39;20, BSE ECE @SJTU &#39;20; Code and Photography.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-ZR.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-ZR.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-ZR.png">
-  <link rel="mask-icon" href="/images/logo-new.svg" color="#222">
+    <title>A Short Story about Me | Ryan&#39;s Blog</title>
+    <link rel="icon" type="image/png" href="/favicon-32x32-ZR.png">
 
-<link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Inter:300,300italic,400,400italic,700,700italic%7CSource+Sans+Pro:300,300italic,400,400italic,700,700italic%7CSource+Code+Pro:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+    <script src="/libs/jquery/jquery.min.js"></script>
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
-<script class="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
-  </script>
-<meta name="description" content="Greetings! Nice to meet you! I’m Ryan, a computer science engineer. I love everything that is equipped with fancy, high-end technology. I’m also a photographer, strongly interested in capturing everyt">
-<meta property="og:type" content="website">
-<meta property="og:title" content="A Short Story about Me">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
-<meta property="og:site_name" content="Ryan&#39;s Blog">
-<meta property="og:description" content="Greetings! Nice to meet you! I’m Ryan, a computer science engineer. I love everything that is equipped with fancy, high-end technology. I’m also a photographer, strongly interested in capturing everyt">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/images/RZH8697post.jpg">
-<meta property="og:image" content="http://yoursite.com/images/DSC00222.jpg">
-<meta property="og:image" content="http://yoursite.com/images/badminton.jpg">
-<meta property="article:published_time" content="2020-12-10T21:37:55.598Z">
-<meta property="article:modified_time" content="2020-08-19T18:34:35.441Z">
-<meta property="article:author" content="Zhihao (Ryan) Ruan">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/RZH8697post.jpg">
-
-
-<link rel="canonical" href="http://yoursite.com/about/">
-
-
-<script class="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : false,
-    lang   : 'en'
-  };
-</script>
-<title>A Short Story about Me | Ryan's Blog
-</title>
-  
-
-
-
-
-  <noscript>
-  <style>
-  body { margin-top: 2rem; }
-
-  .use-motion .menu-item,
-  .use-motion .sidebar,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header {
-    visibility: visible;
-  }
-
-  .use-motion .header,
-  .use-motion .site-brand-container .toggle,
-  .use-motion .footer { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle,
-  .use-motion .custom-logo-image {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line {
-    transform: scaleX(1);
-  }
-
-  .search-pop-overlay, .sidebar-nav { display: none; }
-  .sidebar-panel { display: block; }
-  </style>
-</noscript>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
 
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
 
-  <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">Ryan's Blog</h1>
-      <i class="logo-line"></i>
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Ryan&#39;s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Home</span>
     </a>
-      <p class="site-subtitle" itemprop="description">MSE Robotics @Penn '22<br>BSE CS @UMich '20<br>BSE ECE @SJTU '20</p>
-  </div>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories/Projects" class="waves-effect waves-light">
+      
+      <i class="fa fa-briefcase" style="zoom: 0.6;"></i>
+      
+      <span>Projects (English)</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
-  </div>
-</div>
 
+<div id="mobile-nav" class="side-nav sidenav">
 
-
-<nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
-        <li class="menu-item menu-item-quick-view"><a href="/allposts/" rel="section"><i class="fa fa-bookmark fa-fw"></i>Quick View</a></li>
-        <li class="menu-item menu-item-projects-(english)"><a href="/categories/Projects/" rel="section"><i class="fa fa-briefcase fa-fw"></i>Projects (English)</a></li>
-        <li class="menu-item menu-item-tutorials-(english)"><a href="/categories/Tutorials/" rel="section"><i class="fa fa-book fa-fw"></i>Tutorials (English)</a></li>
-        <li class="menu-item menu-item-travel-journals-(中文)"><a href="/categories/Travel-Journals/" rel="section"><i class="fa fa-car fa-fw"></i>Travel Journals (中文)</a></li>
-        <li class="menu-item menu-item-my-gallery-(english)"><a href="/categories/My-Gallery/" rel="section"><i class="fa fa-image fa-fw"></i>My Gallery (English)</a></li>
-        <li class="menu-item menu-item-timeline"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Timeline</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
-  </ul>
-</nav>
-
-
-
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-</div>
+    <div class="mobile-head bg-color">
         
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#about-me"><span class="nav-number">1.</span> <span class="nav-text"> About me</span></a></li></ol></div>
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Ryan&#39;s Blog</div>
+        <div class="logo-desc">
+            
+            MSE Robotics @Penn &#39;22, BSE CS @UMich &#39;20, BSE ECE @SJTU &#39;20; Code and Photography.
+            
         </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Zhihao (Ryan) Ruan"
-      src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">Zhihao (Ryan) Ruan</p>
-  <div class="site-description" itemprop="description">Code and Photography.</div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">21</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">5</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">19</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/shineyruan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;shineyruan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:ruanzh@umich.edu" title="E-Mail → mailto:ruanzh@umich.edu" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.instagram.com/yuenshiney/" title="Instagram → https:&#x2F;&#x2F;www.instagram.com&#x2F;yuenshiney&#x2F;" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/zhihao-ruan-29b29a13a/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;zhihao-ruan-29b29a13a&#x2F;" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>Linkedin</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://zhihaoruan.xyz/curriculum-vitae/" title="CV → https:&#x2F;&#x2F;zhihaoruan.xyz&#x2F;curriculum-vitae&#x2F;" rel="noopener" target="_blank"><i class="fa fa-id-card fa-fw"></i>CV</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://zhihaoruan.xyz/resume/" title="Resume → https:&#x2F;&#x2F;zhihaoruan.xyz&#x2F;resume&#x2F;" rel="noopener" target="_blank"><i class="fa fa-id-card fa-fw"></i>Resume</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      My Close Collaborators
     </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://regina8023.github.io/" title="https:&#x2F;&#x2F;regina8023.github.io&#x2F;" rel="noopener" target="_blank">Regina (Jingliang Ren)</a>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Home
+		</a>
+          
         </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://voyager1998.github.io/" title="https:&#x2F;&#x2F;voyager1998.github.io&#x2F;" rel="noopener" target="_blank">Ken (Kun Huang)</a>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories/Projects" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-briefcase"></i>
+			
+			Projects (English)
+		</a>
+          
         </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://lejunjiang.github.io/" title="https:&#x2F;&#x2F;lejunjiang.github.io&#x2F;" rel="noopener" target="_blank">Harald (Lejun Jiang)</a>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Tags
+		</a>
+          
         </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
     </ul>
-  </div>
+</div>
+
 
         </div>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
 
-
-    </header>
-
-    
-  <div class="back-to-top" role="button">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-  <a href="https://github.com/shineyruan" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner page posts-expand">
-  
-  
-
-
-    
-    
-    
-    <div class="post-block" lang="en"><header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">A Short Story about Me
-</h1>
-
-<div class="post-meta-container">
-</div>
+        
+    </nav>
 
 </header>
 
-      
-      
-      <div class="post-body">
-          <p>Greetings! Nice to meet you! I’m Ryan, a computer science engineer. I love everything that is equipped with fancy, high-end technology. I’m also a photographer, strongly interested in capturing everything that is beautiful and important in my daily life. As you go into my blog, I would like to share some long stories with you. Let’s make friends!</p>
-<p><img src="/images/RZH8697post.jpg" alt="" /></p>
-<h2 id="about-me"><a class="markdownIt-Anchor" href="#about-me"></a> About me</h2>
-<p>I come from South China, the city of Zhuhai, Guangdong Province. Zhuhai is a really peaceful and lovely city by the sea. Walking on the seashore, you can always feel the warm sunshine and the wind breeze. The air is fresh, often mixed with the smell of the fish — there is always a lot of people fishing there. Fish, shrimps and scallops make up a really large proportion of my childhood memory. I remember so clearly that everyday after work, my parents always went to the local fish market, and bought some really fresh fish home for dinner. The passion for fish in my family leads to one of my greatest habits: I love seafood very, very much.</p>
-<p><img src="/images/DSC00222.jpg" alt="Zhuhai Fishing Girl, the most famous landmark in Zhuhai City." /><span class="image-caption">Zhuhai Fishing Girl, the most famous landmark in Zhuhai City.</span></p>
-<p>I spent my first 18 years in this beautiful city, and went through my primary school and middle school life. When I was in the 7<sup>th</sup> grade, I had a chance to learn programming. Although the programming language I learned was <code>Pascal</code>, which is no longer used today, the programming experience really gave me a solid ground on data structures and algorithms. I once got the 3<sup>rd</sup> prize for the National Olympiad of Informatics in Provinces (NOIP), which is a great award at that time. From the coding experience, I have formed a good habit — I am never afraid of learning any new programming languages, and I always tend to think deeply about how a complicated system gets to work.</p>
-<p>After middle school, I went to <a href="http://en.sjtu.edu.cn/">Shanghai Jiao Tong University (SJTU)</a>, which is one of the top 4 universities in China. There, I began my academic career. After my sophomore year, I was successfully enrolled in a dual-degree program, and came to the University of Michigan, which is where I am now. Throughout all the time in the university, I had quite a lot of project experience, and each of them has greatly improved one of my skills. These project experience will be elaborated in detail in other posts.</p>
-<p>I’m also fond of travelling and photography. On one hand, travelling is a great activity that helps me get rid of my current surroundings for a while and get a chance to explore new things. You know, when people have been in an environment for too long, they would easily be stuck and get bored. On the other hand, I’m quite open to different cultures and styles and I’m eager to explore as many different cultures as possible in my life, which could help broaden my horizons. As for photography, as a recording tool, this is a great way for me to document what I saw as well as my experiences in the past; as a type of art, it is also a perfect way for me to express my emotions. I have set up a <a href="https://zhihaoruan.xyz/categories/My-Gallery/">“My Gallery” category</a> in my blog which will update irregularly (sorry!) to document what I saw, and how I was feeling.</p>
-<p>Besides, I’m also a big fan of badminton. I started to play badminton when I was in the 7<sup>th</sup> grade, and have always been playing since then. Playing badminton has long been my main way to relax. I really enjoy the pace, the speed, and the feelings of shooting. I have also made a lot of friends from playing badminton. I am always trying out new strategies while playing a game to improve my skills. Would you like to play with me?</p>
-<p align="center">
-    <img src="/images/badminton.jpg" alt="Championship of an SJTU badminton Team Competition." width="500"><span class="image-caption">Championship of an SJTU badminton Team Competition.</span>
-      </div>
-      
-      
-      
+    <style type="text/css">
+    /* don't remove. */
+    .about-cover {
+        height: 75vh;
+    }
+</style>
+
+<div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                Zhihao (Ryan) Ruan
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "What matters in life is not what happens to you but what you remember and how you remember it.",
+                            
+                                "生命中真正重要的不是你遭遇了什么，而是你记住了哪些事，又是如何铭记的。",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
     </div>
+</div>
 
-    
-    
-
-
-    <div class="comments gitalk-container"></div>
 
 <script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      const commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
-</div>
-  </main>
 
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 2018 – 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Zhihao (Ryan) Ruan</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    <span title="Symbols count total">69k</span>
-  </span>
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="Reading time total">1:03</span>
-  </span>
-</div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
 
     </div>
-  </footer>
+</div>
 
-  
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+<main class="content">
 
-  
-<script src="/js/local-search.js"></script>
+    <div id="aboutme" class="container about-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
+                        
+<div class="statis">
+    <span class="count"><a href="/">22</a></span>
+    <span class="name">Posts</span>
+</div>
 
 
 
+<div class="statis">
+    <span class="count"><a href="/categories">5</a></span>
+    <span class="name">Categories</span>
+</div>
+
+
+
+<div class="statis">
+    <span class="count"><a href="/tags">19</a></span>
+    <span class="name">Tags</span>
+</div>
+
+
+                    </div>
+                    <div class="col s12 m12 l4">
+                        <div class="profile center-align">
+                            <div class="avatar">
+                                <img src="/medias/avatar.jpg" alt="Zhihao (Ryan) Ruan"
+                                     class="circle responsive-img avatar-img">
+                            </div>
+                            <div class="author">
+                                <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
+                                    
+<div class="statis">
+    <span class="count"><a href="/">22</a></span>
+    <span class="name">Posts</span>
+</div>
+
+
+
+<div class="statis">
+    <span class="count"><a href="/categories">5</a></span>
+    <span class="name">Categories</span>
+</div>
+
+
+
+<div class="statis">
+    <span class="count"><a href="/tags">19</a></span>
+    <span class="name">Tags</span>
+</div>
+
+
+                                </div>
+                                <div class="title">Zhihao (Ryan) Ruan</div>
+                                <div class="career">Roboticist; M.S. Engineering in Robotics @Penn '22</div>
+                                <div class="social-link hide-on-large-only" data-aos="zoom-in-left">
+                                    
+    <a href="https://github.com/shineyruan" class="tooltipped" target="_blank" data-tooltip="Visit my GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="https://www.linkedin.com/in/zhihao-ruan-29b29a13a/" class="tooltipped" target="_blank" data-tooltip="Follow me on Linkedin" data-position="top" data-delay="50">
+        <i class="fab fa-linkedin"></i>
+    </a>
+
+
+
+    <a href="mailto:ruanzh@seas.upenn.edu" class="tooltipped" target="_blank" data-tooltip="Contact me by Email" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l4 hide-on-med-and-down" data-aos="zoom-in-left">
+                        <div class="social-link">
+                            
+    <a href="https://github.com/shineyruan" class="tooltipped" target="_blank" data-tooltip="Visit my GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="https://www.linkedin.com/in/zhihao-ruan-29b29a13a/" class="tooltipped" target="_blank" data-tooltip="Follow me on Linkedin" data-position="top" data-delay="50">
+        <i class="fab fa-linkedin"></i>
+    </a>
+
+
+
+    <a href="mailto:ruanzh@seas.upenn.edu" class="tooltipped" target="_blank" data-tooltip="Contact me by Email" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="introduction center-align" data-aos="fade-up">Code and photography.</div>
+
+                <style type="text/css">
+    #posts-chart,
+    #categories-chart,
+    #tags-chart {
+        width: 100%;
+        height: 300px;
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+    }
+</style>
+
+<div id="postCharts" class="post-charts">
+    <div class="title center-align" data-aos="zoom-in-up">
+        <i class="far fa-bar-chart"></i>&nbsp;&nbsp;Post Charts
+    </div>
+    <div class="row">
+        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
+            <div id="posts-chart"></div>
+        </div>
+
+        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
+            <div id="categories-chart"></div>
+        </div>
+
+        <div class="chart col s12 m6 l4" data-aos="zoom-in-up">
+            <div id="tags-chart"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
 <script>
-if (document.querySelectorAll('.pdf-container').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2.2.4/pdfobject.min.js', () => {
-    document.querySelectorAll('.pdf-container').forEach(element => {
-      PDFObject.embed(element.dataset.target, element, {
-        pdfOpenParams: {
-          navpanes : 0,
-          toolbar  : 0,
-          statusbar: 0,
-          pagemode : 'thumbs',
-          view     : 'FitH'
+    let postsChart = echarts.init(document.getElementById('posts-chart'));
+    let categoriesChart = echarts.init(document.getElementById('categories-chart'));
+    let tagsChart = echarts.init(document.getElementById('tags-chart'));
+
+    
+
+    let postsOption = {
+        title: {
+            text: 'Post Publish Chart',
+            top: -5,
+            x: 'center'
         },
-        PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height   : element.dataset.height
-      });
-    });
-  }, window.PDFObject);
-}
+        tooltip: {
+            trigger: 'axis'
+        },
+        xAxis: {
+            type: 'category',
+            data: ["2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01"]
+        },
+        yAxis: {
+            type: 'value',
+        },
+        series: [
+            {
+                name: 'Number of posts',
+                type: 'line',
+                color: ['#6772e5'],
+                data: [2,2,1,0,4,1,0,1,0,0,1,1,0],
+                markPoint: {
+                    symbolSize: 45,
+                    color: ['#fa755a','#3ecf8e','#82d3f4'],
+                    data: [{
+                        type: 'max',
+                        itemStyle: {color: ['#3ecf8e']},
+                        name: 'Maximum'
+                    }, {
+                        type: 'min',
+                        itemStyle: {color: ['#fa755a']},
+                        name: 'Minimum'
+                    }]
+                },
+                markLine: {
+                    itemStyle: {color: ['#ab47bc']},
+                    data: [
+                        {type: 'average', name: 'Average'}
+                    ]
+                }
+            }
+        ]
+    };
+
+    
+
+    let categoriesOption = {
+        title: {
+            text: 'Categories Chart',
+            top: -4,
+            x: 'center'
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        series: [
+            {
+                name: 'Categories',
+                type: 'pie',
+                radius: '50%',
+                color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
+                data: [{"name":"My Gallery","value":9},{"name":"Projects","value":4},{"name":"Travel Journals","value":2},{"name":"Lecture notes","value":1},{"name":"Tutorials","value":4}],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    
+
+    let tagsOption = {
+        title: {
+            text: 'TOP10 Tags Chart',
+            top: -5,
+            x: 'center'
+        },
+        tooltip: {},
+        xAxis: [
+            {
+                type: 'category',
+                data: ["photography","city representation","vscode","latex","embedded systems","computer vision","raspberry pi","robotics","computer graphics","blue hour"]
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                type: 'bar',
+                color: ['#82d3f4'],
+                barWidth : 18,
+                data: [11,7,3,2,2,1,1,1,1,1],
+                markPoint: {
+                    symbolSize: 45,
+                    data: [{
+                        type: 'max',
+                        itemStyle: {color: ['#3ecf8e']},
+                        name: 'Maximum'
+                    }, {
+                        type: 'min',
+                        itemStyle: {color: ['#fa755a']},
+                        name: 'Minimum'
+                    }],
+                },
+                markLine: {
+                    itemStyle: {color: ['#ab47bc']},
+                    data: [
+                        {type: 'average', name: 'Average'}
+                    ]
+                }
+            }
+        ]
+    };
+
+    // render the charts
+    postsChart.setOption(postsOption);
+    categoriesChart.setOption(categoriesOption);
+    tagsChart.setOption(tagsOption);
 </script>
 
 
+                
+                
+<div class="my-projects">
+    <div class="title center-align" data-aos="zoom-in-up">
+        <i class="fas fa-gift"></i>&nbsp;&nbsp;My Projects
+    </div>
+    <div class="row">
+        
+        
+        <div class="col s12 m6 l4" data-aos="fade-up">
+            <div class="info center-align">
+                <a href="https://github.com/EECS467-DOAPP/doapp" class="icon"
+                   style="background: linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)" target="_blank">
+                    <i class="fa fa-briefcase"></i>
+                </a>
+                <div class="info-title">
+                    <a href="https://github.com/EECS467-DOAPP/doapp" target="_blank">DOAPP</a>
+                </div>
+                <div class="info-desc">Dynamic Obstacle Avoidance and Path Planning (ROS, CUDA, C++).</div>
+            </div>
+        </div>
+        
+        <div class="col s12 m6 l4" data-aos="fade-up">
+            <div class="info center-align">
+                <a href="https://github.com/shineyruan/multimodal-GAN" class="icon"
+                   style="background: linear-gradient(to bottom right, #F06292 0%, #EF5350 100%)" target="_blank">
+                    <i class="fa fa-briefcase"></i>
+                </a>
+                <div class="info-title">
+                    <a href="https://github.com/shineyruan/multimodal-GAN" target="_blank">BicycleGAN</a>
+                </div>
+                <div class="info-desc">Simple implementation of BicycleGAN in PyTorch</div>
+            </div>
+        </div>
+        
+        <div class="col s12 m6 l4" data-aos="fade-up">
+            <div class="info center-align">
+                <a href="https://github.com/shineyruan/faster-rcnn-toy" class="icon"
+                   style="background: linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)" target="_blank">
+                    <i class="fa fa-briefcase"></i>
+                </a>
+                <div class="info-title">
+                    <a href="https://github.com/shineyruan/faster-rcnn-toy" target="_blank">Faster RCNN</a>
+                </div>
+                <div class="info-desc">Implementation of Faster RCNN in PyTorch</div>
+            </div>
+        </div>
+        
+        <div class="col s12 m6 l4" data-aos="fade-up">
+            <div class="info center-align">
+                <a href="https://github.com/shineyruan/Don-t-Step-on-White-Tiles" class="icon"
+                   style="background: linear-gradient(45deg, rgba(255, 160, 0, 0.75) 0%, rgba(255, 160, 0, 0.65) 100%);" target="_blank">
+                    <i class="fa fa-briefcase"></i>
+                </a>
+                <div class="info-title">
+                    <a href="https://github.com/shineyruan/Don-t-Step-on-White-Tiles" target="_blank">Step on White Tiles</a>
+                </div>
+                <div class="info-desc">Interactive game with Nintendo controller, ARM Cortex M3, FPGA, and self-implemented VGA protocol</div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
 
-  
+                
 
+                
+                
+<div class="my-skills">
+    <div class="title center-align" data-aos="zoom-in-up">
+        <i class="fas fa-wrench"></i>&nbsp;&nbsp;My Skills
+    </div>
+    <div class="row">
+        
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 90%">
+                    <span>C++</span>
+                </div>
+                <div class="skill-bar-percent">90%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #9900FF 0%, #CC66FF 100%); width: 85%">
+                    <span>Python</span>
+                </div>
+                <div class="skill-bar-percent">85%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #2196F3 0%, #42A5F5 100%); width: 70%">
+                    <span>C</span>
+                </div>
+                <div class="skill-bar-percent">70%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 65%">
+                    <span>CUDA</span>
+                </div>
+                <div class="skill-bar-percent">65%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 70%">
+                    <span>Robotics Operating System</span>
+                </div>
+                <div class="skill-bar-percent">70%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 80%">
+                    <span>Computer vision/Deep learning</span>
+                </div>
+                <div class="skill-bar-percent">80%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, rgba(255, 160, 0, 0.75) 0%, rgba(255, 160, 0, 0.65) 100%); width: 65%">
+                    <span>Computer Graphics</span>
+                </div>
+                <div class="skill-bar-percent">65%</div>
+            </div>
+        </div>
+        
+        
+    </div>
 
-<script>
-  (function() {
-    function leancloudSelector(url) {
-      url = encodeURI(url);
-      return document.getElementById(url).querySelector('.leancloud-visitors-count');
-    }
+    
 
-    function addCount(Counter) {
-      const visitors = document.querySelector('.leancloud_visitors');
-      const url = decodeURI(visitors.id);
-      const title = visitors.dataset.flagTitle;
-
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
-        .then(response => response.json())
-        .then(({ results }) => {
-          if (results.length > 0) {
-            const counter = results[0];
-            leancloudSelector(url).innerText = counter.time + 1;
-            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
-              .catch(error => {
-                console.error('Failed to save visitor count', error);
-              });
-          } else {
-              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+    
+    <div class="other-skills chip-container" data-aos="zoom-in-up">
+        <div class="sub-title center-align"><i class="fa fa-book"></i>&nbsp;&nbsp;Other Skills</div>
+        <div class="tag-chips center-align">
             
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
+            
+            <a href="/tags/photography/">
+                <span class="chip center-align waves-effect waves-light chip-default">photography</span>
+            </a>
+            
+            
+            
+            <a href="/tags/city-representation/">
+                <span class="chip center-align waves-effect waves-light chip-default">city representation</span>
+            </a>
+            
+            
+            
+            <a href="/tags/computer-vision/">
+                <span class="chip center-align waves-effect waves-light chip-default">computer vision</span>
+            </a>
+            
+            
+            
+            <a href="/tags/raspberry-pi/">
+                <span class="chip center-align waves-effect waves-light chip-default">raspberry pi</span>
+            </a>
+            
+            
+            
+            <a href="/tags/robotics/">
+                <span class="chip center-align waves-effect waves-light chip-default">robotics</span>
+            </a>
+            
+            
+            
+            <a href="/tags/computer-graphics/">
+                <span class="chip center-align waves-effect waves-light chip-default">computer graphics</span>
+            </a>
+            
+            
+            
+            <a href="/tags/latex/">
+                <span class="chip center-align waves-effect waves-light chip-default">latex</span>
+            </a>
+            
+            
+            
+            <a href="/tags/blue-hour/">
+                <span class="chip center-align waves-effect waves-light chip-default">blue hour</span>
+            </a>
+            
+            
+            
+            <a href="/tags/covid-19/">
+                <span class="chip center-align waves-effect waves-light chip-default">covid-19</span>
+            </a>
+            
+            
+            
+            <a href="/tags/documentary/">
+                <span class="chip center-align waves-effect waves-light chip-default">documentary</span>
+            </a>
+            
+            
+            
+            <a href="/tags/semiconductor-devices/">
+                <span class="chip center-align waves-effect waves-light chip-default">semiconductor devices</span>
+            </a>
+            
+            
+            
+            <a href="/tags/vscode/">
+                <span class="chip center-align waves-effect waves-light chip-default">vscode</span>
+            </a>
+            
+            
+            
+            <a href="/tags/c/">
+                <span class="chip center-align waves-effect waves-light chip-default">c++</span>
+            </a>
+            
+            
+            
+            <a href="/tags/stm32/">
+                <span class="chip center-align waves-effect waves-light chip-default">stm32</span>
+            </a>
+            
+            
+            
+            <a href="/tags/embedded-systems/">
+                <span class="chip center-align waves-effect waves-light chip-default">embedded systems</span>
+            </a>
+            
+            
+            
+            <a href="/tags/win10/">
+                <span class="chip center-align waves-effect waves-light chip-default">win10</span>
+            </a>
+            
+            
+            
+            <a href="/tags/wox/">
+                <span class="chip center-align waves-effect waves-light chip-default">wox</span>
+            </a>
+            
+            
+            
+            <a href="/tags/everything/">
+                <span class="chip center-align waves-effect waves-light chip-default">everything</span>
+            </a>
+            
+            
+            
+            <a href="/tags/search/">
+                <span class="chip center-align waves-effect waves-light chip-default">search</span>
+            </a>
+            
+            
+        </div>
+    </div>
+    
+
+</div>
+
+                
+
+                
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2018-2021</span>
+            
+            <span id="year">2018</span>
+            <a href="/about" target="_blank">Zhihao (Ryan) Ruan</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/shineyruan" class="tooltipped" target="_blank" data-tooltip="Visit my GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="https://www.linkedin.com/in/zhihao-ruan-29b29a13a/" class="tooltipped" target="_blank" data-tooltip="Follow me on Linkedin" data-position="top" data-delay="50">
+        <i class="fab fa-linkedin"></i>
+    </a>
+
+
+
+    <a href="mailto:ruanzh@seas.upenn.edu" class="tooltipped" target="_blank" data-tooltip="Contact me by Email" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
         });
-    }
+    };
 
-    function showTime(Counter) {
-      const visitors = document.querySelectorAll('.leancloud_visitors');
-      const entries = [...visitors].map(element => {
-        return decodeURI(element.id);
-      });
-
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
-        .then(response => response.json())
-        .then(({ results }) => {
-          for (let url of entries) {
-            const target = results.find(item => item.url === url);
-            leancloudSelector(url).innerText = target ? target.time : 0;
-          }
-        })
-        .catch(error => {
-          console.error('LeanCloud Counter Error', error);
-        });
-    }
-
-    const { app_id, app_key, server_url } = {"enable":true,"app_id":"VrgyOMEUcHPEUQybjvmTH6nm-MdYXbMMI","app_key":"BteMiVUs2vSEDl4FcsJiwzAy","server_url":null,"security":true};
-    function fetchData(api_server) {
-      const Counter = (method, url, data) => {
-        return fetch(`${api_server}/1.1${url}`, {
-          method,
-          headers: {
-            'X-LC-Id'     : app_id,
-            'X-LC-Key'    : app_key,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        });
-      };
-      if (CONFIG.page.isPost) {
-        if (CONFIG.hostname !== location.hostname) return;
-        addCount(Counter);
-      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
-        showTime(Counter);
-      }
-    }
-
-    const api_server = app_id.slice(-9) === '-MdYXbMMI' ? `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com` : server_url;
-
-    if (api_server) {
-      fetchData(api_server);
-    } else {
-      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
-        .then(response => response.json())
-        .then(({ api_server }) => {
-          fetchData('https://' + api_server);
-        });
-    }
-  })();
-</script>
-
-
-  
-
-
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.css">
-
-<script>
-NexT.utils.loadComments('.gitalk-container', () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : 'ab214030e1d59c6fc45b',
-      clientSecret: 'd7010cdc7b5d905fbb2ed091fa5d15b96a3dd65b',
-      repo        : 'shineyruan.github.io',
-      owner       : 'shineyruan',
-      admin       : ['shineyruan'],
-      id          : '3be7aa98d992907175cbd79c194399f2',
-        language: 'en',
-      distractionFreeMode: true
-    });
-    gitalk.render(document.querySelector('.gitalk-container'));
-  }, window.Gitalk);
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
 </script>
 
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
+
 </html>
