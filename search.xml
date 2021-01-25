@@ -1751,6 +1751,42 @@ M1001 80H400000v40H1017z"></path></svg></span></span></span><span class="vlist-s
 <li><strong>What is <code>ros::rate()</code>?</strong></li>
 </ul>
 <p><code>ros::Rate</code> specifies the rate of spinning loop of this ROS node.</p>
+<h1 id="implementing-custom-messages"><a class="markdownIt-Anchor" href="#implementing-custom-messages"></a> Implementing Custom Messages</h1>
+<p>In this section I focused on implementing a custom ROS message type <code>scan_range</code>, which includes the min/max range in the laser scan. According to the <a href="http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv">tutorials of creating custom ROS messages</a>, I created the following ROS message <code>scan_range.msg</code>:</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">std_msgs/Header header
+std_msgs/Float64 range_min
+std_msgs/Float64 range_max<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>After resolving all Catkin package dependencies in CMakeList &amp; ROS package manifest file (<code>package.xml</code>), I finally reached the following output.</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&gt;</span> rosmsg show lab1/scan_range
+std_msgs/Header header
+  uint32 <span class="token function">seq</span>
+  <span class="token function">time</span> stamp
+  string frame_id
+std_msgs/Float64 range_min
+  float64 data
+std_msgs/Float64 range_max
+  float64 data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="answers-to-section-5-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-5-written-questions"></a> Answers to Section 5 Written Questions</h2>
+<ul>
+<li><strong>Why did you include the header file of the message file instead of the message file itself?</strong></li>
+</ul>
+<p>According to ROS mechanisms, any customized ROS messages will be generated into a templated message header file to be included in the C++ code. The message file itself is not part of standard C++ and it cannot be parsed by C++ compilers.</p>
+<ul>
+<li><strong>In the documentation of the LaserScan message there was also a data type called Header. What is that? Can you also include it in your message file? What information does it provide? Include Header in your message file too.</strong></li>
+</ul>
+<p>The <code>Header</code> provides information on the sequential order, the timestamp, and the frame ID of the instant when the message is published. It is very useful when one would like to make use of time information of the messages received. The header file has been included in my custom ROS message.</p>
+<h1 id="recording-and-publishing-bag-files"><a class="markdownIt-Anchor" href="#recording-and-publishing-bag-files"></a> Recording and Publishing Bag Files</h1>
+<p>This section aims at playing with <code>rosbag</code> and bag files in ROS. ROS bag files are a certain kind of files that targets at recording ROS messages, so that it can be replayed elsewhere afterwards. ROS Bag is extremely helpful when one would like to collect data in real-world experiments.</p>
+<h2 id="answers-to-section-6-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-6-written-questions"></a> Answers to Section 6 Written Questions</h2>
+<ul>
+<li><strong>Where does the bag file get saved? How can you change where it is saved?</strong></li>
+</ul>
+<p>By default the bag file is saved at the current directory. We can also change the directory by adding <code>-o</code> such as:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rosbag record -o <span class="token punctuation">..</span>/bagfiles/my_rosbag_recordings.bag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><strong>Where will the bag file be saved if you were launching the recording of bagfile record through a launch file. How can you change where it is saved?</strong></li>
+</ul>
+<p>By default the bag file is saved at the current directory. We can also change the directory by appending <code>args=../bagfiles/my_rosbag_recordings.bag</code> to the corresponding node in the launch file.</p>
 ]]></content>
       <categories>
         <category>Projects</category>
