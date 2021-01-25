@@ -384,7 +384,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-01-17
+                    2021-01-25
                 </div>
                 
 
@@ -420,10 +420,10 @@
 <a id="more"></a>
 <p>In the passing winter semester, I took a very interesting course: <a href="http://www.eecs.umich.edu/courses/eecs373/lectures.html"><em>Introduction to Embedded System Design (EECS 373)</em></a>. I’ve learned memory-mapped I/O, interrupt, timer and many other important concepts in embedded system. The target of this course is to build an embedded system using a specific kind of development board – <a href="https://en.wikipedia.org/wiki/Actel_SmartFusion">Actel SmartFusion® SoC FPGA</a>.</p>
 <p>Our final project is “Step on the White Tiles”, which is inspired by a popular mobile game <em>Don’t Tap the White Tiles (Chinese: 别踩白块)</em>. This is one of my proudest projects, so I’d like to write a blog to record this project experience and share these fun technical details with more people!</p>
-<h1 id="background-interactive-gaming"><a class="markdownIt-Anchor" href="#background-interactive-gaming"></a> Background: Interactive Gaming</h1>
+<h2 id="background-interactive-gaming"><a class="markdownIt-Anchor" href="#background-interactive-gaming"></a> Background: Interactive Gaming</h2>
 <p>Interactive gaming system has been developing fast for the past decades. From the Wii Remote controller created by Nintendo to the PlayStation series controller invented by Sony, it seems that people has become more and more fascinated about interactive gaming. Inspired by the existing interactive gaming system solutions, I, along with <a href="https://regina8023.github.io">Regina (Jingliang Ren)</a>, <a href="https://voyager1998.github.io">Ken (Kun Huang)</a> and Shiyu Liu planned to develop a simple interactive gaming system based on <a href="https://www.microsemi.com/product-directory/soc-fpgas/1693-smartfusion">Actel SmartFusion® SoC FPGA</a>, which is a simple implementation of a popular mobile game <em>Don’t Tap the White Tiles</em> into the real world.</p>
 <p><img src="/images/373_intro.png" alt="A basic user interface for the original mobile game, Don't Tap the White Tiles."></p>
-<h1 id="game-rules"><a class="markdownIt-Anchor" href="#game-rules"></a> Game Rules</h1>
+<h2 id="game-rules"><a class="markdownIt-Anchor" href="#game-rules"></a> Game Rules</h2>
 <p>There are 3 modes for our game: slow, medium and fast. Different modes have different numbers and speeds of tiles. At the beginning of the game, player will have 5 lives (health points).</p>
 <ul>
 <li>🍭 When left foot steps on a white tile, white tile becomes green and score++</li>
@@ -431,12 +431,12 @@
 <li>🌶 When player misses a white tile, he/she will lose one life (health point)</li>
 <li>☠️ When all lives go, game over!</li>
 </ul>
-<h1 id="demo-videos"><a class="markdownIt-Anchor" href="#demo-videos"></a> Demo Videos</h1>
+<h2 id="demo-videos"><a class="markdownIt-Anchor" href="#demo-videos"></a> Demo Videos</h2>
 <p>Here is a video captured during EECS373 Project Expo 😎!</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2wzuU-qfCKQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<h1 id="technical-details"><a class="markdownIt-Anchor" href="#technical-details"></a> Technical Details</h1>
+<h2 id="technical-details"><a class="markdownIt-Anchor" href="#technical-details"></a> Technical Details</h2>
 <p>In the following part, I will be introducing in detail how to build this cool interactive gaming system! As mentioned before, in this project we’re using Actel SmartFusion® SoC FPGA.</p>
-<h2 id="component-overview"><a class="markdownIt-Anchor" href="#component-overview"></a> Component Overview</h2>
+<h3 id="component-overview"><a class="markdownIt-Anchor" href="#component-overview"></a> Component Overview</h3>
 <p><img src="/images/373_diagram.png" alt=""></p>
 <p>As indicated in the graph, we use one SmartFusion® board to control 5 main peripherals:</p>
 <ul>
@@ -445,7 +445,7 @@
 <li>Pixy camera for detecting if player’s feet are on white tiles</li>
 <li>Sound board for playing background music and sound effect</li>
 </ul>
-<h2 id="code-environments"><a class="markdownIt-Anchor" href="#code-environments"></a> Code Environments</h2>
+<h3 id="code-environments"><a class="markdownIt-Anchor" href="#code-environments"></a> Code Environments</h3>
 <p>As for the project developing environment, we’re using <a href="https://www.microsemi.com/product-directory/design-resources/1750-libero-soc">Libero SoC Design Software</a> as well as <a href="https://www.microsemi.com/product-directory/design-tools/4879-softconsole#overview">Microsemi SoftConsole</a>. The specific versions are:</p>
 <ul>
 <li>Libero SoC v11.9 SP3</li>
@@ -453,7 +453,7 @@
 <li>Windows 10 Pro 1809 (operating system)</li>
 </ul>
 <p><strong>Note that Libero SoC is neither forward nor backward compatible.</strong> A Libero SoC v11.9 project is not compatible with a Libero SoC v11.9 SP3 project.</p>
-<h2 id="memory-mapped-io-advanced-peripheral-bus"><a class="markdownIt-Anchor" href="#memory-mapped-io-advanced-peripheral-bus"></a> Memory-mapped I/O &amp; Advanced Peripheral Bus</h2>
+<h3 id="memory-mapped-io-advanced-peripheral-bus"><a class="markdownIt-Anchor" href="#memory-mapped-io-advanced-peripheral-bus"></a> Memory-mapped I/O &amp; Advanced Peripheral Bus</h3>
 <p>In common sense, every memory address in a CPU corresponds to some place which can store data (aka “real memory”). However, in embedded systems, each input/output (I/O) device also corresponds to a specific memory address in the core. For these addresses, each of them has been mapped to an I/O device instead of “real memory”, such as Analog-to-Digital Converter (ADC), Digital-to-Analog Converter (DAC), General-Purpose I/O (GPIO) pins, etc. Accessing these addresses through CPU is actually accessing their corresponding I/O devices.</p>
 <p>APB (Advanced Peripheral Bus) is used as an interface to access these peripherals. A typical APB consists of the following signal (by naming convention):</p>
 <table>
@@ -500,7 +500,7 @@
 </table>
 <p>By convention, in terms of APB, the CPU is called “master” while the peripherals are called “slaves”. While signals are generally high/low voltages which is in essence a hardware issue, APB makes generating these signals with C code possible.</p>
 <p><img src="/images/373_apb.png" alt="A diagram of how we're making use of APB in our interactive game."></p>
-<h3 id="implementation-in-verilog"><a class="markdownIt-Anchor" href="#implementation-in-verilog"></a> Implementation in Verilog</h3>
+<h4 id="implementation-in-verilog"><a class="markdownIt-Anchor" href="#implementation-in-verilog"></a> Implementation in Verilog</h4>
 <p>While in most microcontrollers APB is not able to be modified because it is a very complicated circuit network soldered onto the PCB, with an FPGA we can take full advantage of that and customize our own APB. In Verilog, we can simply make use of an unused memory address and create the following module (APB interface):</p>
 <pre class="line-numbers language-verilog" data-language="verilog"><code class="language-verilog"><span class="token keyword">module</span> <span class="token function">apb_interface</span><span class="token punctuation">(</span>
         <span class="token keyword">input</span> PCLK<span class="token punctuation">,</span>                 <span class="token comment">// clock</span>
@@ -525,9 +525,9 @@
 <span class="token comment">// ****** Your code ******</span>
 <span class="token keyword">endmodule</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>We can see that all the I/O ports in the Verilog module has to strictly follow the APB convention mentioned above.</p>
-<h2 id="vga"><a class="markdownIt-Anchor" href="#vga"></a> VGA</h2>
+<h3 id="vga"><a class="markdownIt-Anchor" href="#vga"></a> VGA</h3>
 <p>VGA is short for <em>Video Graphics Array</em>. Although it is a relatively aged display method (introduced by IBM in 1987), its frequency (60Hz per frame) is good enough for our display purpose.</p>
-<h3 id="basics"><a class="markdownIt-Anchor" href="#basics"></a> Basics</h3>
+<h4 id="basics"><a class="markdownIt-Anchor" href="#basics"></a> Basics</h4>
 <p><img src="/images/373_vga_pin.png" alt=""></p>
 <p>A VGA cable has 15 pins, 6 of them are used in the project:</p>
 <ul>
@@ -541,12 +541,12 @@
 <p>Till now, we refresh the whole frame for one time.</p>
 <p><img src="/images/373_vga_timing.png" alt=""></p>
 <p>In a word, to project a desired video, we just need to <strong>output correct RGB signal for each pixel in sequence</strong>.</p>
-<h3 id="implementation"><a class="markdownIt-Anchor" href="#implementation"></a> Implementation</h3>
+<h4 id="implementation"><a class="markdownIt-Anchor" href="#implementation"></a> Implementation</h4>
 <p>The main logic for VGA display is implemented in C code: it determines the positions of tiles, scores and health point; then writes these information in specific APB addresses. Verilog code is only for analyzing information from these APB addresses and generating corresponding signals.</p>
 <p>A 60-Hz interrupt will be generated periodically in fabric. In <code>main.c</code>,</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">__attribute__</span><span class="token punctuation">(</span><span class="token punctuation">(</span>interrupt<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">void</span> <span class="token function">Fabric_IRQHandler</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>is interrupt handler, which is responsible for refresh of the whole frame.</p>
-<h4 id="moving-tiles"><a class="markdownIt-Anchor" href="#moving-tiles"></a> Moving Tiles</h4>
+<h5 id="moving-tiles"><a class="markdownIt-Anchor" href="#moving-tiles"></a> Moving Tiles</h5>
 <p>There are 8 tiles in maximum in one frame. To make them look as random as possible, I randomly generate 3 attributes for each tile:</p>
 <ul>
 <li><strong>length</strong></li>
@@ -557,11 +557,11 @@
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">random_mode</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>controls the new position of kth tile based on its old position.</p>
 <p>Besides, the attribute, <strong><code>left_on</code></strong>, <strong><code>right_on</code></strong>, will control color of the tile. When it is set to <code>true</code> inside <code>pixy.c</code>, the color will turn green or red.</p>
-<h4 id="score-health-point"><a class="markdownIt-Anchor" href="#score-health-point"></a> Score &amp; Health Point</h4>
+<h5 id="score-health-point"><a class="markdownIt-Anchor" href="#score-health-point"></a> Score &amp; Health Point</h5>
 <p>Once <strong><code>left_on</code></strong> or <strong><code>right_on</code></strong> is set to <code>true</code> inside <code>pixy.c</code>, the variable, <strong><code>score</code></strong>, will add one.</p>
 <p>If <strong><code>left_on</code></strong> and <strong><code>right_on</code></strong> are <code>false</code> until the tile goes out of the frame, one life will lose.</p>
 <p>The display of score 🔢 and heart ❤️ are hard-coded in Verilog. Another way to show them is using Sprites + SRAM (see below).</p>
-<h3 id="showing-more-complicated-graphs"><a class="markdownIt-Anchor" href="#showing-more-complicated-graphs"></a> Showing More Complicated Graphs</h3>
+<h4 id="showing-more-complicated-graphs"><a class="markdownIt-Anchor" href="#showing-more-complicated-graphs"></a> Showing More Complicated Graphs</h4>
 <p>Although the display for this game is fairly simple, we tried using <a href="https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/Sprite_(computer_graphics).html">Sprites</a> and SRAM, which is used for complicated graphics (but didn’t use it in final version of project).</p>
 <p>The idea behind Sprites is that generate RGB values for each pixel in a picture; and then store them in SRAM of microcontroller; read RGB value for corresponding pixel from SRAM when scan point comes to the pixel.</p>
 <p><img src="/images/373_sram.png" alt=""></p>
@@ -571,7 +571,7 @@
 <li>Timing. When use APB and SRAM, timing of these two things need to be considered carefully. The <code>PREADY</code> cannot be set to high all the time since SRAM need one clock period to finish reading/writing. So <code>PREADY</code> should be delayed for one clock period.</li>
 <li>Memory limitation. The total size of SRAM inside SmartFusion® is only 64kB.</li>
 </ul>
-<h2 id="nintendo-controller"><a class="markdownIt-Anchor" href="#nintendo-controller"></a> Nintendo Controller</h2>
+<h3 id="nintendo-controller"><a class="markdownIt-Anchor" href="#nintendo-controller"></a> Nintendo Controller</h3>
 <p>For the controller for the user menu selection, we’re using a classic Nintendo® NES controller. This is a relatively aged controller, but its signal is easy to decode and it’s sufficient for our design.</p>
 <p><img src="/images/373Proj_controller_overview.jpg" alt=""></p>
 <p>We can see that it consists of 8 buttons: Up, Down, Left, Right, Select, Start, A and B.</p>
@@ -579,7 +579,7 @@
 <blockquote><p>The Nintendo Entertainment System or NES, also known as the Nintendo Family Computer (Famicom) was released in Japan in 1983 and shortly after in the USA in 1985. The system was even more successful than the Atari 2600 and more or less put the last stake in the heart of Atari home consoles forever. The NES sold more than 60,000,000 units worldwide in its heyday and still sells to this day (I just bought 4 of them from <a href="http://eStarland.com">eStarland.com</a>)! There are over 200 clones of the system in circulation and the word “Nintendo” is used in many cultures as a youth slang term with many “varied” meanings.</p>
 <p>The system itself was nothing compared to the Propeller chip’s computing power, the NES was powered by the 8-bit 6502 running at 1.79 MHz, but the NES did have quite a bit of dedicated graphics hardware making it quite a contender in the 8-bit era, it sported multiple tile maps, graphics planes, sprites, sound, and a lot more.</p>
 <footer><strong>[<i>Game Programming for the Propeller Powered HYDRA</i></strong><cite>pp. 95]</cite></footer></blockquote>
-<h3 id="interfacing-the-nintendo-nes-controller"><a class="markdownIt-Anchor" href="#interfacing-the-nintendo-nes-controller"></a> Interfacing the Nintendo NES controller</h3>
+<h4 id="interfacing-the-nintendo-nes-controller"><a class="markdownIt-Anchor" href="#interfacing-the-nintendo-nes-controller"></a> Interfacing the Nintendo NES controller</h4>
 <p>On the back of the NES controller, it is actually organized as the following figure shows.</p>
 <p><img src="/images/373Proj_controller_back.jpg" alt="An inside view of an NES controller."></p>
 <p>We can see that there’re five wires: brown, red, orange, yellow, white. The functions of these wires are summarized below.</p>
@@ -697,7 +697,7 @@
         <span class="token keyword">end</span>
     <span class="token keyword">end</span>
 <span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="lcd-display"><a class="markdownIt-Anchor" href="#lcd-display"></a> LCD Display</h2>
+<h3 id="lcd-display"><a class="markdownIt-Anchor" href="#lcd-display"></a> LCD Display</h3>
 <p>We use <a href="https://www.sparkfun.com/products/9568">Sparkfun’s <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>20</mn><mo>×</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">20\times4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">4</span></span></span></span> serial enabled LCD display</a> in our project. The interface of this LCD is actually really simple — just UART. If you send a character <code>a</code> to it through UART, it will display an “a” on the screen; if you send a string <code>Hello World</code> to it, it will display “Hello World”.</p>
 <p><img src="/images/373Proj_lcd.jpg" alt="A typical Sparkfun's 20x4 LCD display."></p>
 <p>It is worth noticing that this LCD module displays characters based on the position of a cursor. This is very similar to writing on a text file. The character sent to the module will always be written at the position of the cursor. For instance, if the current cursor position is at the first position of the first line, the incoming character <code>a</code> will then be displayed at the first position in the first line. What is worth mentioning is that there are some special ASCII character pairs that have special meanings and have been hard-coded into the LCD module. For example, some of these special characters are:</p>
@@ -724,13 +724,13 @@
 </tbody>
 </table>
 <p><strong><em>Note. Two bytes separated by a comma means a consecutive ASCII character pair.</em> For instance, <code>0xFE, 0x80</code> means <code>0xFE</code> should be first sent to the LCD module, followed by a <code>0x80</code>.</strong></p>
-<h3 id="constructing-the-user-menu"><a class="markdownIt-Anchor" href="#constructing-the-user-menu"></a> Constructing the User Menu</h3>
+<h4 id="constructing-the-user-menu"><a class="markdownIt-Anchor" href="#constructing-the-user-menu"></a> Constructing the User Menu</h4>
 <p>In terms of constructing a complete user menu, we use <code>&gt;</code> as the prompt character for the selected option. We develop a data structure called <code>LCD_Display</code> to store the current contents of the 4 lines as well as the line index of the prompt character, and another <code>Menu</code> for multiple layers of the menu. For simplicity, we set each layer of the menu has a maximum size of 6.</p>
 <p><img src="/images/373_lcd_tree.png" alt=""></p>
 <p>For more detailed information, please visit our <a href="https://github.com/shineyruan/Don-t-Step-on-White-Tiles">GitHub repo</a> and take a look at the <code>menu.[ch]</code> library files.</p>
-<h2 id="pixy-camera"><a class="markdownIt-Anchor" href="#pixy-camera"></a> Pixy Camera</h2>
+<h3 id="pixy-camera"><a class="markdownIt-Anchor" href="#pixy-camera"></a> Pixy Camera</h3>
 <p><a href="https://pixycam.com/">Pixy camera</a> is a small and responsive open-source camera developed by CREATE Lab, a part of the Robotics Institute at Carnegie Mellon University. It is equipped with color recognition and it can tell the location of the object in real time within its field of view. It has a very nice interface for MCU, which we can integrate into our SmartFusion® board. Particularly, it is able to transmit its color recognition results to MCU via three interfaces: I2C, SPI, and UART. It is known that SPI has the highest data transmission rate among the three popular protocols, so we decide to utilize its SPI interface.</p>
-<h3 id="porting-guidelines"><a class="markdownIt-Anchor" href="#porting-guidelines"></a> Porting Guidelines</h3>
+<h4 id="porting-guidelines"><a class="markdownIt-Anchor" href="#porting-guidelines"></a> Porting Guidelines</h4>
 <p>According to the <a href="https://docs.pixycam.com/wiki/doku.php?id=wiki:v1:porting_guide">official documentation</a>, Pixy camera has the following available ports:</p>
 <p><img src="/images/373Proj_pixy_porting.jpg" alt="The available ports and its corresponding functionality on Pixy camera."></p>
 <p>with the numbering convention (looking at the back of Pixy):</p>
@@ -739,7 +739,7 @@
 5   6
 7   8
 9   10<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="the-serial-protocol"><a class="markdownIt-Anchor" href="#the-serial-protocol"></a> The Serial Protocol</h3>
+<h4 id="the-serial-protocol"><a class="markdownIt-Anchor" href="#the-serial-protocol"></a> The Serial Protocol</h4>
 <p><em>Signature</em> is an important feature of Pixy. A signature represents a particular color: say you may want to set a signature for color red, another signature for color blue, and another signature for color yellow, etc. An <em>object</em> is the biggest object with a corresponding signature appearing in Pixy’s field of view. That is, Pixy can hold as many objects as the signatures.</p>
 <p>The whole information containing in one single image is called a <em>frame</em>. A data frame can have several objects corresponding to several signatures. Pixy’s protocol enables itself to convey information for multiple objects of different colors at a time. More specifically, its serial protocol goes as follows:</p>
 <ol>
@@ -758,16 +758,16 @@
 <p>Above are the information needed for us to parse Pixy’s data. But how can we transmit data to Pixy to set the signatures? Fortunately, Pixy’s group have developed a very nice software called <a href="https://pixycam.com/downloads-pixy1/">PixyMon</a> for us to accomplish this goal. This software sets up a UART communication between PC and Pixy camera, and it can transmit data to it as soon as we click the corresponding button in the software.</p>
 <p>By the means mentioned above, we’re able to get the center of the objects with specific color within Pixy’s field of view, which is a very nice method to locate the player’s feet in our project.</p>
 <p>Meanwhile, there are also other advanced features of Pixy that we haven’t explored. For details, please visit their <a href="https://pixycam.com/">official website</a>.</p>
-<h2 id="sound-board"><a class="markdownIt-Anchor" href="#sound-board"></a> Sound Board</h2>
+<h3 id="sound-board"><a class="markdownIt-Anchor" href="#sound-board"></a> Sound Board</h3>
 <p>We use <a href="https://www.adafruit.com/product/2341">Adafruit Audio FX Mini Sound Board</a> for playing background music.</p>
 <p><img src="/images/373Proj_soundboard.jpg" alt=""></p>
 <p>By plugging in the sound board into computer using USB cable, it will show up as a new USB key. Just copy music into it and music will be written properly in its memory.</p>
 <p>To trigger audio, pull down one of trigger pins - named <code>#0</code> thru <code>#10</code>. To stop audio, pull down <code>Rst</code>.</p>
 <p>The control of this board also uses the Verilog APB interface.</p>
-<h1 id="source-code"><a class="markdownIt-Anchor" href="#source-code"></a> Source Code</h1>
+<h2 id="source-code"><a class="markdownIt-Anchor" href="#source-code"></a> Source Code</h2>
 <p>All source codes with the latest updates can be accessed in my <a href="https://github.com/shineyruan/Don-t-Step-on-White-Tiles">GitHub repository</a>. A project directory structure is also provided below. <strong>Special thanks to Regina for her drawing the project directory structure!</strong></p>
 <p><img src="/images/373_code_tree.png" alt=""></p>
-<h1 id="acknowledgements"><a class="markdownIt-Anchor" href="#acknowledgements"></a> Acknowledgements</h1>
+<h2 id="acknowledgements"><a class="markdownIt-Anchor" href="#acknowledgements"></a> Acknowledgements</h2>
 <p>For the entire work, I would like to express special thanks to:</p>
 <ul>
 <li>Prof. Sample and Prof. Smith’s support throughout the semester ☕️🥃</li>

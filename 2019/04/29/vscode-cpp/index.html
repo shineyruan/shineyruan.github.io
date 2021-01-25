@@ -388,7 +388,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-01-17
+                    2021-01-25
                 </div>
                 
 
@@ -417,14 +417,14 @@
             <div id="articleContent">
                 <p>In the <a href="https://shineyruan.github.io/2019/03/15/vscode-tutorials/">previous post</a> we have known that Visual Studio Code is a lightweight editor for small coding projects. However, you might still wonder how to actually take advantage of this small but powerful editor. In this post, we will see together how to write &amp; compile C/C++ codes in Visual Studio Code.</p>
 <a id="more"></a>
-<h1 id="vs-code-and-cc"><a class="markdownIt-Anchor" href="#vs-code-and-cc"></a> VS Code and C/C++</h1>
+<h2 id="vs-code-and-cc"><a class="markdownIt-Anchor" href="#vs-code-and-cc"></a> VS Code and C/C++</h2>
 <p>C/C++ has been the most popular programming languages for decades, and almost all programming around the world know something about it. Although C/C++ programs might be a little bit trickier to compile in Windows system, VS code provides a nice solution for it.</p>
 <p>This section was written with two Chinese blogs on Zhihu (知乎) as references. I really thank them for their instructions.</p>
 <ol>
 <li><a href="https://www.zhihu.com/question/30315894">Visual Studio Code 如何编写运行 C、C++ 程序？</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/44337349">用VSCode调试C/C++代码 (通过WSL)</a></li>
 </ol>
-<h2 id="compiling-cc-in-windows"><a class="markdownIt-Anchor" href="#compiling-cc-in-windows"></a> Compiling C/C++ in Windows</h2>
+<h3 id="compiling-cc-in-windows"><a class="markdownIt-Anchor" href="#compiling-cc-in-windows"></a> Compiling C/C++ in Windows</h3>
 <p>As for finding a compiler for C/C++ program, I personally recommend <em>Clang for Windows</em> and <em>MinGW-w64</em>. In fact, each of them is a standalone C/C++ compiler for Windows, but why do we need both? This is because it is found that <strong>there are no header files in Clang</strong>, and we have to <strong>add header files from MinGW-w64</strong>.</p>
 <ol>
 <li>Download <strong>Windows (64-bit)</strong> from the Pre-Built Binaries section <a href="http://releases.llvm.org/download.html">here</a>. <code>sig</code> file is not needed.</li>
@@ -583,7 +583,7 @@
 <li>Press <code>Ctrl+F5</code> to run program; <code>F5</code> to debug program.</li>
 </ol>
 <p><strong>Note. The <code>.vscode</code> folder with config JSON files has to be put in EVERY project root folder you’re working on to activate C/C++ compiling.</strong></p>
-<h2 id="compiling-cc-in-windows-subsystem-for-linux-wsl"><a class="markdownIt-Anchor" href="#compiling-cc-in-windows-subsystem-for-linux-wsl"></a> Compiling C/C++ in <em>Windows Subsystem for Linux</em> (WSL)</h2>
+<h3 id="compiling-cc-in-windows-subsystem-for-linux-wsl"><a class="markdownIt-Anchor" href="#compiling-cc-in-windows-subsystem-for-linux-wsl"></a> Compiling C/C++ in <em>Windows Subsystem for Linux</em> (WSL)</h3>
 <p>Another solution for compiling C/C++ codes is using WSL, which I am currently using for school work. The installation procedure for WSL is rather easy and has a lot of tutorials online, so I’m going to skip this part. We also just need a <code>.vscode</code> folder in each project folder we’re working on with <code>tasks.json</code> and <code>launch.json</code> configuration files. These files are generally the same as the previous ones.</p>
 <ol>
 <li><code>tasks.json</code>:</li>
