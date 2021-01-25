@@ -541,6 +541,170 @@
       </tags>
   </entry>
   <entry>
+    <title>My F1TENTH Journey — Lab 1, Introduction to ROS</title>
+    <url>/2021/01/24/f1tenth-lab1/</url>
+    <content><![CDATA[<p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
+<h1 id="overview"><a class="markdownIt-Anchor" href="#overview"></a> Overview</h1>
+<p>In Spring 2021 I finally got a chance to join the F1/10 Autonomous Racing Car Lab at Penn, supervised by <a href="https://www.seas.upenn.edu/~rahulm/">Prof. Rahul Mangharam</a>. To start my autonomous racing journey, I followed the <a href="https://f1tenth-coursekit.readthedocs.io/en/stable/index.html">official tutorials</a> and studied the labs &amp; projects there.</p>
+<p>ROS (Robotics Operating System), is a robotics project development platform widely-used all across the world. Although it is called an “operating system”, it is actually a chain of build tools that can be used to build mixed C++/Python projects as well as provide nice &amp; convenient communication functionalities between processes. F1/10 Autonomous Racing Car dev stack is built upon ROS and C++. <strong>Lab 1 also mainly focuses on introducing ROS as well as providing some small hands-on exercises for ROS coding.</strong></p>
+<h1 id="lab-materials"><a class="markdownIt-Anchor" href="#lab-materials"></a> Lab Materials</h1>
+<p>The lab specs can be access <a href="https://f1tenth-coursekit.readthedocs.io/en/latest/assignments/labs/lab1.html">here</a>. A copy of PDF is also shown below.</p>
+
+
+	<div class="row">
+    <embed src="/pdf/f110_lab1.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<p>The lab was built on the <em>F1Tenth Simulator</em>, which can be accessed <a href="https://f1tenth.readthedocs.io/en/stable/going_forward/simulator/sim_install.html">here</a>.</p>
+<h1 id="workspaces-and-packages"><a class="markdownIt-Anchor" href="#workspaces-and-packages"></a> Workspaces and Packages</h1>
+<p>This section mainly uses the official ROS tutorials to create a Catkin workspace and a ROS package. I followed the tutorials in ROS C++, set up my workspace, and created a package.</p>
+<h2 id="answers-to-section-3-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-3-written-questions"></a> Answers to Section 3 Written Questions</h2>
+<ul>
+<li><strong>What is a CMakeList? Is it related to a make file used for compiling C++ objects? If yes then what is the difference between the two?</strong></li>
+</ul>
+<p>A CMakeList is a script offering instructions on how to build a CMake workspace. With a proper CMakeList, we can use CMake to build the workspace by</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cmake <span class="token punctuation">..</span>
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>As for its relationship to a Makefile, CMakeLists can be viewed as a <em>high-level wrapper</em> of Makefile. In Unix systems, a CMakeList will produce a Makefile.</p>
+<ul>
+<li><strong>Are you using CMakeList.txt for Python in ROS? Is there a executable object being created for Python?</strong></li>
+</ul>
+<p>CMakeList for Python in ROS does not compile anything. It just imports Catkin macros and copies the corresponding Python scripts to the <code>bin</code> folder, if necessary.</p>
+<ul>
+<li><strong>In which directory would you run <code>catkin_make</code>?</strong></li>
+</ul>
+<p><code>catkin_make</code> should be run in Catkin workspaces, aka. <code>catkin_ws</code>.</p>
+<ul>
+<li><strong>The following commands were used in the tutorial</strong></li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> /opt/ros/kinetic<span class="token punctuation">(</span>melodic<span class="token punctuation">)</span>/setup.bash
+<span class="token builtin class-name">source</span> devel/setup.bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>Why do we need to source <code>setup.bash</code>? What does it do? Why do we have to different <code>setup.bash</code> files here and what is the difference?</strong></p>
+<p><code>/opt/ros/kinetic(melodic)/setup.bash</code> provides necessary Catkin commands &amp; env variables across workspaces, such as <code>catkin_make</code>, <code>catkin_init_workspace</code>, etc. <code>devel/setup.bash</code> provides workspace-specific environment variables, such as the Python libraries it builds, the ROS packages it creates, etc.</p>
+<h1 id="publishers-and-subscribers"><a class="markdownIt-Anchor" href="#publishers-and-subscribers"></a> Publishers and Subscribers</h1>
+<p>In this section I wrote a simple subscriber to subscribe the LiDAR message broadcasted from F1Tenth simulator. The ROS message was a <code>sensor_msgs/LaserScan</code> it was published on channel <code>/scan</code>.</p>
+<p>What’s more, I also processed the LiDAR data and found out its maximum/minimum range through a simple linear search, and published the messages on <code>/closest_point</code> and <code>/farthest_point</code> with data type <code>std_msgs::Float64</code>. I also tried to wrap up the processor in a C++ class. The entire code is shown below.</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ros/ros.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sensor_msgs/LaserScan.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;std_msgs/Float64.h&gt;</span></span>
+
+<span class="token keyword">class</span> <span class="token class-name">LidarProcessor</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token comment">// Read-only public member variable of closest/farthest range</span>
+    <span class="token comment">//  within a LaserScan</span>
+    <span class="token keyword">const</span> std_msgs<span class="token operator">::</span>Float64<span class="token operator">&amp;</span> range_closest<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> std_msgs<span class="token operator">::</span>Float64<span class="token operator">&amp;</span> range_farthest<span class="token punctuation">;</span>
+
+    <span class="token comment">// constructor</span>
+    <span class="token function">LidarProcessor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">range_closest</span><span class="token punctuation">(</span>_closest<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">range_farthest</span><span class="token punctuation">(</span>_farthest<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token comment">// callback function for LaserScan subscriber</span>
+    <span class="token keyword">void</span> <span class="token function">handleLaserScan</span><span class="token punctuation">(</span><span class="token keyword">const</span> sensor_msgs<span class="token operator">::</span>LaserScanConstPtr<span class="token operator">&amp;</span> new_scan<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        std<span class="token operator">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span> ranges <span class="token operator">=</span> new_scan<span class="token operator">-&gt;</span>ranges<span class="token punctuation">;</span>
+
+        <span class="token comment">// find the min/max range from linear search</span>
+        <span class="token keyword">float</span> range_closest <span class="token operator">=</span> std<span class="token operator">::</span><span class="token class-name">numeric_limits</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span><span class="token operator">::</span><span class="token function">infinity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">float</span> range_farthest <span class="token operator">=</span> <span class="token number">0.f</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">float</span><span class="token operator">&amp;</span> r <span class="token operator">:</span> ranges<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>std<span class="token operator">::</span><span class="token function">isnan</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token operator">||</span> std<span class="token operator">::</span><span class="token function">isinf</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> range_closest<span class="token punctuation">)</span> range_closest <span class="token operator">=</span> r<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&gt;</span> range_farthest<span class="token punctuation">)</span> range_farthest <span class="token operator">=</span> r<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// clip the data if it exceeds the required min/max range</span>
+        _closest<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">(</span>range_closest <span class="token operator">&lt;</span> new_scan<span class="token operator">-&gt;</span>range_min<span class="token punctuation">)</span> <span class="token operator">?</span> new_scan<span class="token operator">-&gt;</span>range_min <span class="token operator">:</span> range_closest<span class="token punctuation">;</span>
+        _farthest<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">(</span>range_farthest <span class="token operator">&gt;</span> new_scan<span class="token operator">-&gt;</span>range_max<span class="token punctuation">)</span> <span class="token operator">?</span> new_scan<span class="token operator">-&gt;</span>range_max <span class="token operator">:</span> range_farthest<span class="token punctuation">;</span>
+
+        <span class="token function">ROS_INFO</span><span class="token punctuation">(</span><span class="token string">"LaserScan message received: closest %f, farthest %f"</span><span class="token punctuation">,</span> _closest<span class="token punctuation">.</span>data<span class="token punctuation">,</span> _farthest<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    std_msgs<span class="token operator">::</span>Float64 _closest<span class="token punctuation">;</span>
+    std_msgs<span class="token operator">::</span>Float64 _farthest<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ros<span class="token operator">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">"laser_scan_subscriber"</span><span class="token punctuation">,</span> ros<span class="token operator">::</span>init_options<span class="token operator">::</span>AnonymousName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>NodeHandle nh<span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>Rate <span class="token function">loop_rate</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    LidarProcessor processor<span class="token punctuation">;</span>
+
+    ros<span class="token operator">::</span>Subscriber laserScan_subscriber <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">"/scan"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>LidarProcessor<span class="token operator">::</span>handleLaserScan<span class="token punctuation">,</span> <span class="token operator">&amp;</span>processor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>Publisher closestPoint_publisher <span class="token operator">=</span> nh<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>std_msgs<span class="token operator">::</span>Float64<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"/closest_point"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>Publisher farthestPoint_publisher <span class="token operator">=</span> nh<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>std_msgs<span class="token operator">::</span>Float64<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"/farthest_point"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>ros<span class="token operator">::</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        closestPoint_publisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>processor<span class="token punctuation">.</span>range_closest<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        farthestPoint_publisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>processor<span class="token punctuation">.</span>range_farthest<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        loop_rate<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ros<span class="token operator">::</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="answers-to-section-4-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-4-written-questions"></a> Answers to Section 4 Written Questions</h2>
+<ul>
+<li><strong>What is a nodehandle object? Can we have more than one nodehandle objects in a single node?</strong></li>
+</ul>
+<p>A <code>ros::NodeHandle</code> is an extra layer in C++ that provides RAII-style startup &amp; shutdown of the ROS node. It also offers extra functionalities for the node, such as sending/receiving ROS messages, waiting on a specific ROS message, etc. We can indeed have multiple <code>NodeHandle</code>s in a single node for creating different namespaces, but they all refer to the same ROS node.</p>
+<ul>
+<li><strong>What is <code>ros::spinOnce()</code>? How is it different from <code>ros::spin()</code>?</strong></li>
+</ul>
+<p><code>ros::spinOnce()</code> iterates the loop once more while keeping the node active, while <code>ros::spin()</code> puts the entire node into sleep and only handles data from callback functions.</p>
+<ul>
+<li><strong>What is <code>ros::rate()</code>?</strong></li>
+</ul>
+<p><code>ros::Rate</code> specifies the rate of spinning loop of this ROS node.</p>
+<h1 id="implementing-custom-messages"><a class="markdownIt-Anchor" href="#implementing-custom-messages"></a> Implementing Custom Messages</h1>
+<p>In this section I focused on implementing a custom ROS message type <code>scan_range</code>, which includes the min/max range in the laser scan. According to the <a href="http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv">tutorials of creating custom ROS messages</a>, I created the following ROS message <code>scan_range.msg</code>:</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">std_msgs/Header header
+std_msgs/Float64 range_min
+std_msgs/Float64 range_max<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>After resolving all Catkin package dependencies in CMakeList &amp; ROS package manifest file (<code>package.xml</code>), I finally reached the following output.</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&gt;</span> rosmsg show lab1/scan_range
+std_msgs/Header header
+  uint32 <span class="token function">seq</span>
+  <span class="token function">time</span> stamp
+  string frame_id
+std_msgs/Float64 range_min
+  float64 data
+std_msgs/Float64 range_max
+  float64 data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="answers-to-section-5-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-5-written-questions"></a> Answers to Section 5 Written Questions</h2>
+<ul>
+<li><strong>Why did you include the header file of the message file instead of the message file itself?</strong></li>
+</ul>
+<p>According to ROS mechanisms, any customized ROS messages will be generated into a templated message header file to be included in the C++ code. The message file itself is not part of standard C++ and it cannot be parsed by C++ compilers.</p>
+<ul>
+<li><strong>In the documentation of the LaserScan message there was also a data type called Header. What is that? Can you also include it in your message file? What information does it provide? Include Header in your message file too.</strong></li>
+</ul>
+<p>The <code>Header</code> provides information on the sequential order, the timestamp, and the frame ID of the instant when the message is published. It is very useful when one would like to make use of time information of the messages received. The header file has been included in my custom ROS message.</p>
+<h1 id="recording-and-publishing-bag-files"><a class="markdownIt-Anchor" href="#recording-and-publishing-bag-files"></a> Recording and Publishing Bag Files</h1>
+<p>This section aims at playing with <code>rosbag</code> and bag files in ROS. ROS bag files are a certain kind of files that targets at recording ROS messages, so that it can be replayed elsewhere afterwards. ROS Bag is extremely helpful when one would like to collect data in real-world experiments.</p>
+<h2 id="answers-to-section-6-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-6-written-questions"></a> Answers to Section 6 Written Questions</h2>
+<ul>
+<li><strong>Where does the bag file get saved? How can you change where it is saved?</strong></li>
+</ul>
+<p>By default the bag file is saved at the current directory. We can also change the directory by adding <code>-o</code> such as:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rosbag record -o <span class="token punctuation">..</span>/bagfiles/my_rosbag_recordings.bag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><strong>Where will the bag file be saved if you were launching the recording of bagfile record through a launch file. How can you change where it is saved?</strong></li>
+</ul>
+<p>By default the bag file is saved at the current directory. We can also change the directory by appending <code>args=../bagfiles/my_rosbag_recordings.bag</code> to the corresponding node in the launch file.</p>
+]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
+      <tags>
+        <tag>F1Tenth</tag>
+        <tag>F1/10 Racing</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Introduction to Semiconductor Devices</title>
     <url>/2020/06/17/ve320/</url>
     <content><![CDATA[<p>This post contains my lecture notes of taking the course <em>VE320: Introduction to Semiconductor Devices</em> at UM-SJTU Joint Institute.</p>
@@ -1630,170 +1794,6 @@ M1001 80H400000v40H1017z"></path></svg></span></span></span><span class="vlist-s
       </categories>
       <tags>
         <tag>embedded systems</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>My F1TENTH Journey — Lab 1, Introduction to ROS</title>
-    <url>/2021/01/24/f1tenth-lab1/</url>
-    <content><![CDATA[<p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
-<h1 id="overview"><a class="markdownIt-Anchor" href="#overview"></a> Overview</h1>
-<p>In Spring 2021 I finally got a chance to join the F1/10 Autonomous Racing Car Lab at Penn, supervised by <a href="https://www.seas.upenn.edu/~rahulm/">Prof. Rahul Mangharam</a>. To start my autonomous racing journey, I followed the <a href="https://f1tenth-coursekit.readthedocs.io/en/stable/index.html">official tutorials</a> and studied the labs &amp; projects there.</p>
-<p>ROS (Robotics Operating System), is a robotics project development platform widely-used all across the world. Although it is called an “operating system”, it is actually a chain of build tools that can be used to build mixed C++/Python projects as well as provide nice &amp; convenient communication functionalities between processes. F1/10 Autonomous Racing Car dev stack is built upon ROS and C++. <strong>Lab 1 also mainly focuses on introducing ROS as well as providing some small hands-on exercises for ROS coding.</strong></p>
-<h1 id="lab-materials"><a class="markdownIt-Anchor" href="#lab-materials"></a> Lab Materials</h1>
-<p>The lab specs can be access <a href="https://f1tenth-coursekit.readthedocs.io/en/latest/assignments/labs/lab1.html">here</a>. A copy of PDF is also shown below.</p>
-
-
-	<div class="row">
-    <embed src="/pdf/f110_lab1.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-<p>The lab was built on the <em>F1Tenth Simulator</em>, which can be accessed <a href="https://f1tenth.readthedocs.io/en/stable/going_forward/simulator/sim_install.html">here</a>.</p>
-<h1 id="workspaces-and-packages"><a class="markdownIt-Anchor" href="#workspaces-and-packages"></a> Workspaces and Packages</h1>
-<p>This section mainly uses the official ROS tutorials to create a Catkin workspace and a ROS package. I followed the tutorials in ROS C++, set up my workspace, and created a package.</p>
-<h2 id="answers-to-section-3-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-3-written-questions"></a> Answers to Section 3 Written Questions</h2>
-<ul>
-<li><strong>What is a CMakeList? Is it related to a make file used for compiling C++ objects? If yes then what is the difference between the two?</strong></li>
-</ul>
-<p>A CMakeList is a script offering instructions on how to build a CMake workspace. With a proper CMakeList, we can use CMake to build the workspace by</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cmake <span class="token punctuation">..</span>
-<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>As for its relationship to a Makefile, CMakeLists can be viewed as a <em>high-level wrapper</em> of Makefile. In Unix systems, a CMakeList will produce a Makefile.</p>
-<ul>
-<li><strong>Are you using CMakeList.txt for Python in ROS? Is there a executable object being created for Python?</strong></li>
-</ul>
-<p>CMakeList for Python in ROS does not compile anything. It just imports Catkin macros and copies the corresponding Python scripts to the <code>bin</code> folder, if necessary.</p>
-<ul>
-<li><strong>In which directory would you run <code>catkin_make</code>?</strong></li>
-</ul>
-<p><code>catkin_make</code> should be run in Catkin workspaces, aka. <code>catkin_ws</code>.</p>
-<ul>
-<li><strong>The following commands were used in the tutorial</strong></li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> /opt/ros/kinetic<span class="token punctuation">(</span>melodic<span class="token punctuation">)</span>/setup.bash
-<span class="token builtin class-name">source</span> devel/setup.bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p><strong>Why do we need to source <code>setup.bash</code>? What does it do? Why do we have to different <code>setup.bash</code> files here and what is the difference?</strong></p>
-<p><code>/opt/ros/kinetic(melodic)/setup.bash</code> provides necessary Catkin commands &amp; env variables across workspaces, such as <code>catkin_make</code>, <code>catkin_init_workspace</code>, etc. <code>devel/setup.bash</code> provides workspace-specific environment variables, such as the Python libraries it builds, the ROS packages it creates, etc.</p>
-<h1 id="publishers-and-subscribers"><a class="markdownIt-Anchor" href="#publishers-and-subscribers"></a> Publishers and Subscribers</h1>
-<p>In this section I wrote a simple subscriber to subscribe the LiDAR message broadcasted from F1Tenth simulator. The ROS message was a <code>sensor_msgs/LaserScan</code> it was published on channel <code>/scan</code>.</p>
-<p>What’s more, I also processed the LiDAR data and found out its maximum/minimum range through a simple linear search, and published the messages on <code>/closest_point</code> and <code>/farthest_point</code> with data type <code>std_msgs::Float64</code>. I also tried to wrap up the processor in a C++ class. The entire code is shown below.</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ros/ros.h&gt;</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sensor_msgs/LaserScan.h&gt;</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;std_msgs/Float64.h&gt;</span></span>
-
-<span class="token keyword">class</span> <span class="token class-name">LidarProcessor</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    <span class="token comment">// Read-only public member variable of closest/farthest range</span>
-    <span class="token comment">//  within a LaserScan</span>
-    <span class="token keyword">const</span> std_msgs<span class="token operator">::</span>Float64<span class="token operator">&amp;</span> range_closest<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> std_msgs<span class="token operator">::</span>Float64<span class="token operator">&amp;</span> range_farthest<span class="token punctuation">;</span>
-
-    <span class="token comment">// constructor</span>
-    <span class="token function">LidarProcessor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">range_closest</span><span class="token punctuation">(</span>_closest<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">range_farthest</span><span class="token punctuation">(</span>_farthest<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-    <span class="token comment">// callback function for LaserScan subscriber</span>
-    <span class="token keyword">void</span> <span class="token function">handleLaserScan</span><span class="token punctuation">(</span><span class="token keyword">const</span> sensor_msgs<span class="token operator">::</span>LaserScanConstPtr<span class="token operator">&amp;</span> new_scan<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        std<span class="token operator">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span> ranges <span class="token operator">=</span> new_scan<span class="token operator">-&gt;</span>ranges<span class="token punctuation">;</span>
-
-        <span class="token comment">// find the min/max range from linear search</span>
-        <span class="token keyword">float</span> range_closest <span class="token operator">=</span> std<span class="token operator">::</span><span class="token class-name">numeric_limits</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span><span class="token operator">::</span><span class="token function">infinity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">float</span> range_farthest <span class="token operator">=</span> <span class="token number">0.f</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">float</span><span class="token operator">&amp;</span> r <span class="token operator">:</span> ranges<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>std<span class="token operator">::</span><span class="token function">isnan</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token operator">||</span> std<span class="token operator">::</span><span class="token function">isinf</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> range_closest<span class="token punctuation">)</span> range_closest <span class="token operator">=</span> r<span class="token punctuation">;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&gt;</span> range_farthest<span class="token punctuation">)</span> range_farthest <span class="token operator">=</span> r<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-        <span class="token comment">// clip the data if it exceeds the required min/max range</span>
-        _closest<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">(</span>range_closest <span class="token operator">&lt;</span> new_scan<span class="token operator">-&gt;</span>range_min<span class="token punctuation">)</span> <span class="token operator">?</span> new_scan<span class="token operator">-&gt;</span>range_min <span class="token operator">:</span> range_closest<span class="token punctuation">;</span>
-        _farthest<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">(</span>range_farthest <span class="token operator">&gt;</span> new_scan<span class="token operator">-&gt;</span>range_max<span class="token punctuation">)</span> <span class="token operator">?</span> new_scan<span class="token operator">-&gt;</span>range_max <span class="token operator">:</span> range_farthest<span class="token punctuation">;</span>
-
-        <span class="token function">ROS_INFO</span><span class="token punctuation">(</span><span class="token string">"LaserScan message received: closest %f, farthest %f"</span><span class="token punctuation">,</span> _closest<span class="token punctuation">.</span>data<span class="token punctuation">,</span> _farthest<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-<span class="token keyword">private</span><span class="token operator">:</span>
-    std_msgs<span class="token operator">::</span>Float64 _closest<span class="token punctuation">;</span>
-    std_msgs<span class="token operator">::</span>Float64 _farthest<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    ros<span class="token operator">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">"laser_scan_subscriber"</span><span class="token punctuation">,</span> ros<span class="token operator">::</span>init_options<span class="token operator">::</span>AnonymousName<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ros<span class="token operator">::</span>NodeHandle nh<span class="token punctuation">;</span>
-    ros<span class="token operator">::</span>Rate <span class="token function">loop_rate</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    LidarProcessor processor<span class="token punctuation">;</span>
-
-    ros<span class="token operator">::</span>Subscriber laserScan_subscriber <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">"/scan"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>LidarProcessor<span class="token operator">::</span>handleLaserScan<span class="token punctuation">,</span> <span class="token operator">&amp;</span>processor<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ros<span class="token operator">::</span>Publisher closestPoint_publisher <span class="token operator">=</span> nh<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>std_msgs<span class="token operator">::</span>Float64<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"/closest_point"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ros<span class="token operator">::</span>Publisher farthestPoint_publisher <span class="token operator">=</span> nh<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>std_msgs<span class="token operator">::</span>Float64<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"/farthest_point"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>ros<span class="token operator">::</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        closestPoint_publisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>processor<span class="token punctuation">.</span>range_closest<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        farthestPoint_publisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>processor<span class="token punctuation">.</span>range_farthest<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        loop_rate<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ros<span class="token operator">::</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="answers-to-section-4-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-4-written-questions"></a> Answers to Section 4 Written Questions</h2>
-<ul>
-<li><strong>What is a nodehandle object? Can we have more than one nodehandle objects in a single node?</strong></li>
-</ul>
-<p>A <code>ros::NodeHandle</code> is an extra layer in C++ that provides RAII-style startup &amp; shutdown of the ROS node. It also offers extra functionalities for the node, such as sending/receiving ROS messages, waiting on a specific ROS message, etc. We can indeed have multiple <code>NodeHandle</code>s in a single node for creating different namespaces, but they all refer to the same ROS node.</p>
-<ul>
-<li><strong>What is <code>ros::spinOnce()</code>? How is it different from <code>ros::spin()</code>?</strong></li>
-</ul>
-<p><code>ros::spinOnce()</code> iterates the loop once more while keeping the node active, while <code>ros::spin()</code> puts the entire node into sleep and only handles data from callback functions.</p>
-<ul>
-<li><strong>What is <code>ros::rate()</code>?</strong></li>
-</ul>
-<p><code>ros::Rate</code> specifies the rate of spinning loop of this ROS node.</p>
-<h1 id="implementing-custom-messages"><a class="markdownIt-Anchor" href="#implementing-custom-messages"></a> Implementing Custom Messages</h1>
-<p>In this section I focused on implementing a custom ROS message type <code>scan_range</code>, which includes the min/max range in the laser scan. According to the <a href="http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv">tutorials of creating custom ROS messages</a>, I created the following ROS message <code>scan_range.msg</code>:</p>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">std_msgs/Header header
-std_msgs/Float64 range_min
-std_msgs/Float64 range_max<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>After resolving all Catkin package dependencies in CMakeList &amp; ROS package manifest file (<code>package.xml</code>), I finally reached the following output.</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&gt;</span> rosmsg show lab1/scan_range
-std_msgs/Header header
-  uint32 <span class="token function">seq</span>
-  <span class="token function">time</span> stamp
-  string frame_id
-std_msgs/Float64 range_min
-  float64 data
-std_msgs/Float64 range_max
-  float64 data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="answers-to-section-5-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-5-written-questions"></a> Answers to Section 5 Written Questions</h2>
-<ul>
-<li><strong>Why did you include the header file of the message file instead of the message file itself?</strong></li>
-</ul>
-<p>According to ROS mechanisms, any customized ROS messages will be generated into a templated message header file to be included in the C++ code. The message file itself is not part of standard C++ and it cannot be parsed by C++ compilers.</p>
-<ul>
-<li><strong>In the documentation of the LaserScan message there was also a data type called Header. What is that? Can you also include it in your message file? What information does it provide? Include Header in your message file too.</strong></li>
-</ul>
-<p>The <code>Header</code> provides information on the sequential order, the timestamp, and the frame ID of the instant when the message is published. It is very useful when one would like to make use of time information of the messages received. The header file has been included in my custom ROS message.</p>
-<h1 id="recording-and-publishing-bag-files"><a class="markdownIt-Anchor" href="#recording-and-publishing-bag-files"></a> Recording and Publishing Bag Files</h1>
-<p>This section aims at playing with <code>rosbag</code> and bag files in ROS. ROS bag files are a certain kind of files that targets at recording ROS messages, so that it can be replayed elsewhere afterwards. ROS Bag is extremely helpful when one would like to collect data in real-world experiments.</p>
-<h2 id="answers-to-section-6-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-6-written-questions"></a> Answers to Section 6 Written Questions</h2>
-<ul>
-<li><strong>Where does the bag file get saved? How can you change where it is saved?</strong></li>
-</ul>
-<p>By default the bag file is saved at the current directory. We can also change the directory by adding <code>-o</code> such as:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rosbag record -o <span class="token punctuation">..</span>/bagfiles/my_rosbag_recordings.bag<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li><strong>Where will the bag file be saved if you were launching the recording of bagfile record through a launch file. How can you change where it is saved?</strong></li>
-</ul>
-<p>By default the bag file is saved at the current directory. We can also change the directory by appending <code>args=../bagfiles/my_rosbag_recordings.bag</code> to the corresponding node in the launch file.</p>
-]]></content>
-      <categories>
-        <category>Projects</category>
-      </categories>
-      <tags>
-        <tag>F1Tenth</tag>
-        <tag>F1/10 Racing</tag>
       </tags>
   </entry>
 </search>
