@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Minecraft Game Programming, Ryan&#39;s Blog">
+    <meta name="keywords" content="My F1TENTH Journey — Lab 1, Introduction to ROS, Ryan&#39;s Blog">
     <meta name="description" content="MSE Robotics @Penn &#39;22, BSE CS @UMich &#39;20, BSE ECE @SJTU &#39;20; Code and Photography.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Minecraft Game Programming | Ryan&#39;s Blog</title>
+    <title>My F1TENTH Journey — Lab 1, Introduction to ROS | Ryan&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon-32x32-ZR.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -231,12 +231,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/560-screenshot.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Minecraft Game Programming</h1>
+                    <h1 class="description center-align post-title">My F1TENTH Journey — Lab 1, Introduction to ROS</h1>
                 </div>
             </div>
         </div>
@@ -352,8 +352,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/computer-graphics/">
-                                <span class="chip bg-color">computer graphics</span>
+                            <a href="/tags/F1Tenth/">
+                                <span class="chip bg-color">F1Tenth</span>
+                            </a>
+                        
+                            <a href="/tags/F1-10-Racing/">
+                                <span class="chip bg-color">F1/10 Racing</span>
                             </a>
                         
                     </div>
@@ -377,21 +381,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-12-09
+                    2021-01-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-01-17
+                    2021-01-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    761
+                    915
                 </div>
                 
 
@@ -411,40 +415,122 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>In the fall of 2020, I finally had a chance to explore the field of computer graphics at University of Pennsylvania, and did a very interesting course project which builds a simplified Minecraft from scratch. This game is built on OpenGL 3.2 with Qt 5.15.0. Through building this game, I learned a lot about OpenGL rendering pipeline, game engine &amp; texture mapping.</p>
-<h1 id="demo-video"><a class="markdownIt-Anchor" href="#demo-video"></a> Demo Video</h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l_YViGj6_Qc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-<a id="more"></a>
+                <p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
 <h1 id="overview"><a class="markdownIt-Anchor" href="#overview"></a> Overview</h1>
-<p>Minecraft is originally well-known for its block-like structure. Everything is made of blocks, including mountains, trees, grasses, people, cows, zombies, etc. Although it might seem a little bit weird, this actually creates a really amazing, retro vibe as if you were playing those good old, low-resolution video games in the 70s and 80s. What’s more, I personally think that using different types of blocks to create a huge variety of objects from scratch is one of the essence of Minecraft. It is exactly because of the set-up of blocks that players can easily make things on their own.</p>
-<p><img src="/images/minecraft.png" alt="Minecraft (Java edition) main menu."></p>
-<h2 id="blocks"><a class="markdownIt-Anchor" href="#blocks"></a> Blocks</h2>
-<p>Minecraft is a game only built upon <code>Block</code>s. Each block is defined to be a 1x1 cube in 3D space. All <code>Block</code>s can only be arranged adjacent to each other without any translation or rotation. Now you may wonder: aren’t there items such as leaves, torches, ladders, sticks in Minecraft that don’t look like a cube? Well, yes, but these are considered to be <em>specially-shaped blocks</em>. There are still many <em>regular-shaped blocks</em> such as stones, dirt, ice that look exactly like a 3D cube. Those specially-shaped blocks are <strong>only treated in their special shapes when rendering game graphics,</strong> but when it comes to the deep low-level gaming logic, such as finding the state of the block (occupied/unoccupied) or the center position of the block, etc., these specially-shaped blocks are treated just like the regular ones!</p>
-<p>Minecraft has lots of different types of blocks. Passionate Minecraft gamers also keeps adding new types of blocks to the original game to make it more playable. For my own Minecraft game, I have currently only created the following types of blocks:</p>
-<p>Regular blocks (3D cubic shape):</p>
+<p>In Spring 2021 I finally got a chance to join the F1/10 Autonomous Racing Car Lab at Penn, supervised by <a href="https://www.seas.upenn.edu/~rahulm/">Prof. Rahul Mangharam</a>. To start my autonomous racing journey, I followed the <a href="https://f1tenth-coursekit.readthedocs.io/en/stable/index.html">official tutorials</a> and studied the labs &amp; projects there.</p>
+<p>ROS (Robotics Operating System), is a robotics project development platform widely-used all across the world. Although it is called an “operating system”, it is actually a chain of build tools that can be used to build mixed C++/Python projects as well as provide nice &amp; convenient communication functionalities between processes. F1/10 Autonomous Racing Car dev stack is built upon ROS and C++. <strong>Lab 1 also mainly focuses on introducing ROS as well as providing some small hands-on exercises for ROS coding.</strong></p>
+<h1 id="lab-materials"><a class="markdownIt-Anchor" href="#lab-materials"></a> Lab Materials</h1>
+<p>The lab specs can be access <a href="https://f1tenth-coursekit.readthedocs.io/en/latest/assignments/labs/lab1.html">here</a>. A copy of PDF is also shown below.</p>
+
+
+	<div class="row">
+    <embed src="https://github.com/f1tenth/f1tenth_labs/blob/master/lab1/latex/lab1.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<p>The lab was built on the <em>F1Tenth Simulator</em>, which can be accessed <a href="https://f1tenth.readthedocs.io/en/stable/going_forward/simulator/sim_install.html">here</a>.</p>
+<h1 id="workspaces-and-packages"><a class="markdownIt-Anchor" href="#workspaces-and-packages"></a> Workspaces and Packages</h1>
+<p>This section mainly uses the official ROS tutorials to create a Catkin workspace and a ROS package. I followed the tutorials in ROS C++, set up my workspace, and created a package.</p>
+<h2 id="answers-to-section-3-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-3-written-questions"></a> Answers to Section 3 Written Questions</h2>
 <ul>
-<li><code>CLOUD</code></li>
-<li><code>GRASS</code></li>
-<li><code>DIRT</code></li>
-<li><code>STONE</code></li>
-<li><code>SNOW</code> (actually corresponds to snow blocks in original Minecraft)</li>
-<li><code>ICE</code></li>
-<li><code>REDSTONE_LAMP</code></li>
-<li>…</li>
+<li><strong>What is a CMakeList? Is it related to a make file used for compiling C++ objects? If yes then what is the difference between the two?</strong></li>
 </ul>
-<p>Specially-shaped blocks:</p>
+<p>A CMakeList is a script offering instructions on how to build a CMake workspace. With a proper CMakeList, we can use CMake to build the workspace by</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cmake <span class="token punctuation">..</span>
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>As for its relationship to a Makefile, CMakeLists can be viewed as a <em>high-level wrapper</em> of Makefile. In Unix systems, a CMakeList will produce a Makefile.</p>
 <ul>
-<li><code>REDSTONE_TORCH</code></li>
-<li><code>LEVER</code></li>
-<li><code>REDSTONE_WIRE</code></li>
-<li>…</li>
+<li><strong>Are you using CMakeList.txt for Python in ROS? Is there a executable object being created for Python?</strong></li>
 </ul>
-<p>In additional to the regular biomes such as grasslands, mountains, forests in original Minecraft, we also created a new biome called <em>Heaven</em>. Heaven consists of <code>CLOUD</code> as the ground, and we used <code>QUARTZ</code>, <code>GOLD</code> and <code>QUARTZ_BRICK</code> to build a very large temple for God in Heaven. For details, please see our demo video!</p>
-<h2 id="chunks"><a class="markdownIt-Anchor" href="#chunks"></a> Chunks</h2>
-<p>Minecraft has a very huge map. It is impossible for the game to load all the maps into PC memory every time on start-up. Hence, it is critical for Minecraft to come up with a plan to only load the surrounding map at the player’s location. In fact, Minecraft actually divides the entire map into <code>Chunks</code>, where each <code>Chunk</code> consists of 16x256x16 blocks (<em>x, y, z</em> direction, respectively; <em>y</em> is the direction pointing “upwards” <em>i.e.,</em> to the sky). Upon rendering, each <code>Chunk</code> would be the <strong>smallest unit for rendering.</strong> This mean that Minecraft doesn’t render the surface of all blocks one by one. Instead, only rendering the surface (the boundary between an opaque block (<code>STONE</code>, <code>DIRT</code>, <code>SNOW</code>, etc.) and a transparent block (<code>EMPTY</code>, <code>WATER</code>, <code>ICE</code>, etc.)) of an entire <code>Chunk</code> would be much more efficient and make the game more responsive.</p>
-<h2 id="terrains-terrain-generation-zones"><a class="markdownIt-Anchor" href="#terrains-terrain-generation-zones"></a> Terrains, Terrain Generation Zones</h2>
-<p>When it comes to map loading, it is easy to discover that only loading one chunk (16x16 blocks in <em>x, z</em> direction) at a time reveals way too little information of the player’s surroundings. A simple solution is that we can group <code>Chunk</code>s together and form <code>Terrain</code>s. As a result, each <code>Terrain</code> is defined to have 4x4 <code>Chunk</code>s in the <em>x</em>, <em>z</em> direction (64x64 blocks; 64x256x64 blocks for <em>x</em>, <em>y</em>, <em>z</em>). Furthermore, 5x5 <code>Terrain</code>s form a <em>terrain generation zone.</em> In this way, we can now always <strong>keep loading the terrain generation zone centered at the chunk where player is standing,</strong> which means we load 20x20 <code>Chunks</code> surrounding the player. Once the player moves off a <code>Chunk</code>, we keep loading new neighboring <code>Chunks</code> to the PC memory and remove those chunks that are no longer considered to be in the new terrain generation zone from the PC memory. By such means we maintain a constant amount of memory usage throughout the game while keeping the player well informed of the surrounding terrain.</p>
-<p><em>To be continued…</em></p>
+<p>CMakeList for Python in ROS does not compile anything. It just imports Catkin macros and copies the corresponding Python scripts to the <code>bin</code> folder, if necessary.</p>
+<ul>
+<li><strong>In which directory would you run <code>catkin_make</code>?</strong></li>
+</ul>
+<p><code>catkin_make</code> should be run in Catkin workspaces, aka. <code>catkin_ws</code>.</p>
+<ul>
+<li><strong>The following commands were used in the tutorial</strong></li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">source</span> /opt/ros/kinetic<span class="token punctuation">(</span>melodic<span class="token punctuation">)</span>/setup.bash
+<span class="token builtin class-name">source</span> devel/setup.bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>Why do we need to source <code>setup.bash</code>? What does it do? Why do we have to different <code>setup.bash</code> files here and what is the difference?</strong></p>
+<p><code>/opt/ros/kinetic(melodic)/setup.bash</code> provides necessary Catkin commands &amp; env variables across workspaces, such as <code>catkin_make</code>, <code>catkin_init_workspace</code>, etc. <code>devel/setup.bash</code> provides workspace-specific environment variables, such as the Python libraries it builds, the ROS packages it creates, etc.</p>
+<h1 id="publishers-and-subscribers"><a class="markdownIt-Anchor" href="#publishers-and-subscribers"></a> Publishers and Subscribers</h1>
+<p>In this section I wrote a simple subscriber to subscribe the LiDAR message broadcasted from F1Tenth simulator. The ROS message was a <code>sensor_msgs/LaserScan</code> it was published on channel <code>/scan</code>.</p>
+<p>What’s more, I also processed the LiDAR data and found out its maximum/minimum range through a simple linear search, and published the messages on <code>/closest_point</code> and <code>/farthest_point</code> with data type <code>std_msgs::Float64</code>. I also tried to wrap up the processor in a C++ class. The entire code is shown below.</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ros/ros.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;sensor_msgs/LaserScan.h&gt;</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;std_msgs/Float64.h&gt;</span></span>
+
+<span class="token keyword">class</span> <span class="token class-name">LidarProcessor</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token comment">// Read-only public member variable of closest/farthest range</span>
+    <span class="token comment">//  within a LaserScan</span>
+    <span class="token keyword">const</span> std_msgs<span class="token operator">::</span>Float64<span class="token operator">&amp;</span> range_closest<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> std_msgs<span class="token operator">::</span>Float64<span class="token operator">&amp;</span> range_farthest<span class="token punctuation">;</span>
+
+    <span class="token comment">// constructor</span>
+    <span class="token function">LidarProcessor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">range_closest</span><span class="token punctuation">(</span>_closest<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">range_farthest</span><span class="token punctuation">(</span>_farthest<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token comment">// callback function for LaserScan subscriber</span>
+    <span class="token keyword">void</span> <span class="token function">handleLaserScan</span><span class="token punctuation">(</span><span class="token keyword">const</span> sensor_msgs<span class="token operator">::</span>LaserScanConstPtr<span class="token operator">&amp;</span> new_scan<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        std<span class="token operator">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span> ranges <span class="token operator">=</span> new_scan<span class="token operator">-&gt;</span>ranges<span class="token punctuation">;</span>
+
+        <span class="token comment">// find the min/max range from linear search</span>
+        <span class="token keyword">float</span> range_closest <span class="token operator">=</span> std<span class="token operator">::</span><span class="token class-name">numeric_limits</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span><span class="token operator">::</span><span class="token function">infinity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">float</span> range_farthest <span class="token operator">=</span> <span class="token number">0.f</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">float</span><span class="token operator">&amp;</span> r <span class="token operator">:</span> ranges<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>std<span class="token operator">::</span><span class="token function">isnan</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token operator">||</span> std<span class="token operator">::</span><span class="token function">isinf</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> range_closest<span class="token punctuation">)</span> range_closest <span class="token operator">=</span> r<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&gt;</span> range_farthest<span class="token punctuation">)</span> range_farthest <span class="token operator">=</span> r<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// clip the data if it exceeds the required min/max range</span>
+        _closest<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">(</span>range_closest <span class="token operator">&lt;</span> new_scan<span class="token operator">-&gt;</span>range_min<span class="token punctuation">)</span> <span class="token operator">?</span> new_scan<span class="token operator">-&gt;</span>range_min <span class="token operator">:</span> range_closest<span class="token punctuation">;</span>
+        _farthest<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token punctuation">(</span>range_farthest <span class="token operator">&gt;</span> new_scan<span class="token operator">-&gt;</span>range_max<span class="token punctuation">)</span> <span class="token operator">?</span> new_scan<span class="token operator">-&gt;</span>range_max <span class="token operator">:</span> range_farthest<span class="token punctuation">;</span>
+
+        <span class="token function">ROS_INFO</span><span class="token punctuation">(</span><span class="token string">"LaserScan message received: closest %f, farthest %f"</span><span class="token punctuation">,</span> _closest<span class="token punctuation">.</span>data<span class="token punctuation">,</span> _farthest<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token keyword">private</span><span class="token operator">:</span>
+    std_msgs<span class="token operator">::</span>Float64 _closest<span class="token punctuation">;</span>
+    std_msgs<span class="token operator">::</span>Float64 _farthest<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ros<span class="token operator">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">"laser_scan_subscriber"</span><span class="token punctuation">,</span> ros<span class="token operator">::</span>init_options<span class="token operator">::</span>AnonymousName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>NodeHandle nh<span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>Rate <span class="token function">loop_rate</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    LidarProcessor processor<span class="token punctuation">;</span>
+
+    ros<span class="token operator">::</span>Subscriber laserScan_subscriber <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">"/scan"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>LidarProcessor<span class="token operator">::</span>handleLaserScan<span class="token punctuation">,</span> <span class="token operator">&amp;</span>processor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>Publisher closestPoint_publisher <span class="token operator">=</span> nh<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>std_msgs<span class="token operator">::</span>Float64<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"/closest_point"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>Publisher farthestPoint_publisher <span class="token operator">=</span> nh<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>std_msgs<span class="token operator">::</span>Float64<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"/farthest_point"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>ros<span class="token operator">::</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        closestPoint_publisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>processor<span class="token punctuation">.</span>range_closest<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        farthestPoint_publisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>processor<span class="token punctuation">.</span>range_farthest<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        loop_rate<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ros<span class="token operator">::</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="answers-to-section-4-written-questions"><a class="markdownIt-Anchor" href="#answers-to-section-4-written-questions"></a> Answers to Section 4 Written Questions</h2>
+<ul>
+<li><strong>What is a nodehandle object? Can we have more than one nodehandle objects in a single node?</strong></li>
+</ul>
+<p>A <code>ros::NodeHandle</code> is an extra layer in C++ that provides RAII-style startup &amp; shutdown of the ROS node. It also offers extra functionalities for the node, such as sending/receiving ROS messages, waiting on a specific ROS message, etc. We can indeed have multiple <code>NodeHandle</code>s in a single node for creating different namespaces, but they all refer to the same ROS node.</p>
+<ul>
+<li><strong>What is <code>ros::spinOnce()</code>? How is it different from <code>ros::spin()</code>?</strong></li>
+</ul>
+<p><code>ros::spinOnce()</code> iterates the loop once more while keeping the node active, while <code>ros::spin()</code> puts the entire node into sleep and only handles data from callback functions.</p>
+<ul>
+<li><strong>What is <code>ros::rate()</code>?</strong></li>
+</ul>
+<p><code>ros::Rate</code> specifies the rate of spinning loop of this ROS node.</p>
 
                 
             </div>
@@ -471,7 +557,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhihaoruan.xyz/2020/12/09/560proj/">http://zhihaoruan.xyz/2020/12/09/560proj/</a>
+                    <a href="http://zhihaoruan.xyz/2021/01/24/f1tenth-lab1/">http://zhihaoruan.xyz/2021/01/24/f1tenth-lab1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -509,8 +595,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/computer-graphics/">
-                                    <span class="chip bg-color">computer graphics</span>
+                                <a href="/tags/F1Tenth/">
+                                    <span class="chip bg-color">F1Tenth</span>
+                                </a>
+                            
+                                <a href="/tags/F1-10-Racing/">
+                                    <span class="chip bg-color">F1/10 Racing</span>
                                 </a>
                             
                         </div>
@@ -555,7 +645,7 @@
         repo: 'shineyruan.github.io',
         owner: 'shineyruan',
         admin: "shineyruan",
-        id: '2020-12-09T14-30-11',
+        id: '2021-01-24T15-56-44',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -583,9 +673,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/01/24/f1tenth-lab1/">
                     <div class="card-image">
@@ -603,9 +694,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -618,6 +709,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -640,31 +732,43 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/05/Hello-World/">
+                <a href="/2020/12/09/560proj/">
                     <div class="card-image">
                         
-                        <img src="/images/RZH8697post.jpg" class="responsive-img" alt="Hello, World">
+                        <img src="/images/560-screenshot.png" class="responsive-img" alt="Minecraft Game Programming">
                         
-                        <span class="card-title">Hello, World</span>
+                        <span class="card-title">Minecraft Game Programming</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to my personal website! I am a first-year robotics master’s student at the University of Pennsylvania. I receive
+                            In the fall of 2020, I finally had a chance to explore the field of computer graphics at University of Pennsylvania, and
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Zhihao (Ryan) Ruan
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Projects/" class="post-category">
+                                    Projects
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/computer-graphics/">
+                        <span class="chip bg-color">computer graphics</span>
+                    </a>
+                    
                 </div>
                 
             </div>
