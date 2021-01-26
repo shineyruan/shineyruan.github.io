@@ -697,6 +697,11 @@ std_msgs/Float64 range_max
 <li><strong>Where will the bag file be saved if you were launching the recording of bagfile record through a launch file. How can you change where it is saved?</strong></li>
 </ul>
 <p>By default the bag file is saved at the current directory. We can also change the directory by appending <code>args=../bagfiles/my_rosbag_recordings.bag</code> to the corresponding node in the launch file.</p>
+<h2 id="references"><a class="markdownIt-Anchor" href="#references"></a> References</h2>
+<p>F1/10 Autonomous Racing Lecture: Course Introduction</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zENhppcxwzY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p>F1/10 Autonomous Racing Lecture: Using the Simulator</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q71OKxztppA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 ]]></content>
       <categories>
         <category>Projects</category>
