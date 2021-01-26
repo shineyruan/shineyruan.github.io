@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Minecraft Game Programming, Ryan&#39;s Blog">
+    <meta name="keywords" content="My F1TENTH Journey — Lab 2, Automatic Emergency Braking, Ryan&#39;s Blog">
     <meta name="description" content="MSE Robotics @Penn &#39;22, BSE CS @UMich &#39;20, BSE ECE @SJTU &#39;20; Code and Photography.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Minecraft Game Programming | Ryan&#39;s Blog</title>
+    <title>My F1TENTH Journey — Lab 2, Automatic Emergency Braking | Ryan&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon-32x32-ZR.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -231,12 +231,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/560-screenshot.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Minecraft Game Programming</h1>
+                    <h1 class="description center-align post-title">My F1TENTH Journey — Lab 2, Automatic Emergency Braking</h1>
                 </div>
             </div>
         </div>
@@ -352,8 +352,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/computer-graphics/">
-                                <span class="chip bg-color">computer graphics</span>
+                            <a href="/tags/F1Tenth/">
+                                <span class="chip bg-color">F1Tenth</span>
+                            </a>
+                        
+                            <a href="/tags/F1-10-Racing/">
+                                <span class="chip bg-color">F1/10 Racing</span>
                             </a>
                         
                     </div>
@@ -377,21 +381,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-12-09
+                    2021-01-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-01-25
+                    2021-01-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    761
+                    573
                 </div>
                 
 
@@ -411,41 +415,101 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>In the fall of 2020, I finally had a chance to explore the field of computer graphics at University of Pennsylvania, and did a very interesting course project which builds a simplified Minecraft from scratch. This game is built on OpenGL 3.2 with Qt 5.15.0. Through building this game, I learned a lot about OpenGL rendering pipeline, game engine &amp; texture mapping.</p>
-<h2 id="demo-video"><a class="markdownIt-Anchor" href="#demo-video"></a> Demo Video</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l_YViGj6_Qc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                <p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
+<p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs">here</a>.</strong></em></p>
+<p><strong>Previous post:</strong></p>
+<ul>
+<li><a href="https://zhihaoruan.xyz/2021/01/24/f1tenth-lab1/">My F1TENTH Journey — Lab 1, Introduction to ROS</a></li>
+</ul>
 <a id="more"></a>
 <h2 id="overview"><a class="markdownIt-Anchor" href="#overview"></a> Overview</h2>
-<p>Minecraft is originally well-known for its block-like structure. Everything is made of blocks, including mountains, trees, grasses, people, cows, zombies, etc. Although it might seem a little bit weird, this actually creates a really amazing, retro vibe as if you were playing those good old, low-resolution video games in the 70s and 80s. What’s more, I personally think that using different types of blocks to create a huge variety of objects from scratch is one of the essence of Minecraft. It is exactly because of the set-up of blocks that players can easily make things on their own.</p>
-<p><img src="/images/minecraft.png" alt="Minecraft (Java edition) main menu."></p>
-<h3 id="blocks"><a class="markdownIt-Anchor" href="#blocks"></a> Blocks</h3>
-<p>Minecraft is a game only built upon <code>Block</code>s. Each block is defined to be a 1x1 cube in 3D space. All <code>Block</code>s can only be arranged adjacent to each other without any translation or rotation. Now you may wonder: aren’t there items such as leaves, torches, ladders, sticks in Minecraft that don’t look like a cube? Well, yes, but these are considered to be <em>specially-shaped blocks</em>. There are still many <em>regular-shaped blocks</em> such as stones, dirt, ice that look exactly like a 3D cube. Those specially-shaped blocks are <strong>only treated in their special shapes when rendering game graphics,</strong> but when it comes to the deep low-level gaming logic, such as finding the state of the block (occupied/unoccupied) or the center position of the block, etc., these specially-shaped blocks are treated just like the regular ones!</p>
-<p>Minecraft has lots of different types of blocks. Passionate Minecraft gamers also keeps adding new types of blocks to the original game to make it more playable. For my own Minecraft game, I have currently only created the following types of blocks:</p>
-<p>Regular blocks (3D cubic shape):</p>
-<ul>
-<li><code>CLOUD</code></li>
-<li><code>GRASS</code></li>
-<li><code>DIRT</code></li>
-<li><code>STONE</code></li>
-<li><code>SNOW</code> (actually corresponds to snow blocks in original Minecraft)</li>
-<li><code>ICE</code></li>
-<li><code>REDSTONE_LAMP</code></li>
-<li>…</li>
-</ul>
-<p>Specially-shaped blocks:</p>
-<ul>
-<li><code>REDSTONE_TORCH</code></li>
-<li><code>LEVER</code></li>
-<li><code>REDSTONE_WIRE</code></li>
-<li>…</li>
-</ul>
-<p>In additional to the regular biomes such as grasslands, mountains, forests in original Minecraft, we also created a new biome called <em>Heaven</em>. Heaven consists of <code>CLOUD</code> as the ground, and we used <code>QUARTZ</code>, <code>GOLD</code> and <code>QUARTZ_BRICK</code> to build a very large temple for God in Heaven. For details, please see our demo video!</p>
-<h3 id="chunks"><a class="markdownIt-Anchor" href="#chunks"></a> Chunks</h3>
-<p>Minecraft has a very huge map. It is impossible for the game to load all the maps into PC memory every time on start-up. Hence, it is critical for Minecraft to come up with a plan to only load the surrounding map at the player’s location. In fact, Minecraft actually divides the entire map into <code>Chunks</code>, where each <code>Chunk</code> consists of 16x256x16 blocks (<em>x, y, z</em> direction, respectively; <em>y</em> is the direction pointing “upwards” <em>i.e.,</em> to the sky). Upon rendering, each <code>Chunk</code> would be the <strong>smallest unit for rendering.</strong> This mean that Minecraft doesn’t render the surface of all blocks one by one. Instead, only rendering the surface (the boundary between an opaque block (<code>STONE</code>, <code>DIRT</code>, <code>SNOW</code>, etc.) and a transparent block (<code>EMPTY</code>, <code>WATER</code>, <code>ICE</code>, etc.)) of an entire <code>Chunk</code> would be much more efficient and make the game more responsive.</p>
-<h3 id="terrains-terrain-generation-zones"><a class="markdownIt-Anchor" href="#terrains-terrain-generation-zones"></a> Terrains, Terrain Generation Zones</h3>
-<p>When it comes to map loading, it is easy to discover that only loading one chunk (16x16 blocks in <em>x, z</em> direction) at a time reveals way too little information of the player’s surroundings. A simple solution is that we can group <code>Chunk</code>s together and form <code>Terrain</code>s. As a result, each <code>Terrain</code> is defined to have 4x4 <code>Chunk</code>s in the <em>x</em>, <em>z</em> direction (64x64 blocks; 64x256x64 blocks for <em>x</em>, <em>y</em>, <em>z</em>). Furthermore, 5x5 <code>Terrain</code>s form a <em>terrain generation zone.</em> In this way, we can now always <strong>keep loading the terrain generation zone centered at the chunk where player is standing,</strong> which means we load 20x20 <code>Chunks</code> surrounding the player. Once the player moves off a <code>Chunk</code>, we keep loading new neighboring <code>Chunks</code> to the PC memory and remove those chunks that are no longer considered to be in the new terrain generation zone from the PC memory. By such means we maintain a constant amount of memory usage throughout the game while keeping the player well informed of the surrounding terrain.</p>
-<p><em>To be continued…</em></p>
+<p>This lab focuses on implementing an AEB (Automatic Emergency Braking) in ROS node for F1/10 racing cars. AEB is widely used in autonomous vehicles as a basic safety guarantee to avoid collisions with objects.</p>
+<p>The lab materials can be accessed <a href="https://f1tenth-coursekit.readthedocs.io/en/stable/assignments/labs/lab2.html#">here</a>. A PDF version is also attached below.</p>
 
+
+	<div class="row">
+    <embed src="/pdf/f110_lab2.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+<p>The lab was built on the <em>F1Tenth Simulator</em>, which can be accessed <a href="https://f1tenth.readthedocs.io/en/stable/going_forward/simulator/sim_install.html">here</a>.</p>
+<h2 id="demo"><a class="markdownIt-Anchor" href="#demo"></a> Demo</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vVHXqJv6NbY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h2 id="time-to-collision"><a class="markdownIt-Anchor" href="#time-to-collision"></a> Time-To-Collision</h2>
+<p>TTC (Time-To-Collision) is the time it would take for the vehicle to collide with an obstacle given its current heading and velocity. TTC can be calculated with the following format:</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mi>T</mi><mi>C</mi><mo>=</mo><mfrac><mi>r</mi><mrow><mo stretchy="false">[</mo><mo>−</mo><mover accent="true"><mi>r</mi><mo>˙</mo></mover><msub><mo stretchy="false">]</mo><mo>+</mo></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">TTC = \frac{r}{[-\dot{r}]_+}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.0435600000000003em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">[</span><span class="mord">−</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.66786em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.08333000000000002em;">˙</span></span></span></span></span></span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>where <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> is the distance between vehicle and obstacle, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>r</mi><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot{r}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66786em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.66786em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.08333000000000002em;">˙</span></span></span></span></span></span></span></span></span> is its 1st derivative with respect to time, and the symbol <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mi>x</mi><msub><mo stretchy="false">]</mo><mo>+</mo></msub></mrow><annotation encoding="application/x-tex">[x]_+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">x</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.25833100000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span> denotes <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\max(0,x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span>.</p>
+<p>In practice, we use LiDAR results to calculate TTC for each beam. Specifically, we project the current vehicle velocity onto the direction of each beam as <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>r</mi><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot{r}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66786em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.66786em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.08333000000000002em;">˙</span></span></span></span></span></span></span></span></span>, namely <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>r</mi><mo>˙</mo></mover><mo>=</mo><mi>v</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\dot{r}=v\cos(\theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66786em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.66786em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.08333000000000002em;">˙</span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span>.</p>
+<p><code>sensor_msgs/LaserScan</code> provides us with LiDAR beams in all directions. In each <code>LaserScan</code> message, we have <code>angle_min</code>, <code>angle_max</code> and <code>angle_increment</code>, which corresponds to the <em>starting angle</em>, the <em>ending angle</em>, and the <em>step angle</em> between two adjacent laser beams. All the angles are given in the local coordinate frame (positive <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> direction is the vehicle’s heading) and positive <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> direction is marked as angle value <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>.</p>
+<p>We also have <code>float32[] ranges</code> in each <code>LaserScan</code> message, which gives us the distance to obstacle in the corresponding direction angle. Namely, <code>ranges[i] &lt;--&gt; angle_min + i * angle_increment</code>.</p>
+<p>With all the information, we can write our AEB node as follows.</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/**
+ * @brief The class that handles emergency braking
+ * 
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">Safety</span> <span class="token punctuation">{</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+    ros<span class="token operator">::</span>NodeHandle n<span class="token punctuation">;</span>
+    <span class="token keyword">double</span> speed<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">double</span> deceleration<span class="token punctuation">;</span>
+
+    <span class="token comment">// ROS subscribers and publishers</span>
+    ros<span class="token operator">::</span>Subscriber odom_subscriber<span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>Subscriber scan_subscriber<span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>Publisher publish_bool<span class="token punctuation">;</span>
+    ros<span class="token operator">::</span>Publisher publish_ackermann<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Safety</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">deceleration</span><span class="token punctuation">(</span><span class="token number">8.26</span><span class="token punctuation">)</span>  <span class="token comment">// F1/10 racing car deceleration: 8.26 m/s^2</span>
+    <span class="token punctuation">{</span>
+        n <span class="token operator">=</span> ros<span class="token operator">::</span><span class="token function">NodeHandle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        speed <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// create ROS subscribers and publishers</span>
+        odom_subscriber <span class="token operator">=</span> n<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">"/odom"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>Safety<span class="token operator">::</span>odom_callback<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        scan_subscriber <span class="token operator">=</span> n<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">"/scan"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>Safety<span class="token operator">::</span>scan_callback<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        publish_bool <span class="token operator">=</span> n<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>std_msgs<span class="token operator">::</span>Bool<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"/brake_bool"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        publish_ackermann <span class="token operator">=</span> n<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>ackermann_msgs<span class="token operator">::</span>AckermannDriveStamped<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"/brake"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">void</span> <span class="token function">odom_callback</span><span class="token punctuation">(</span><span class="token keyword">const</span> nav_msgs<span class="token operator">::</span>Odometry<span class="token operator">::</span>ConstPtr <span class="token operator">&amp;</span>odom_msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// update current speed</span>
+        geometry_msgs<span class="token operator">::</span>Vector3 velocity <span class="token operator">=</span> odom_msg<span class="token operator">-&gt;</span>twist<span class="token punctuation">.</span>twist<span class="token punctuation">.</span>linear<span class="token punctuation">;</span>
+        speed <span class="token operator">=</span> lab2_utils<span class="token operator">::</span><span class="token function">vecLength</span><span class="token punctuation">(</span>velocity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">void</span> <span class="token function">scan_callback</span><span class="token punctuation">(</span><span class="token keyword">const</span> sensor_msgs<span class="token operator">::</span>LaserScan<span class="token operator">::</span>ConstPtr <span class="token operator">&amp;</span>scan_msg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">int</span> N <span class="token operator">=</span> scan_msg<span class="token operator">-&gt;</span>ranges<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> N<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">double</span> range <span class="token operator">=</span> scan_msg<span class="token operator">-&gt;</span>ranges<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>range <span class="token operator">&gt;</span> scan_msg<span class="token operator">-&gt;</span>range_max <span class="token operator">||</span> range <span class="token operator">&lt;</span> scan_msg<span class="token operator">-&gt;</span>range_min<span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">double</span> angle_to_heading <span class="token operator">=</span> scan_msg<span class="token operator">-&gt;</span>angle_min <span class="token operator">+</span> i <span class="token operator">*</span> scan_msg<span class="token operator">-&gt;</span>angle_increment<span class="token punctuation">;</span>
+            <span class="token keyword">double</span> projected_speed <span class="token operator">=</span> std<span class="token operator">::</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">*</span> speed <span class="token operator">*</span> std<span class="token operator">::</span><span class="token function">cos</span><span class="token punctuation">(</span>angle_to_heading<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// calculate TTC</span>
+            <span class="token keyword">double</span> ttc <span class="token operator">=</span> <span class="token punctuation">(</span>projected_speed <span class="token operator">&lt;=</span> <span class="token number">0.0</span><span class="token punctuation">)</span>
+                             <span class="token operator">?</span> std<span class="token operator">::</span><span class="token class-name">numeric_limits</span><span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">&gt;</span><span class="token operator">::</span><span class="token function">infinity</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                             <span class="token operator">:</span> range <span class="token operator">/</span> <span class="token punctuation">(</span>projected_speed<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// publish drive/brake message</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>ttc <span class="token operator">&lt;=</span> <span class="token number">2.5</span> <span class="token operator">*</span> speed <span class="token operator">/</span> deceleration<span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// 2.5 is a parameter (magic number) from simulation experiments</span>
+                std_msgs<span class="token operator">::</span>Bool msg_bool<span class="token punctuation">;</span>
+                msg_bool<span class="token punctuation">.</span>data <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+                ackermann_msgs<span class="token operator">::</span>AckermannDriveStamped msg_brake<span class="token punctuation">;</span>
+                msg_brake<span class="token punctuation">.</span>drive<span class="token punctuation">.</span>speed <span class="token operator">=</span> <span class="token number">0.f</span><span class="token punctuation">;</span>
+
+                publish_bool<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>msg_bool<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                publish_ackermann<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>msg_brake<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token function">ROS_INFO</span><span class="token punctuation">(</span><span class="token string">"Emergency brake message sent"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -471,7 +535,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhihaoruan.xyz/2020/12/09/560proj/">http://zhihaoruan.xyz/2020/12/09/560proj/</a>
+                    <a href="http://zhihaoruan.xyz/2021/01/25/f1tenth-lab2/">http://zhihaoruan.xyz/2021/01/25/f1tenth-lab2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -509,8 +573,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/computer-graphics/">
-                                    <span class="chip bg-color">computer graphics</span>
+                                <a href="/tags/F1Tenth/">
+                                    <span class="chip bg-color">F1Tenth</span>
+                                </a>
+                            
+                                <a href="/tags/F1-10-Racing/">
+                                    <span class="chip bg-color">F1/10 Racing</span>
                                 </a>
                             
                         </div>
@@ -555,7 +623,7 @@
         repo: 'shineyruan.github.io',
         owner: 'shineyruan',
         admin: "shineyruan",
-        id: '2020-12-09T14-30-11',
+        id: '2021-01-25T23-32-28',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -583,9 +651,66 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2021/01/25/f1tenth-lab2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="My F1TENTH Journey — Lab 2, Automatic Emergency Braking">
+                        
+                        <span class="card-title">My F1TENTH Journey — Lab 2, Automatic Emergency Braking</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.
+All my source codes can be accessed here.
+Pre
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Projects/" class="post-category">
+                                    Projects
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/F1Tenth/">
+                        <span class="chip bg-color">F1Tenth</span>
+                    </a>
+                    
+                    <a href="/tags/F1-10-Racing/">
+                        <span class="chip bg-color">F1/10 Racing</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/01/24/f1tenth-lab1/">
                     <div class="card-image">
@@ -604,9 +729,9 @@ All my source codes can be accessed here.
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -630,42 +755,6 @@ All my source codes can be accessed here.
                         <span class="chip bg-color">F1/10 Racing</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/11/05/Hello-World/">
-                    <div class="card-image">
-                        
-                        <img src="/images/RZH8697post.jpg" class="responsive-img" alt="Hello, World">
-                        
-                        <span class="card-title">Hello, World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Welcome to my personal website! I am a first-year robotics master’s student at the University of Pennsylvania. I receive
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-05
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Zhihao (Ryan) Ruan
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
