@@ -230,7 +230,7 @@
   <entry>
     <title>Hello, World</title>
     <url>/2020/11/05/Hello-World/</url>
-    <content><![CDATA[<p>Welcome to my personal website! I am a first-year robotics master’s student at the University of Pennsylvania. I received my undergraduate degree in computer science engineering (CSE) at the University of Michigan, with a second degree in electrical and computer engineering (ECE) at Shanghai Jiao Tong University. You can find a short story about me <a href="https://shineyruan.github.io/about/">here</a>. A copy of my <a href="https://zhihaoruan.xyz/curriculum-vitae">CV</a> and a copy of my <a href="https://zhihaoruan.xyz/resume">resume</a> can both be found on my website.</p>
+    <content><![CDATA[<p>Welcome to my personal website! I am a first-year robotics master’s student at the University of Pennsylvania. Prior to Penn, I received my B.S. degree in computer science engineering (CSE) at the University of Michigan, with a second B.S. degree in electrical and computer engineering (ECE) at Shanghai Jiao Tong University. A copy of my <a href="https://zhihaoruan.xyz/curriculum-vitae">CV</a> and a copy of my <a href="https://zhihaoruan.xyz/resume">resume</a> can both be found on my website.</p>
 <p><img src="/images/RZH8697post.jpg" alt="A picture of myself."></p>
 <a id="more"></a>
 <h2 id="relevant-classes"><a class="markdownIt-Anchor" href="#relevant-classes"></a> Relevant Classes</h2>
@@ -252,9 +252,10 @@
 </ul>
 <p>As a robotics master’s student, I continue to explore a variety of areas closely related to robotics, include but not limited to</p>
 <ul>
-<li>Computer Graphics — for robotic simulation &amp; visualization</li>
-<li>Linear Programming &amp; Optimization — for robotic algorithm development</li>
 <li>Deep Computer Vision — for robotic perception</li>
+<li>Computer Graphics — for robotic simulation &amp; visualization</li>
+<li>Linear Programming &amp; Optimization, Modern Convex Optimization — for robotic algorithm development</li>
+<li>Learning in Robotics — for an in-depth study in filtering, mapping, control, and RL (Reinforcement Learning) problems</li>
 </ul>
 <h2 id="skills"><a class="markdownIt-Anchor" href="#skills"></a> Skills</h2>
 <p>A list of skills that I’ve acquired from my experience includes but is not limited to:</p>
@@ -271,6 +272,7 @@
 <h3 id="projects"><a class="markdownIt-Anchor" href="#projects"></a> Projects</h3>
 <p>I have recorded a number of my own projects <a href="https://zhihaoruan.xyz/categories/Projects/">here</a> on this website. Some of these are course projects, while others may be research projects. Some of the featured projects are:</p>
 <ul>
+<li><a href="https://zhihaoruan.xyz/tags/F1Tenth/">The F1/10 Autonomous Racing Project Series at Penn</a></li>
 <li><a href="https://zhihaoruan.xyz/2020/12/09/560proj/">Minecraft Game Programming</a></li>
 <li><a href="https://zhihaoruan.xyz/2019/05/03/373Proj/">An Interactive Game — Step On the White Tiles!</a></li>
 <li><a href="https://zhihaoruan.xyz/2020/01/13/467slam/">SLAM — Simultaneous Localization And Mapping</a></li>
@@ -1981,6 +1983,76 @@ M1001 80H400000v40H1013z"></path></svg></span></span></span><span class="vlist-s
 <h2 id="references"><a class="markdownIt-Anchor" href="#references"></a> References</h2>
 <p>F1/10 Autonomous Racing Lecture: Reactive Methods for Planning</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7VLYP-z9hTw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
+      <tags>
+        <tag>F1Tenth</tag>
+        <tag>F1/10 Racing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker)</title>
+    <url>/2021/01/29/f1tenth-lab6/</url>
+    <content><![CDATA[<p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
+<p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs">here</a>.</strong></em></p>
+<p><strong>Previous post:</strong></p>
+<ul>
+<li><a href="https://zhihaoruan.xyz/2021/01/24/f1tenth-lab1/">My F1TENTH Journey — Lab 1, Introduction to ROS</a></li>
+<li><a href="https://zhihaoruan.xyz/2021/01/25/f1tenth-lab2/">My F1TENTH Journey — Lab 2, Automatic Emergency Braking</a></li>
+<li><a href="https://zhihaoruan.xyz/2021/01/27/f1tenth-lab3/">My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower</a></li>
+<li><a href="https://zhihaoruan.xyz/2021/01/27/f1tenth-lab4/">My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance</a></li>
+</ul>
+<a id="more"></a>
+<h2 id="overview"><a class="markdownIt-Anchor" href="#overview"></a> Overview</h2>
+<p>In autonomous driving development, recording waypoints for future testing is very important. One way to record waypoints efficiently is only remembering the x, y, z coordinates of the vehicle regularly for some constant time gap. However, as ground vehicles are generally <em>non-holonomic</em> (i.e., the vehicle cannot make a turn in place), it is non-trivial to control an autonomous vehicle to exactly follow these pre-recorded waypoints. Hence, we need to design a path tracker (waypoint tracker) so that it can calculate and send commands to the vehicle to make it follow the pre-recorded waypoints. That is how “Pure Pursuit” algorithm comes into place.</p>
+<h2 id="the-pure-pursuit-algorithm"><a class="markdownIt-Anchor" href="#the-pure-pursuit-algorithm"></a> The Pure Pursuit Algorithm</h2>
+<p>The Pure Pursuit algorithm accounts for the non-holonomic constraints and the speed of the vehicle when it follows the waypoints. Given the current position of the vehicle, what it does is to always steer towards the next appropriate waypoint according to some lookahead distance <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span>. In real practice, Pure Pursuit algorithm is often used with localization methods, i.e., a particle filter.</p>
+<p>But since the vehicle is non-holonomic, how can we steer towards the next waypoint properly? Setting the exact direction of the next waypoint from the current vehicle position is not feasible, as the vehicle is always in high speed and might overshoot the desired goal. One alternative option tries to interpolate the trajectory by finding an arc between the current position and the next waypoint (goal), which can be showed as the figure below.</p>
+<p><img src="/images/f1tenth-lab6-arc.jpg" alt="Arc interpolation between current position and goal."></p>
+<p>However there are infinitely many arcs between two points, and each of them has a different radius (curvature). Therefore we would like to add one more constraint to the arc: its center of radius must lie on the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> axis. In such way we can always find a unique arc interpolation for our trajectory, and it can be solved by simple math. After solving the geometry we can get the radius of the arc:</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>=</mo><mfrac><msup><mi>L</mi><mn>2</mn></msup><mrow><mn>2</mn><mi mathvariant="normal">∣</mi><mi>y</mi><mi mathvariant="normal">∣</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">r=\frac{L^2}{2|y|}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.427108em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">∣</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p><img src="/images/f1tenth-lab6-steer.jpg" alt="Finding the steering angle from the arc interpolation."></p>
+<p>Finally, we can simply set the steering angle proportional to the curvature of the arc:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">double</span> steering_angle <span class="token operator">=</span> K_p <span class="token operator">*</span> curvature<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>K_p</code> works exactly the same as a P controller and its value can also be tuned using PID tuning theory.</p>
+<p>In summary, the Pure Pursuit algorithm can be implemented in the following steps:</p>
+<ol>
+<li>Find the next waypoint (goal) from the current position and the list of all waypoints.</li>
+<li>Interpolate an arc between current position and goal, and calculate its radius &amp; curvature.</li>
+<li>Set the steering angle proportional to the curvature.</li>
+</ol>
+<h2 id="actual-implementation"><a class="markdownIt-Anchor" href="#actual-implementation"></a> Actual Implementation</h2>
+<p>This section summarizes a list of issues when I was implementing the pure pursuit algorithm in ROS and C++.</p>
+<ol>
+<li><strong>Running the particle filter</strong>.</li>
+</ol>
+<p>In real practice we can never know the ground truth position of the vehicle. The position of the vehicle can only be measured using some kind of sensors and algorithms. For this lab I made use of a decent particle filter ROS package written by <a href="https://github.com/mit-racecar/particle_filter">MIT car racing team</a>. As I was using ROS Noetic with Python 3 while this package was written in Python 2, I made a fork of their project and spent some time converting their code into Python 3 to fit in my workspace. For future reference, the Python 3 version of this particle filter can be accessed <a href="https://github.com/shineyruan/particle_filter">here</a>.</p>
+<p>It is worth mentioning that this particle filter provides several options for laser beam ray computing, and all of them depends on a ray-marching library called <a href="https://github.com/kctess5/range_libc">RangeLibc</a>. The original RangeLibc was also written in Python 2 and I also made <a href="https://github.com/shineyruan/range_libc">a fork of it</a> and converted it into Python 3. With my modification the entire particle filter pipeline should now be able to run successfully in Python 3 and ROS Noetic.</p>
+<ol start="2">
+<li><strong>Choosing the goal waypoint from current position and lookahead distance.</strong></li>
+</ol>
+<p>In general, there are multiple ways to choose the goal waypoint for the vehicle. Some options include choosing the waypoint in the list that has distance closest to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span> from the current vehicle position, interpolating a waypoint with distance exactly equal to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span> from the closest waypoint in the range and out of the range, and choosing the waypoint closest to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span> from those out of the range. As for my implementation, I chose to implement in the following way:</p>
+<ul>
+<li>Starting from the current position, pick the first waypoint that has a distance larger than <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span> from the current position.</li>
+</ul>
+<p>Notice that my implementation is current not the best option, as it has not incorporate the current orientation of the car and it might cause troubles when the next goal is somewhere behind the vehicle.</p>
+<ol start="3">
+<li><strong>Convert the goal coordinates to local frame before calculating the curvature of the arc.</strong></li>
+</ol>
+<p>As the curvature calculation assumes that our vehicle is always facing in the positive <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> direction, we must convert the goal waypoint into local frame before calculations.</p>
+<ol start="4">
+<li><strong>Use signed curvature for the steering angle.</strong></li>
+</ol>
+<p>In real practice the next waypoint could be either in the front-left or front-right of the vehicle, resulting in the fact that the curvature could either be concave or convex. Hence it is important for us to consider the sign of the curvature so that we can steer our car in the correct direction.</p>
+<h2 id="demo-videos"><a class="markdownIt-Anchor" href="#demo-videos"></a> Demo Videos</h2>
+<p>The Pure Pursuit algorithm with the vehicle running in 5m/s. Green trajectory is the pre-recorded waypoints; red dot is the goal waypoint for the vehicle; blue dot is the current position of the vehicle (using ground truth position in simulator).</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Qs2StzvzXHw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h2 id="references"><a class="markdownIt-Anchor" href="#references"></a> References</h2>
+<p>F1/10 Autonomous Racing Lecture: Pure Pursuit</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r_FEKkeN_fg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 ]]></content>
       <categories>
         <category>Projects</category>

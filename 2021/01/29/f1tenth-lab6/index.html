@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello, World, Ryan&#39;s Blog">
+    <meta name="keywords" content="My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker), Ryan&#39;s Blog">
     <meta name="description" content="MSE Robotics @Penn &#39;22, BSE CS @UMich &#39;20, BSE ECE @SJTU &#39;20; Code and Photography.">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello, World | Ryan&#39;s Blog</title>
+    <title>My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker) | Ryan&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon-32x32-ZR.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -231,12 +231,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/RZH8697post.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/f1tenth-lab6-cover.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello, World</h1>
+                    <h1 class="description center-align post-title">My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker)</h1>
                 </div>
             </div>
         </div>
@@ -350,12 +350,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/F1Tenth/">
+                                <span class="chip bg-color">F1Tenth</span>
+                            </a>
+                        
+                            <a href="/tags/F1-10-Racing/">
+                                <span class="chip bg-color">F1/10 Racing</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Projects/" class="post-category">
+                                Projects
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -364,21 +381,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-11-05
+                    2021-01-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-03-02
+                    2021-01-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    574
+                    987
                 </div>
                 
 
@@ -398,76 +415,64 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to my personal website! I am a first-year robotics master’s student at the University of Pennsylvania. Prior to Penn, I received my B.S. degree in computer science engineering (CSE) at the University of Michigan, with a second B.S. degree in electrical and computer engineering (ECE) at Shanghai Jiao Tong University. A copy of my <a href="https://zhihaoruan.xyz/curriculum-vitae">CV</a> and a copy of my <a href="https://zhihaoruan.xyz/resume">resume</a> can both be found on my website.</p>
-<p><img src="/images/RZH8697post.jpg" alt="A picture of myself."></p>
+                <p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
+<p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs">here</a>.</strong></em></p>
+<p><strong>Previous post:</strong></p>
+<ul>
+<li><a href="https://zhihaoruan.xyz/2021/01/24/f1tenth-lab1/">My F1TENTH Journey — Lab 1, Introduction to ROS</a></li>
+<li><a href="https://zhihaoruan.xyz/2021/01/25/f1tenth-lab2/">My F1TENTH Journey — Lab 2, Automatic Emergency Braking</a></li>
+<li><a href="https://zhihaoruan.xyz/2021/01/27/f1tenth-lab3/">My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower</a></li>
+<li><a href="https://zhihaoruan.xyz/2021/01/27/f1tenth-lab4/">My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance</a></li>
+</ul>
 <a id="more"></a>
-<h2 id="relevant-classes"><a class="markdownIt-Anchor" href="#relevant-classes"></a> Relevant Classes</h2>
-<p>With the advantage of being enrolled in a dual-degree program, I have taken a list of courses covering from electrical engineering to computer science, including but not limited to:</p>
+<h2 id="overview"><a class="markdownIt-Anchor" href="#overview"></a> Overview</h2>
+<p>In autonomous driving development, recording waypoints for future testing is very important. One way to record waypoints efficiently is only remembering the x, y, z coordinates of the vehicle regularly for some constant time gap. However, as ground vehicles are generally <em>non-holonomic</em> (i.e., the vehicle cannot make a turn in place), it is non-trivial to control an autonomous vehicle to exactly follow these pre-recorded waypoints. Hence, we need to design a path tracker (waypoint tracker) so that it can calculate and send commands to the vehicle to make it follow the pre-recorded waypoints. That is how “Pure Pursuit” algorithm comes into place.</p>
+<h2 id="the-pure-pursuit-algorithm"><a class="markdownIt-Anchor" href="#the-pure-pursuit-algorithm"></a> The Pure Pursuit Algorithm</h2>
+<p>The Pure Pursuit algorithm accounts for the non-holonomic constraints and the speed of the vehicle when it follows the waypoints. Given the current position of the vehicle, what it does is to always steer towards the next appropriate waypoint according to some lookahead distance <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span>. In real practice, Pure Pursuit algorithm is often used with localization methods, i.e., a particle filter.</p>
+<p>But since the vehicle is non-holonomic, how can we steer towards the next waypoint properly? Setting the exact direction of the next waypoint from the current vehicle position is not feasible, as the vehicle is always in high speed and might overshoot the desired goal. One alternative option tries to interpolate the trajectory by finding an arc between the current position and the next waypoint (goal), which can be showed as the figure below.</p>
+<p><img src="/images/f1tenth-lab6-arc.jpg" alt="Arc interpolation between current position and goal."></p>
+<p>However there are infinitely many arcs between two points, and each of them has a different radius (curvature). Therefore we would like to add one more constraint to the arc: its center of radius must lie on the <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span> axis. In such way we can always find a unique arc interpolation for our trajectory, and it can be solved by simple math. After solving the geometry we can get the radius of the arc:</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>=</mo><mfrac><msup><mi>L</mi><mn>2</mn></msup><mrow><mn>2</mn><mi mathvariant="normal">∣</mi><mi>y</mi><mi mathvariant="normal">∣</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">r=\frac{L^2}{2|y|}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.427108em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord">∣</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p><img src="/images/f1tenth-lab6-steer.jpg" alt="Finding the steering angle from the arc interpolation."></p>
+<p>Finally, we can simply set the steering angle proportional to the curvature of the arc:</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">double</span> steering_angle <span class="token operator">=</span> K_p <span class="token operator">*</span> curvature<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>K_p</code> works exactly the same as a P controller and its value can also be tuned using PID tuning theory.</p>
+<p>In summary, the Pure Pursuit algorithm can be implemented in the following steps:</p>
+<ol>
+<li>Find the next waypoint (goal) from the current position and the list of all waypoints.</li>
+<li>Interpolate an arc between current position and goal, and calculate its radius &amp; curvature.</li>
+<li>Set the steering angle proportional to the curvature.</li>
+</ol>
+<h2 id="actual-implementation"><a class="markdownIt-Anchor" href="#actual-implementation"></a> Actual Implementation</h2>
+<p>This section summarizes a list of issues when I was implementing the pure pursuit algorithm in ROS and C++.</p>
+<ol>
+<li><strong>Running the particle filter</strong>.</li>
+</ol>
+<p>In real practice we can never know the ground truth position of the vehicle. The position of the vehicle can only be measured using some kind of sensors and algorithms. For this lab I made use of a decent particle filter ROS package written by <a href="https://github.com/mit-racecar/particle_filter">MIT car racing team</a>. As I was using ROS Noetic with Python 3 while this package was written in Python 2, I made a fork of their project and spent some time converting their code into Python 3 to fit in my workspace. For future reference, the Python 3 version of this particle filter can be accessed <a href="https://github.com/shineyruan/particle_filter">here</a>.</p>
+<p>It is worth mentioning that this particle filter provides several options for laser beam ray computing, and all of them depends on a ray-marching library called <a href="https://github.com/kctess5/range_libc">RangeLibc</a>. The original RangeLibc was also written in Python 2 and I also made <a href="https://github.com/shineyruan/range_libc">a fork of it</a> and converted it into Python 3. With my modification the entire particle filter pipeline should now be able to run successfully in Python 3 and ROS Noetic.</p>
+<ol start="2">
+<li><strong>Choosing the goal waypoint from current position and lookahead distance.</strong></li>
+</ol>
+<p>In general, there are multiple ways to choose the goal waypoint for the vehicle. Some options include choosing the waypoint in the list that has distance closest to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span> from the current vehicle position, interpolating a waypoint with distance exactly equal to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span> from the closest waypoint in the range and out of the range, and choosing the waypoint closest to <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span> from those out of the range. As for my implementation, I chose to implement in the following way:</p>
 <ul>
-<li>Honors Physics</li>
-<li>Electromagnetics</li>
-<li>Signals and Systems</li>
-<li>Analog Circuits</li>
-<li>Semiconductor Devices</li>
-<li>Data Structures and Algorithms</li>
-<li>Computer Architecture</li>
-<li>Embedded Systems Design</li>
-<li>Machine Learning</li>
-<li>Autonomous Robotics</li>
-<li>Computer Vision</li>
-<li>CUDA Programming</li>
-<li>Operating Systems</li>
+<li>Starting from the current position, pick the first waypoint that has a distance larger than <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span> from the current position.</li>
 </ul>
-<p>As a robotics master’s student, I continue to explore a variety of areas closely related to robotics, include but not limited to</p>
-<ul>
-<li>Deep Computer Vision — for robotic perception</li>
-<li>Computer Graphics — for robotic simulation &amp; visualization</li>
-<li>Linear Programming &amp; Optimization, Modern Convex Optimization — for robotic algorithm development</li>
-<li>Learning in Robotics — for an in-depth study in filtering, mapping, control, and RL (Reinforcement Learning) problems</li>
-</ul>
-<h2 id="skills"><a class="markdownIt-Anchor" href="#skills"></a> Skills</h2>
-<p>A list of skills that I’ve acquired from my experience includes but is not limited to:</p>
-<ul>
-<li>C/C++</li>
-<li>CUDA</li>
-<li>LCM/ROS development</li>
-<li>Python in deep learning/computer vision</li>
-<li>MATLAB</li>
-<li>ARM Cortex-M3 project development</li>
-</ul>
-<h2 id="my-posts"><a class="markdownIt-Anchor" href="#my-posts"></a> My Posts</h2>
-<p>This blog is divided into several sections, and each of them contains a list of posts. I’d love to record all of my accomplishments and happy moments here, to share them with you.</p>
-<h3 id="projects"><a class="markdownIt-Anchor" href="#projects"></a> Projects</h3>
-<p>I have recorded a number of my own projects <a href="https://zhihaoruan.xyz/categories/Projects/">here</a> on this website. Some of these are course projects, while others may be research projects. Some of the featured projects are:</p>
-<ul>
-<li><a href="https://zhihaoruan.xyz/tags/F1Tenth/">The F1/10 Autonomous Racing Project Series at Penn</a></li>
-<li><a href="https://zhihaoruan.xyz/2020/12/09/560proj/">Minecraft Game Programming</a></li>
-<li><a href="https://zhihaoruan.xyz/2019/05/03/373Proj/">An Interactive Game — Step On the White Tiles!</a></li>
-<li><a href="https://zhihaoruan.xyz/2020/01/13/467slam/">SLAM — Simultaneous Localization And Mapping</a></li>
-<li><a href="https://zhihaoruan.xyz/2020/08/29/450proj/">Real-Time On-Device Flow Statistics Detection and Prediction</a></li>
-</ul>
-<h3 id="tutorials"><a class="markdownIt-Anchor" href="#tutorials"></a> Tutorials</h3>
-<p><em>Tutorials</em> section contains a lot of guidelines on making use of some really nice softwares to improve your work efficiency.</p>
-<ul>
-<li><a href="https://shineyruan.github.io/2019/03/15/vscode-tutorials/">Visual Studio Code — A Simple Tutorial</a></li>
-<li><a href="https://zhihaoruan.xyz/2019/04/29/vscode-cpp/">Getting Started with C/C++ in Visual Studio Code</a></li>
-<li><a href="https://zhihaoruan.xyz/2019/04/29/vscode-stm32/">Getting Started with Embedded Systems in Visual Studio Code</a></li>
-<li><a href="https://zhihaoruan.xyz/2019/04/29/wox-tutorials/">Wox — Making Your Windows 10 Better!</a></li>
-</ul>
-<h3 id="my-gallery"><a class="markdownIt-Anchor" href="#my-gallery"></a> My Gallery</h3>
-<p>Besides computer science, I’m also fond of photography as well as travelling around the world. I love to write travel journals to commemorate those precious moments.</p>
-<p>When I was travelling, a question that I have been constantly thinking about is “what kind of pictures could represent a city’s culture?” Although a city might have different faces and it sounds impossible for me to reflect all of them in one single picture, I would try to use a series to document them. In my point of view, every single city/town on the earth has its unique culture. Only when one gets really close to the city dwellers can he/she really feels the unique culture of the place.</p>
-<p>The following posts are chapters of my travelling journals. Some of them record what I’m seeing in daily life, while the others might be trying to discover the city’s culture. Hope you would enjoy my work.</p>
-<ul>
-<li><a href="https://zhihaoruan.xyz/2020/05/24/Hong-Kong/">Hong Kong, China</a></li>
-<li><a href="https://zhihaoruan.xyz/2020/05/17/Michigan/">Michigan, USA</a></li>
-<li><a href="https://zhihaoruan.xyz/2020/02/28/Cork/">Cork, Ireland, and the Cliffs of Moher</a></li>
-<li><a href="https://zhihaoruan.xyz/2020/02/28/Dublin/">Dublin, Ireland</a></li>
-<li><a href="https://zhihaoruan.xyz/2019/04/09/Ann-Arbor/">Ann Arbor, MI</a></li>
-<li><a href="https://zhihaoruan.xyz/2019/04/09/Dearborn/">Dearborn, MI</a></li>
-<li><a href="https://zhihaoruan.xyz/2019/03/05/Zhuhai/">Zhuhai, China — Home, Sweet Home</a></li>
-</ul>
-<p><strong>— <em>End of Introduction</em> —</strong></p>
+<p>Notice that my implementation is current not the best option, as it has not incorporate the current orientation of the car and it might cause troubles when the next goal is somewhere behind the vehicle.</p>
+<ol start="3">
+<li><strong>Convert the goal coordinates to local frame before calculating the curvature of the arc.</strong></li>
+</ol>
+<p>As the curvature calculation assumes that our vehicle is always facing in the positive <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> direction, we must convert the goal waypoint into local frame before calculations.</p>
+<ol start="4">
+<li><strong>Use signed curvature for the steering angle.</strong></li>
+</ol>
+<p>In real practice the next waypoint could be either in the front-left or front-right of the vehicle, resulting in the fact that the curvature could either be concave or convex. Hence it is important for us to consider the sign of the curvature so that we can steer our car in the correct direction.</p>
+<h2 id="demo-videos"><a class="markdownIt-Anchor" href="#demo-videos"></a> Demo Videos</h2>
+<p>The Pure Pursuit algorithm with the vehicle running in 5m/s. Green trajectory is the pre-recorded waypoints; red dot is the goal waypoint for the vehicle; blue dot is the current position of the vehicle (using ground truth position in simulator).</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Qs2StzvzXHw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<h2 id="references"><a class="markdownIt-Anchor" href="#references"></a> References</h2>
+<p>F1/10 Autonomous Racing Lecture: Pure Pursuit</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r_FEKkeN_fg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
                 
             </div>
@@ -494,7 +499,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://zhihaoruan.xyz/2020/11/05/Hello-World/">http://zhihaoruan.xyz/2020/11/05/Hello-World/</a>
+                    <a href="http://zhihaoruan.xyz/2021/01/29/f1tenth-lab6/">http://zhihaoruan.xyz/2021/01/29/f1tenth-lab6/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -531,7 +536,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/F1Tenth/">
+                                    <span class="chip bg-color">F1Tenth</span>
+                                </a>
+                            
+                                <a href="/tags/F1-10-Racing/">
+                                    <span class="chip bg-color">F1/10 Racing</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -574,7 +587,7 @@
         repo: 'shineyruan.github.io',
         owner: 'shineyruan',
         admin: "shineyruan",
-        id: '2020-11-05T15-35-01',
+        id: '2021-01-29T19-52-14',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -602,28 +615,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/12/09/560proj/">
+                <a href="/2021/01/29/f1tenth-lab6/">
                     <div class="card-image">
                         
-                        <img src="/images/560-screenshot.png" class="responsive-img" alt="Minecraft Game Programming">
+                        <img src="/images/f1tenth-lab6-cover.png" class="responsive-img" alt="My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker)">
                         
-                        <span class="card-title">Minecraft Game Programming</span>
+                        <span class="card-title">My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            In the fall of 2020, I finally had a chance to explore the field of computer graphics at University of Pennsylvania, and
+                            This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.
+All my source codes can be accessed here.
+Pre
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -636,11 +652,16 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/computer-graphics/">
-                        <span class="chip bg-color">computer graphics</span>
+                    <a href="/tags/F1Tenth/">
+                        <span class="chip bg-color">F1Tenth</span>
+                    </a>
+                    
+                    <a href="/tags/F1-10-Racing/">
+                        <span class="chip bg-color">F1/10 Racing</span>
                     </a>
                     
                 </div>
@@ -654,23 +675,25 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/08/29/450proj/">
+                <a href="/2021/01/27/f1tenth-lab4/">
                     <div class="card-image">
                         
-                        <img src="/images/450_MorphologicalAnalysis.png" class="responsive-img" alt="Real-Time On-Device Flow Statistics Detection and Prediction">
+                        <img src="/images/f1tenth-lab4.png" class="responsive-img" alt="My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance">
                         
-                        <span class="card-title">Real-Time On-Device Flow Statistics Detection and Prediction</span>
+                        <span class="card-title">My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            This project was served as the Undergraduate Major Design Experience at UM-SJTU Joint Institute, Shanghai Jiao Tong Univ
+                            This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.
+All my source codes can be accessed here.
+Pre
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-27
                             </span>
                         <span class="publish-author">
                             
@@ -687,12 +710,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/computer-vision/">
-                        <span class="chip bg-color">computer vision</span>
+                    <a href="/tags/F1Tenth/">
+                        <span class="chip bg-color">F1Tenth</span>
                     </a>
                     
-                    <a href="/tags/raspberry-pi/">
-                        <span class="chip bg-color">raspberry pi</span>
+                    <a href="/tags/F1-10-Racing/">
+                        <span class="chip bg-color">F1/10 Racing</span>
                     </a>
                     
                 </div>
