@@ -388,7 +388,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-01-27
+                    2021-09-12
                 </div>
                 
 
@@ -468,21 +468,21 @@
 <span class="token keyword">public</span><span class="token operator">:</span>
     <span class="token comment">// Read-only public member variable of closest/farthest range</span>
     <span class="token comment">//  within a LaserScan</span>
-    <span class="token keyword">const</span> std_msgs<span class="token operator">::</span>Float64<span class="token operator">&amp;</span> range_closest<span class="token punctuation">;</span>
-    <span class="token keyword">const</span> std_msgs<span class="token operator">::</span>Float64<span class="token operator">&amp;</span> range_farthest<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> std_msgs<span class="token double-colon punctuation">::</span>Float64<span class="token operator">&amp;</span> range_closest<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> std_msgs<span class="token double-colon punctuation">::</span>Float64<span class="token operator">&amp;</span> range_farthest<span class="token punctuation">;</span>
 
     <span class="token comment">// constructor</span>
     <span class="token function">LidarProcessor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">range_closest</span><span class="token punctuation">(</span>_closest<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">range_farthest</span><span class="token punctuation">(</span>_farthest<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
     <span class="token comment">// callback function for LaserScan subscriber</span>
-    <span class="token keyword">void</span> <span class="token function">handleLaserScan</span><span class="token punctuation">(</span><span class="token keyword">const</span> sensor_msgs<span class="token operator">::</span>LaserScanConstPtr<span class="token operator">&amp;</span> new_scan<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        std<span class="token operator">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span> ranges <span class="token operator">=</span> new_scan<span class="token operator">-&gt;</span>ranges<span class="token punctuation">;</span>
+    <span class="token keyword">void</span> <span class="token function">handleLaserScan</span><span class="token punctuation">(</span><span class="token keyword">const</span> sensor_msgs<span class="token double-colon punctuation">::</span>LaserScanConstPtr<span class="token operator">&amp;</span> new_scan<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span> ranges <span class="token operator">=</span> new_scan<span class="token operator">-&gt;</span>ranges<span class="token punctuation">;</span>
 
         <span class="token comment">// find the min/max range from linear search</span>
-        <span class="token keyword">float</span> range_closest <span class="token operator">=</span> std<span class="token operator">::</span><span class="token class-name">numeric_limits</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span><span class="token operator">::</span><span class="token function">infinity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">float</span> range_closest <span class="token operator">=</span> std<span class="token double-colon punctuation">::</span><span class="token class-name">numeric_limits</span><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span><span class="token double-colon punctuation">::</span><span class="token function">infinity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">float</span> range_farthest <span class="token operator">=</span> <span class="token number">0.f</span><span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">float</span><span class="token operator">&amp;</span> r <span class="token operator">:</span> ranges<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>std<span class="token operator">::</span><span class="token function">isnan</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token operator">||</span> std<span class="token operator">::</span><span class="token function">isinf</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>std<span class="token double-colon punctuation">::</span><span class="token function">isnan</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token operator">||</span> std<span class="token double-colon punctuation">::</span><span class="token function">isinf</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> range_closest<span class="token punctuation">)</span> range_closest <span class="token operator">=</span> r<span class="token punctuation">;</span>
             <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&gt;</span> range_farthest<span class="token punctuation">)</span> range_farthest <span class="token operator">=</span> r<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
@@ -495,27 +495,27 @@
     <span class="token punctuation">}</span>
 
 <span class="token keyword">private</span><span class="token operator">:</span>
-    std_msgs<span class="token operator">::</span>Float64 _closest<span class="token punctuation">;</span>
-    std_msgs<span class="token operator">::</span>Float64 _farthest<span class="token punctuation">;</span>
+    std_msgs<span class="token double-colon punctuation">::</span>Float64 _closest<span class="token punctuation">;</span>
+    std_msgs<span class="token double-colon punctuation">::</span>Float64 _farthest<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
 <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> argv<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    ros<span class="token operator">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">"laser_scan_subscriber"</span><span class="token punctuation">,</span> ros<span class="token operator">::</span>init_options<span class="token operator">::</span>AnonymousName<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ros<span class="token operator">::</span>NodeHandle nh<span class="token punctuation">;</span>
-    ros<span class="token operator">::</span>Rate <span class="token function">loop_rate</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">,</span> <span class="token string">"laser_scan_subscriber"</span><span class="token punctuation">,</span> ros<span class="token double-colon punctuation">::</span>init_options<span class="token double-colon punctuation">::</span>AnonymousName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span>NodeHandle nh<span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span>Rate <span class="token function">loop_rate</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     LidarProcessor processor<span class="token punctuation">;</span>
 
-    ros<span class="token operator">::</span>Subscriber laserScan_subscriber <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">"/scan"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>LidarProcessor<span class="token operator">::</span>handleLaserScan<span class="token punctuation">,</span> <span class="token operator">&amp;</span>processor<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ros<span class="token operator">::</span>Publisher closestPoint_publisher <span class="token operator">=</span> nh<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>std_msgs<span class="token operator">::</span>Float64<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"/closest_point"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ros<span class="token operator">::</span>Publisher farthestPoint_publisher <span class="token operator">=</span> nh<span class="token punctuation">.</span>advertise<span class="token operator">&lt;</span>std_msgs<span class="token operator">::</span>Float64<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"/farthest_point"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span>Subscriber laserScan_subscriber <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token string">"/scan"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>LidarProcessor<span class="token double-colon punctuation">::</span>handleLaserScan<span class="token punctuation">,</span> <span class="token operator">&amp;</span>processor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span>Publisher closestPoint_publisher <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">advertise</span><span class="token generic class-name"><span class="token operator">&lt;</span>std_msgs<span class="token double-colon punctuation">::</span>Float64<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token string">"/closest_point"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ros<span class="token double-colon punctuation">::</span>Publisher farthestPoint_publisher <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">advertise</span><span class="token generic class-name"><span class="token operator">&lt;</span>std_msgs<span class="token double-colon punctuation">::</span>Float64<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token string">"/farthest_point"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>ros<span class="token operator">::</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>ros<span class="token double-colon punctuation">::</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         closestPoint_publisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>processor<span class="token punctuation">.</span>range_closest<span class="token punctuation">)</span><span class="token punctuation">;</span>
         farthestPoint_publisher<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>processor<span class="token punctuation">.</span>range_farthest<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         loop_rate<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        ros<span class="token operator">::</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ros<span class="token double-colon punctuation">::</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -571,9 +571,13 @@ std_msgs/Float64 range_max
 <p>By default the bag file is saved at the current directory. We can also change the directory by appending <code>args=../bagfiles/my_rosbag_recordings.bag</code> to the corresponding node in the launch file.</p>
 <h2 id="references"><a class="markdownIt-Anchor" href="#references"></a> References</h2>
 <p>F1/10 Autonomous Racing Lecture: Course Introduction</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zENhppcxwzY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/zENhppcxwzY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 <p>F1/10 Autonomous Racing Lecture: Using the Simulator</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Q71OKxztppA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/Q71OKxztppA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
 
                 
             </div>
