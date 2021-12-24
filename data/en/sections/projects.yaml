@@ -1,0 +1,126 @@
+# section information
+section:
+  name: Projects
+  id: projects
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+  - name: All
+    filter: "all"
+  - name: Professional
+    filter: "professional"
+  - name: Academic
+    filter: "academic"
+  - name: Hobby
+    filter: "hobby"
+
+# your projects
+projects:
+  - name: CAD2CAV
+    # logo: /images/sections/projects/kubernetes.png
+    role: Developer
+    timeline: "Feb 2021 - Present"
+    repo: https://github.com/mlab-upenn/ISP2021-cad2cav # If your project is a public repo on GitHub, then provide this link. it will show star count.
+    #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+    summary: Multi-agent path planning and exploration in unknown environments.
+    tags:
+      [
+        "f1tenth",
+        "academic",
+        "robotics",
+        "autonomous-driving",
+        "motion planning",
+      ]
+
+  - name: Volume-ReSTIR-Vulkan
+    # logo: /images/sections/projects/tensorflow.png
+    role: Developer
+    timeline: "Nov 2021 - Dec 2021"
+    repo: https://github.com/TheSmokeyGuys/Volume-ReSTIR-Vulkan
+    #url: ""
+    summary: Vulkan implementation for volume rendering with ReSTIR.
+    tags: ["academic", "computer-graphics", "vulkan", "rendering", "restir"]
+
+  - name: Vulkan Grass Rendering
+    # logo: /images/sections/projects/tensorflow.png
+    role: Owner
+    timeline: "Nov 2021"
+    repo: https://github.com/shineyruan/Vulkan-Grass-Rendering
+    #url: ""
+    summary: Vulkan renderer of grass blades with animation in compute shader.
+    tags: ["academic", "computer-graphics", "rendering", "vulkan"]
+
+  - name: CUDA Path Tracer
+    # logo: /images/sections/projects/tensorflow.png
+    role: Owner
+    timeline: "Oct 2021 - Nov 2021"
+    repo: https://github.com/shineyruan/CUDA-Path-Tracer
+    #url: ""
+    summary: CUDA implementation of software path tracing with À-Trous denoiser.
+    tags: ["academic", "computer-graphics", "rendering", "ray-tracing"]
+
+  - name: BicycleGAN in PyTorch
+    # logo: /images/sections/projects/tensorflow.png
+    role: Owner
+    timeline: "Nov 2020"
+    repo: https://github.com/shineyruan/multimodal-GAN
+    #url: ""
+    summary: PyTorch implementation of BicycleGAN.
+    tags:
+      ["academic", "robotics", "computer-vision", "deep-learning", "pytorch"]
+
+  - name: Faster RCNN in PyTorch
+    # logo: /images/sections/projects/tensorflow.png
+    role: Owner
+    timeline: "Nov 2020"
+    repo: https://github.com/shineyruan/faster-rcnn-toy
+    #url: ""
+    summary: PyTorch implementation of Faster RCNN.
+    tags:
+      ["academic", "robotics", "computer-vision", "deep-learning", "pytorch"]
+
+  - name: DOAPP
+    # logo: /images/sections/projects/tensorflow.png
+    role: Developer
+    timeline: "Oct 2019 - Dec 2019"
+    repo: https://github.com/EECS467-DOAPP/doapp
+    #url: ""
+    summary: Dynamic Obstacle Avoidance and Path Planning for robotic manipulators.
+    tags: ["academic", "robotics", "motion-planning"]
+
+  - name: Don't Step on White Tiles
+    # logo: /images/sections/projects/tensorflow.png
+    role: Developer
+    timeline: "Mar 2019 - May 2019"
+    url: "https://zhihaoruan.xyz/2019/05/03/373Proj/"
+    summary: 3D interactive version of 'Don't Step on White Tiles' implemented on an embedded system with FPGA.
+    tags: ["academic", "robotics", "motion-planning"]
+
+  # - name: A sample academic paper
+  #   role: Team Lead
+  #   timeline: "Jan 2017 - Nov 2017"
+  #   url: "https://www.example.com"
+  #   summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eius reprehenderit animi suscipit autem eligendi esse amet aliquid error eum. Accusantium distinctio soluta aliquid quas placeat modi suscipit eligendi nisi.
+  #   tags: ["academic", "iot"]
+
+  # - name: Nocode
+  #   logo: /images/sections/projects/no-code.png
+  #   role: Nothing
+  #   timeline: "Oct 2019 - Dec 2019"
+  #   repo: https://github.com/kelseyhightower/nocode
+  #   #url: ""
+  #   summary: The best way to write secure and reliable applications. Write nothing; deploy nowhere.
+  #   tags: ["hobby", "fun"]
+
+  # - name: Toha
+  #   logo: /images/sections/projects/toha.png
+  #   role: Owner
+  #   timeline: "Jun 2019 - Present"
+  #   repo: https://github.com/hossainemruz/toha
+  #   summary: A Hugo theme for personal portfolio.
+  #   tags: ["hobby", "hugo", "theme", "professional"]

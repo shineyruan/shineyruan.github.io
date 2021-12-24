@@ -1,0 +1,63 @@
+# section information
+section:
+  name: Experiences
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your experiences
+experiences:
+  - company:
+      name: xLab, University of Pennsylvania
+      url: "https://mlab-upenn.github.io/lab_website/"
+      location: Philadelphia, PA
+      # company overview
+      overview: xLab is a research lab at University of Pennsylvania lead by Prof. Rahul Mangharam targeting at developing critical systems and autonomous systems.
+    positions:
+      - designation: Graduate Research Assistant
+        start: Feb 2021
+        # don't provide end date if you are currently working there. It will be replaced by "Present"
+        # end: Dec 2020
+        # give some points about what was your responsibilities at the company.
+        responsibilities:
+          - Working on Project CAD2CAV, an unknown environment exploration and mapping project for multiple vehicles.
+          - Wrote graph-based multi-agent path planner in ROS and C++ with Ant Colony Optimization solver for Capacitated Vehicle Routing Problem, Spectral Clustering, and k-Way Graph Partitioning.
+          - Implemented FMT* for real-time obstacle avoidance and Pure Pursuit as the controller for F1/10 autonomous racing vehicles.
+
+      # - designation: Junior Software Engineer
+      #   start: Nov 2017
+      #   end: Oct 2019
+      #   responsibilities:
+      #     - Implement and test xyz feature for abc tool.
+      #     - Support client for abc tool.
+      #     - Learn k,d,w technology for xyz.
+
+  - company:
+      name: TuSimple, Inc.
+      url: "https://www.tusimple.com/"
+      location: San Diego, CA
+      overview: TuSimple is an autonomous trucking company that builds world-leading autonomous driving trucks and autonomous freight network (AFN).
+    positions:
+      - designation: Planning Research Engineer Intern
+        start: May 2021
+        end: August 2021
+        responsibilities:
+          - Developed motion planning softwares and algorithms for autonomous driving trucks.
+
+  - company:
+      name: Interactive Sensing and Computing (ISC) Lab, University of Michigan
+      url: "http://www.alansonsample.com/"
+      location: Ann Arbor, MI
+      overview: ISC Lab is a research lab at University of Michigan lead by Prof. Alanson Sample that builds embedded systems for medical research and Human-Computer Interface (HCI) applications.
+    positions:
+      - designation: Undergraduate Research Assistant
+        start: Jan 2019
+        end: Dec 2019
+        responsibilities:
+          - Built an embedded system in C & MATLAB with STM32 microprocessor and Panasonic's GridEye 8x8 IR sensor through I2C & UART that can collect, detect and visualize heat distribution in the room.
+          - Constructed a complete C API for Panasonic's GridEye 8x8 IR sensor for STM32 microprocessor from scratch.
+          - Implemented Direct Digital Synthesis (DDS) in C of a frequency-sweep ultrasonic sine wave from 39kHz to 41kHz with STM32 microprocessor and ultrasonic transducers.
+          - Designed two different ultrasound distance measurement algorithms in Python including FMCW (Frequency-Modulated Continuous Wave) algorithm and phase-based ranging algorithm with STM32 microprocessor.
