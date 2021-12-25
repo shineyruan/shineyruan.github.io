@@ -17,6 +17,9 @@ markup:
     startLevel: 2
     endLevel: 6
     ordered: false
+  goldmark:
+    renderer:
+      unsafe: true
 
 # Enable global emoji support
 enableEmoji: true
