@@ -37,6 +37,15 @@ projects:
         "motion planning",
       ]
 
+  - name: F1Tenth Labs
+    # logo: /images/sections/projects/kubernetes.png
+    role: Owner
+    timeline: "Feb 2021"
+    repo: https://github.com/shineyruan/F1Tenth_Labs # If your project is a public repo on GitHub, then provide this link. it will show star count.
+    #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+    summary: Lab implementation for F1Tenth autonomous racing course
+    tags: ["f1tenth", "academic", "robotics", "autonomous-driving"]
+
   - name: Volume-ReSTIR-Vulkan
     # logo: /images/sections/projects/tensorflow.png
     role: Developer
@@ -99,7 +108,7 @@ projects:
     timeline: "Mar 2019 - May 2019"
     url: "https://zhihaoruan.xyz/2019/05/03/373Proj/"
     summary: 3D interactive version of 'Don't Step on White Tiles' implemented on an embedded system with FPGA.
-    tags: ["academic", "robotics", "motion-planning"]
+    tags: ["academic", "embedded-systems", "electronics"]
 
   # - name: A sample academic paper
   #   role: Team Lead
