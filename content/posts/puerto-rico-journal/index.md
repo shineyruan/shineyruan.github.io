@@ -1,5 +1,5 @@
 ---
-caption: ¡HOLA! Puerto Rico — 波多黎各：逃离大雪的海边度假计划
+title: ¡HOLA! Puerto Rico — 波多黎各：逃离大雪的海边度假计划
 date: 2020-03-13 18:45:19
 description: Zhihao's travel journal to Puerto Rico
 # hero: /images/posts/introduction/RZH8697post.jpg

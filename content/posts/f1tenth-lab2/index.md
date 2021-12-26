@@ -18,7 +18,7 @@ math: true
 ***All my source codes can be accessed [here](https://github.com/shineyruan/F1Tenth_Labs).***
 
 **Previous post:**
-- [My F1TENTH Journey — Lab 1, Introduction to ROS](https://zhihaoruan.xyz/2021/01/24/f1tenth-lab1/)
+- [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/f1tenth-lab1/index.md" >}})
 
 <!-- more -->
 
