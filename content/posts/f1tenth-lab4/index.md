@@ -36,7 +36,7 @@ In theory, "Follow the Gap" planner can be done in the several steps:
 3. Find maximum length sequence of consecutive non-zero endpoints and identify the "widest" free space. (The **max-gap.**)
 4. Choose the furthest endpoint in the max-gap, and steer the vehicle in that direction with some certain speed.
 
-!["Follow the Gap" Algorithms in diagrams.](f1tenth-lab4.png)
+{{< figure src="f1tenth-lab4.png" caption="'Follow the Gap' Algorithms in diagrams." >}}
 
 ### Notes in Real Practice
 1. **Laser scan data must be smoothed and de-noised.**
@@ -53,8 +53,7 @@ which gives us the distance between the two endpoints.
 
 One of the corner case in testing the algorithm is the corner of the wall. As the figure indicates below, the car detects the corner of the wall and has marked it as an obstacle, setting all points within the safety bubble as 0. However, *the laser beam direction that detects the farthest endpoint in the max-gap happens to be right next to the obstacle,* causing the car to make a left turn rather than right turn, and directly hits the wall.
 
-<p align="center">
-    <img src="f1tenth-lab4-safety-angle.png" alt="Demonstration of a corner case without safety angle." width="400">
+{{< figure src="f1tenth-lab4-safety-angle.png" caption="Demonstration of a corner case without safety angle." width="400" >}}
 
 To address this issue, I added a "safety angle" around the bubble, which basically sets the laser beams too close to the direction of obstacles to distance 0. For instance, a safety angle of 20 degrees would set additional laser beams in the direction leftwards of the bubble by 20 degrees and rightwards of that bubble by 20 degrees also to 0. This simple method would prevent the vehicle to get too close to the obstacle, even if the best direction of free space happens to be next to the obstacle.
 

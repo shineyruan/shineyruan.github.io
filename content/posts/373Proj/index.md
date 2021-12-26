@@ -33,7 +33,7 @@ Our final project is "Step on the White Tiles", which is inspired by a popular m
 
 Interactive gaming system has been developing fast for the past decades. From the Wii Remote controller created by Nintendo to the PlayStation series controller invented by Sony, it seems that people has become more and more fascinated about interactive gaming. Inspired by the existing interactive gaming system solutions, I, along with [Regina (Jingliang Ren)](https://regina8023.github.io), [Ken (Kun Huang)](https://voyager1998.github.io) and Shiyu Liu planned to develop a simple interactive gaming system based on [Actel SmartFusion&reg; SoC FPGA](https://www.microsemi.com/product-directory/soc-fpgas/1693-smartfusion), which is a simple implementation of a popular mobile game *Don't Tap the White Tiles* into the real world.
 
-![A basic user interface for the original mobile game, Don't Tap the White Tiles.](373_intro.png)
+{{< figure src="373_intro.png" caption="A basic user interface for the original mobile game, Don't Tap the White Tiles." width="400" >}}
 
 ## Game Rules
 
@@ -226,7 +226,7 @@ For more details, [a document that I have referred to](http://uzebox.org/files/N
 
 On the back of the NES controller, it is actually organized as the following figure shows.
 
-![An inside view of an NES controller.](373Proj_controller_back.jpg)
+{{< figure src="373Proj_controller_back.jpg" caption="An inside view of an NES controller." >}}
 
 We can see that there're five wires: brown, red, orange, yellow, white. The functions of these wires are summarized below.
 
@@ -251,7 +251,7 @@ The states of the 8 buttons (pressed/not pressed) will be provided at the `data_
 
 Based on the above rules, we can create a logic in Verilog that keeps reading the button states of the NES controller in the background. To keep things simple, we use APB interface to interact with the C coding parts, and we organize the 8 button states to be in the form of an 8-bit integer in a specific APB address that can be accessed with C code.
 
-![This figure shows the 8-bit integer data format we're using for NES controller.](373_controller_data.png)
+{{< figure src="373_controller_data.png" caption="This figure shows the 8-bit integer data format we're using for NES controller." >}}
 
 As we're using 25MHz clock on our SmartFusion&reg; board, we need to extend our clock signal to $12\mu\rm{s}$. Thus, we need a clock divider.
 
@@ -339,7 +339,7 @@ end
 
 We use [Sparkfun's $20\times4$ serial enabled LCD display](https://www.sparkfun.com/products/9568) in our project. The interface of this LCD is actually really simple &mdash; just UART. If you send a character `a` to it through UART, it will display an "a" on the screen; if you send a string `Hello World` to it, it will display "Hello World".
 
-![A typical Sparkfun's 20x4 LCD display.](373Proj_lcd.jpg)
+{{< figure src="373Proj_lcd.jpg" caption="A typical Sparkfun's 20x4 LCD display." >}}
 
 It is worth noticing that this LCD module displays characters based on the position of a cursor. This is very similar to writing on a text file. The character sent to the module will always be written at the position of the cursor. For instance, if the current cursor position is at the first position of the first line, the incoming character `a` will then be displayed at the first position in the first line. What is worth mentioning is that there are some special ASCII character pairs that have special meanings and have been hard-coded into the LCD module. For example, some of these special characters are:
 
@@ -367,7 +367,7 @@ For more detailed information, please visit our [GitHub repo](https://github.com
 
 According to the [official documentation](https://docs.pixycam.com/wiki/doku.php?id=wiki:v1:porting_guide), Pixy camera has the following available ports:
 
-![The available ports and its corresponding functionality on Pixy camera.](373Proj_pixy_porting.jpg)
+{{< figure src="373Proj_pixy_porting.jpg" caption="The available ports and its corresponding functionality on Pixy camera." >}}
 
 with the numbering convention (looking at the back of Pixy):
 

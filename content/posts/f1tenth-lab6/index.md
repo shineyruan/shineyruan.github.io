@@ -33,12 +33,12 @@ The Pure Pursuit algorithm accounts for the non-holonomic constraints and the sp
 
 But since the vehicle is non-holonomic, how can we steer towards the next waypoint properly? Setting the exact direction of the next waypoint from the current vehicle position is not feasible, as the vehicle is always in high speed and might overshoot the desired goal. One alternative option tries to interpolate the trajectory by finding an arc between the current position and the next waypoint (goal), which can be showed as the figure below.
 
-![Arc interpolation between current position and goal.](f1tenth-lab6-arc.jpg)
+{{< figure src="f1tenth-lab6-arc.jpg" caption="Arc interpolation between current position and goal." >}}
 
 However there are infinitely many arcs between two points, and each of them has a different radius (curvature). Therefore we would like to add one more constraint to the arc: its center of radius must lie on the $y$ axis. In such way we can always find a unique arc interpolation for our trajectory, and it can be solved by simple math. After solving the geometry we can get the radius of the arc:
 $$r=\frac{L^2}{2|y|}$$
 
-![Finding the steering angle from the arc interpolation.](f1tenth-lab6-steer.jpg)
+{{< figure src="f1tenth-lab6-steer.jpg" caption="Finding the steering angle from the arc interpolation." >}}
 
 Finally, we can simply set the steering angle proportional to the curvature of the arc: 
 ```cpp

@@ -38,8 +38,7 @@ $$u(t)=K_p e(t) + K_i \int_0^t e(\tau) d\tau + K_d \frac{d}{dt}e(t).$$
 where $K_p$, $K_i$ and $K_d$ are tunable weight parameters of the controller, $e(t)$ is the error of current state to the desired state, and $u(t)$ is the control output.
 
 ## Wall Following
-<p align="center">
-    <img src="f1tenth-lab3-car.png" alt="Distance and orientation of the car relative to the wall." width="400">
+{{< figure src="f1tenth-lab3-car.png" caption="Distance and orientation of the car relative to the wall." width="400" >}}
 
 In the context of our car, we would like to maintain the distance between the wall and our car at a certain desired value. In the image above, we can see that the parameter we would like to control is $D_t$, while we only have LiDAR laser scans in the local car coordinate frame (positive $x$ as the forward direction of the car). 
 
@@ -52,8 +51,7 @@ As we wish to maintain $D_t$ around a certain set point, we define the error ter
 
 What's more, we would also like to define a **look-ahead distance** as in real practice our car will be running in high speed and there might be some delays for the car to maneuver as our control command is sent.
 
-<p align="center">
-    <img src="f1tenth-lab3-lookahead.png" alt="Finding the look-ahead distance from the car to the wall." width="400">
+{{< figure src="f1tenth-lab3-lookahead.png" caption="Finding the look-ahead distance from the car to the wall." width="400" >}}
 
 The look-ahead distance $D_{t+1}$ can be defined as $D_{t+1}=D_t+L\sin\alpha$, where $L$ is some tunable parameters.
 
