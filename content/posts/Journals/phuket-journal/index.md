@@ -4,6 +4,12 @@ tags: ["Photography", "Travel Journal", "Multi-lingual"]
 categories: ["Travel Journals"]
 date: 2020-01-14 16:12:17
 hero: /images/posts/phuket-journal/RZH6667post.jpg
+menu:
+  sidebar:
+    name: Phuket Journal
+    identifier: travel-journals-phuket-journal
+    parent: travel-journals
+    weight: 100
 ---
 
 
