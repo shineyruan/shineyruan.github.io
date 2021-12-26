@@ -1,0 +1,90 @@
+# section information
+section:
+  name: Education
+  id: education
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+degrees:
+  - name: M.S.E. in Robotics
+    icon: fas fa-robot
+    timeframe: 2020-2022
+    institution:
+      name: University of Pennsylvania
+      url: "https://www.upenn.edu/"
+    grade:
+      scale: GPA
+      achieved: 4.0
+      outOf: 4.0
+    takenCourses:
+      # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
+      showGrades: false
+      courses:
+        - name: CIS 700 Probabilistic Methods in Machine Learning
+        - name: CIS 565 GPU Programming & Architecture
+          achieved: 3
+          outOf: 4
+        - name: ESE 514 Graph Neural Networks
+        - name: ESE 605 Modern Convex Optimization
+          achieved: 4
+          outOf: 4
+        - name: CIS 680 Advanced Topics in Machine Perception
+          achieved: 4
+          outOf: 4
+        - name: ESE 650 Learning in Robotics
+          achieved: 4
+          outOf: 4
+        - name: CIS 560 Introduction to Computer Graphics
+          achieved: 4.0
+          outOf: 4.0
+    # publications:
+    #   - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    #     url: "#"
+    #   - title: Fusce eu augue ut odio porttitor pulvinar.
+    #     url: "#"
+    #   - title: Nullam vitae orci tincidunt purus viverra pulvinar.
+    #     url: "#"
+  - name: B.S. in Computer Science Engineering
+    icon: fa-graduation-cap
+    timeframe: 2018-2020
+    institution:
+      name: University of Michigan
+      url: "https://umich.edu/"
+    grade:
+      scale: GPA
+      achieved: 3.9
+      outOf: 4
+    takenCourses:
+      # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
+      showGrades: false
+      courses:
+        - name: EECS 482 Operating System
+        - name: EECS 467 Autonomous Robotics
+        - name: EECS 281 Data Structures and Algorithm
+        - name: EECS 442 Introduction to Computer Vision
+        - name: EECS 373 Introduction to Embedded Systems Design
+    # publications:
+    #   - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    #     url: "#"
+    #   - title: Fusce eu augue ut odio porttitor pulvinar.
+    #     url: "#"
+    # extracurricularActivities:
+    #   - In vitae facilisis est, eget porta sem.
+    #   - Vestibulum consectetur lorem justo, at laoreet lorem feugiat et.
+    #   - Duis sed massa feugiat, ornare justo et, aliquam est.
+    #   - Pellentesque ut fringilla magna.
+  - name: B.S. in Electrical and Computer Engineering
+    icon: fa-university
+    timeframe: 2016-2020
+    institution:
+      name: Shanghai Jiao Tong University (UM-SJTU Joint Institute)
+      url: "https://www.ji.sjtu.edu.cn/"
+    grade:
+      scale: GPA
+      achieved: 3.6
+      outOf: 4
+    extracurricularActivities:
+      - Deputy Director of Media Department, Student's Union
