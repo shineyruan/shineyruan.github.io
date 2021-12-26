@@ -1,82 +1,112 @@
-var searchFunc = function (path, search_id, content_id) {
-    'use strict';
-    $.ajax({
-        url: path,
-        dataType: "xml",
-        success: function (xmlResponse) {
-            // get the contents from search data
-            var datas = $("entry", xmlResponse).map(function () {
-                return {
-                    title: $("title", this).text(),
-                    content: $("content", this).text(),
-                    url: $("url", this).text()
-                };
-            }).get();
-            var $input = document.getElementById(search_id);
-            var $resultContent = document.getElementById(content_id);
-            $input.addEventListener('input', function () {
-                var str = '<ul class=\"search-result-list\">';
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                $resultContent.innerHTML = "";
-                if (this.value.trim().length <= 0) {
-                    return;
-                }
-                // perform local searching
-                var cnt = 1;
-                datas.forEach(function (data) {
-                    var isMatch = true;
-                    var content_index = [];
-                    var data_title = data.title.trim().toLowerCase();
-                    var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                    var data_url = data.url;
-                    var index_title = -1;
-                    var index_content = -1;
-                    var first_occur = -1;
-                    // only match artiles with not empty titles and contents
-                    if (data_title != '' && data_content != '') {
-                        keywords.forEach(function (keyword, i) {
-                            index_title = data_title.indexOf(keyword);
-                            index_content = data_content.indexOf(keyword);
-                            if (index_title < 0 && index_content < 0) {
-                                isMatch = false;
-                            } else {
-                                if (index_content < 0) {
-                                    index_content = 0;
-                                }
-                                if (i == 0) {
-                                    first_occur = index_content;
-                                }
-                            }
-                        });
-                    }
-                    // show search results
-                    if (isMatch) {
-                        str += "<li><a href='" + data_url + "' class='search-result-title'>" + String(cnt) + ". " + data_title + "</a>";
-                        cnt += 1;
+summaryInclude=60;
+var fuseOptions = {
+  shouldSort: true,
+  includeMatches: true,
+  threshold: 0.0,
+  tokenize:true,
+  location: 0,
+  distance: 100,
+  maxPatternLength: 32,
+  minMatchCharLength: 1,
+  keys: [
+    {name:"title",weight:0.8},
+    {name:"hero",weight:0.7},
+    {name:"summary",weight:0.6},
+    {name:"date",weight:0.5},
+    {name:"contents",weight:0.5},
+    {name:"tags",weight:0.3},
+    {name:"categories",weight:0.3}
+  ]
+};
 
-                        var content = data.content.trim().replace(/<[^>]+>/g, "");
-                        if (first_occur >= 0) {
-                            // cut out 100 characters
-                            var start = first_occur - 20;
-                            if (start < 0) {
-                                start = 0;
-                            }
-                            var match_content = content.substr(start, 100);
-                            // highlight all keywords
-                            keywords.forEach(function (keyword) {
-                                var regS = new RegExp(keyword, "gi");
-                                match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                            });
 
-                            str += "<p class=\"search-result\">" + match_content + "...</p>"
-                        }
-                        str += "</li>";
-                    }
-                });
-                str += "</ul>";
-                str = "<p class=\"search-result-summary\">共找到" + String(cnt-1) + "条结果</p>"  + str;
-                $resultContent.innerHTML = str;
-            });
+var searchQuery = param("keyword");
+if(searchQuery){
+  $("#search-query").val(searchQuery);
+  executeSearch(searchQuery);
+}else {
+  $('#search-results').append("<p>Please enter a word or phrase above</p>");
+}
+
+
+
+function executeSearch(searchQuery){
+  $.getJSON( window.location.href.split("/search/")[0] + "/index.json", function( data ) {
+    var pages = data;
+    var fuse = new Fuse(pages, fuseOptions);
+    var result = fuse.search(searchQuery);
+    // console.log({"matches":result});
+    document.getElementById("search-box").value = searchQuery
+    if(result.length > 0){
+      populateResults(result);
+    }else{
+      $('#search-results').append("<p>No matches found</p>");
+    }
+  });
+}
+
+function populateResults(result){
+  $.each(result,function(key,value){
+    var contents= value.item.contents;
+    var snippet = "";
+    var snippetHighlights=[];
+    var tags =[];
+    if( fuseOptions.tokenize ){
+      snippetHighlights.push(searchQuery);
+    }else{
+      $.each(value.matches,function(matchKey,mvalue){
+        if(mvalue.key == "tags" || mvalue.key == "categories" ){
+          snippetHighlights.push(mvalue.value);
+        }else if(mvalue.key == "contents"){
+          start = mvalue.indices[0][0]-summaryInclude>0?mvalue.indices[0][0]-summaryInclude:0;
+          end = mvalue.indices[0][1]+summaryInclude<contents.length?mvalue.indices[0][1]+summaryInclude:contents.length;
+          snippet += contents.substring(start,end);
+          snippetHighlights.push(mvalue.value.substring(mvalue.indices[0][0],mvalue.indices[0][1]-mvalue.indices[0][0]+1));
         }
+      });
+    }
+
+    if(snippet.length<1){
+      snippet += contents.substring(0,summaryInclude*2);
+    }
+    //pull template from hugo templarte definition
+    var templateDefinition = $('#search-result-template').html();
+    //replace values
+    var output = render(templateDefinition,{key:key,title:value.item.title,hero:value.item.hero,date:value.item.date,summary:value.item.summary,link:value.item.permalink,tags:value.item.tags,categories:value.item.categories,snippet:snippet});
+    $('#search-results').append(output);
+
+    $.each(snippetHighlights,function(snipkey,snipvalue){
+      $("#summary-"+key).mark(snipvalue);
     });
+
+  });
+}
+
+function param(name) {
+    return decodeURIComponent((location.search.split(name + '=')[1] || '').split('&')[0]).replace(/\+/g, ' ');
+}
+
+function render(templateString, data) {
+  var conditionalMatches,conditionalPattern,copy;
+  conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+  //since loop below depends on re.lastInxdex, we use a copy to capture any manipulations whilst inside the loop
+  copy = templateString;
+  while ((conditionalMatches = conditionalPattern.exec(templateString)) !== null) {
+    if(data[conditionalMatches[1]]){
+      //valid key, remove conditionals, leave contents.
+      copy = copy.replace(conditionalMatches[0],conditionalMatches[2]);
+    }else{
+      //not valid, remove entire section
+      copy = copy.replace(conditionalMatches[0],'');
+    }
+  }
+  templateString = copy;
+  //now any conditionals removed we can do simple substitution
+  var key, find, re;
+  for (key in data) {
+    find = '\\$\\{\\s*' + key + '\\s*\\}';
+    re = new RegExp(find, 'g');
+    templateString = templateString.replace(re, data[key]);
+  }
+  return templateString;
 }
