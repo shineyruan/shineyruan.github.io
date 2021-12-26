@@ -16,7 +16,7 @@ Welcome to my personal website! I am a first-year robotics master's student at t
 
 <!-- more -->
 
-![A picture of myself.](RZH8697post.jpg)
+{{< figure src="RZH8697post.jpg" caption="A picture of myself." >}}
 
 ## Relevant Classes
 
