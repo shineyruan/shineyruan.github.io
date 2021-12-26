@@ -85,12 +85,10 @@ When I was travelling, a question that I have been constantly thinking about is 
 
 The following posts are chapters of my travelling journals. Some of them record what I'm seeing in daily life, while the others might be trying to discover the city's culture. Hope you would enjoy my work.
 
-* [Hong Kong, China](https://zhihaoruan.xyz/2020/05/24/Hong-Kong/)
-* [Michigan, USA](https://zhihaoruan.xyz/2020/05/17/Michigan/)
-* [Cork, Ireland, and the Cliffs of Moher](https://zhihaoruan.xyz/2020/02/28/Cork/)
-* [Dublin, Ireland](https://zhihaoruan.xyz/2020/02/28/Dublin/)
-* [Ann Arbor, MI](https://zhihaoruan.xyz/2019/04/09/Ann-Arbor/)
-* [Dearborn, MI](https://zhihaoruan.xyz/2019/04/09/Dearborn/)
-* [Zhuhai, China &mdash; Home, Sweet Home](https://zhihaoruan.xyz/2019/03/05/Zhuhai/)
+* [Hong Kong, China]({{< ref "/posts/Gallery/hong-kong/index.md" >}})
+* [Michigan, USA]({{< ref "/posts/Gallery/michigan/index.md" >}})
+* [Ireland]({{< ref "/posts/Gallery/dublin/index.md" >}})
+* [Ann Arbor, MI]({{< ref "/posts/Gallery/ann-arbor/index.md" >}})
+* [Zhuhai, China &mdash; Home, Sweet Home]({{< ref "/posts/Gallery/zhuhai/index.md" >}})
 
 **--- *End of Introduction* ---**

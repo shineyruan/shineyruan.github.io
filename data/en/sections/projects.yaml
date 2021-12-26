@@ -106,7 +106,7 @@ projects:
     # logo: /images/sections/projects/tensorflow.png
     role: Developer
     timeline: "Mar 2019 - May 2019"
-    url: "https://zhihaoruan.xyz/2019/05/03/373Proj/"
+    url: "https://zhihaoruan.xyz/posts/projects/373proj/"
     summary: 3D interactive version of 'Don't Step on White Tiles' implemented on an embedded system with FPGA.
     tags: ["academic", "embedded-systems", "electronics"]
 
