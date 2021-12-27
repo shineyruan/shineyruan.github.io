@@ -7,8 +7,8 @@ hero: /images/posts/f1tenth-lab1/f1tenth-lab1.png
 menu:
   sidebar:
     name: F1Tenth Course Lab 1
-    identifier: projects-f1tenth-lab1
-    parent: projects
+    identifier: projects-f1tenth-labs-lab1
+    parent: projects-f1tenth-labs
     weight: 10
 tags: ["F1Tenth", "F1Tenth Racing", "Multi-lingual"]
 categories: ["Projects"]

@@ -6,8 +6,8 @@ theme: Toha
 menu:
   sidebar:
     name: F1Tenth Course Lab 3
-    identifier: projects-f1tenth-lab3
-    parent: projects
+    identifier: projects-f1tenth-labs-lab3
+    parent: projects-f1tenth-labs
     weight: 10
 tags: ["F1Tenth", "F1Tenth Racing", "Multi-lingual"]
 categories: ["Projects"]
@@ -20,8 +20,8 @@ hero: /images/posts/f1tenth-lab3/f1tenth-lab3-car.png
 ***All my source codes can be accessed [here](https://github.com/shineyruan/F1Tenth_Labs).***
 
 **Previous post:**
-- [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/Projects/f1tenth-lab1/index.md" >}})
-- [My F1TENTH Journey — Lab 2, Automatic Emergency Braking]({{< ref "/posts/Projects/f1tenth-lab2/index.md" >}})
+- [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab1/index.md" >}})
+- [My F1TENTH Journey — Lab 2, Automatic Emergency Braking]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab2/index.md" >}})
 
 <!-- more -->
 

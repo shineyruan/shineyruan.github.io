@@ -7,8 +7,8 @@ theme: Toha
 menu:
   sidebar:
     name: F1Tenth Course Lab 6
-    identifier: projects-f1tenth-lab6
-    parent: projects
+    identifier: projects-f1tenth-labs-lab6
+    parent: projects-f1tenth-labs
     weight: 10
 tags: ["F1Tenth", "F1Tenth Racing", "Multi-lingual"]
 categories: ["Projects"]
@@ -20,10 +20,10 @@ math: true
 ***All my source codes can be accessed [here](https://github.com/shineyruan/F1Tenth_Labs).***
 
 **Previous post:**
-- [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/Projects/f1tenth-lab1/index.md" >}})
-- [My F1TENTH Journey — Lab 2, Automatic Emergency Braking]({{< ref "/posts/Projects/f1tenth-lab2/index.md" >}})
-- [My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower]({{< ref "/posts/Projects/f1tenth-lab3/index.md" >}})
-- [My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance]({{< ref "/posts/Projects/f1tenth-lab4/index.md" >}})
+- [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab1/index.md" >}})
+- [My F1TENTH Journey — Lab 2, Automatic Emergency Braking]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab2/index.md" >}})
+- [My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab3/index.md" >}})
+- [My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab4/index.md" >}})
 
 <!-- more -->
 
