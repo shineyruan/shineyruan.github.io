@@ -17,6 +17,8 @@ In this winter, I finally got a chance to visit and spend a nice Christmas holid
 
 <!-- more -->
 
+![](_RZH3662postruanzh.jpg)
+
 ![](_RZH3468postruanzh.jpg)
 
 ![](_RZH3518postruanzh.jpg)
