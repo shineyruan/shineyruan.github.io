@@ -82,6 +82,9 @@ In real practice the next waypoint could be either in the front-left or front-ri
 The Pure Pursuit algorithm with the vehicle running in 5m/s. Green trajectory is the pre-recorded waypoints; red dot is the goal waypoint for the vehicle; blue dot is the current position of the vehicle (using ground truth position in simulator).
 {{< youtube Qs2StzvzXHw >}}
 
+The Pure Pursuit algorithm was also successfully run in the real world. The following experiment was conducted in the 2nd floor of Levine Hall at the University of Pennsylvania.
+{{<youtube t9NOFv8BmfY>}}
+
 ## References
 F1/10 Autonomous Racing Lecture: Pure Pursuit
 {{< youtube r_FEKkeN_fg >}}
