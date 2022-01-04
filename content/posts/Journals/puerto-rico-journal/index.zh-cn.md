@@ -5,7 +5,7 @@ description: Zhihao's travel journal to Puerto Rico
 hero: /images/posts/puerto-rico-journal/PR-cover.jpg
 menu:
   sidebar:
-    name: 波多黎各旅行日记
+    name: 波多黎各：逃离大雪的海边度假计划
     identifier: travel-journals-puerto-rico-journal
     parent: travel-journals
     weight: 100

@@ -6,7 +6,7 @@ date: 2020-01-14 16:12:17
 hero: /images/posts/phuket-journal/RZH6667post.jpg
 menu:
   sidebar:
-    name: 普吉旅行日记
+    name: 前往普吉，感受海岸和阳光
     identifier: travel-journals-phuket-journal
     parent: travel-journals
     weight: 100
