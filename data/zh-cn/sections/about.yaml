@@ -1,6 +1,6 @@
 # section information
 section:
-  name: About
+  name: 关于
   id: about
   enable: true
   weight: 1
@@ -8,17 +8,17 @@ section:
   template: sections/about.html
 
 # your designation
-designation: Robotics M.S.E. '22
+designation: 2022届机器人学硕士
 # your company information
 company:
-  name: University of Pennsylvania
+  name: 宾夕法尼亚大学
   url: "https://www.grasp.upenn.edu/"
 
 # your resume. this file path should be relative to you "static" directory
 resume: "files/cv.pdf"
 
 # a summary about you
-summary: "Greetings! I am a robotics student passionate about the autonomous driving (AD) industry. My main area of focus lies in motion planning and machine learning. I also have a lot of experience in robotics perception, such as computer vision and LiDAR. Hope to see you in the future! <br/> <br/> ***Note: Please visit Chinese page for personal travel journals.***"
+summary: "很高兴认识你！我在美国宾夕法尼亚大学攻读机器人硕士学位。机器人学是个非常有意思的学科。它涉及感知、导航、控制等多个领域的算法。我主要的兴趣在于自动驾驶的决策与规划领域，同时对感知方面也稍有涉猎。希望能在未来的某天遇见你！<br/> <br/> ***注：本中文页面仅记录个人旅行日记。如需阅读个人专业相关项目简介，请移步英文页面。***"
 
 # your social links
 # give as many as you want. use font-awesome for the icons.

@@ -6,7 +6,7 @@ date: 2020-01-14 16:12:17
 hero: /images/posts/phuket-journal/RZH6667post.jpg
 menu:
   sidebar:
-    name: Phuket Journal
+    name: 普吉旅行日记
     identifier: travel-journals-phuket-journal
     parent: travel-journals
     weight: 100

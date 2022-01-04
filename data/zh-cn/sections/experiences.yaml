@@ -1,0 +1,63 @@
+# section information
+section:
+  name: 工作经历
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your experiences
+experiences:
+  - company:
+      name: xLab, 宾夕法尼亚大学
+      url: "https://mlab-upenn.github.io/lab_website/"
+      location: 美国宾夕法尼亚州费城
+      # company overview
+      overview: xLab是一个致力于研究实时嵌入式系统和机器人系统的实验室。下设1/10规模的F1自动驾驶方程式赛车（F1/10赛车）研究小组，导师为Prof. Rahul Mangharam.
+    positions:
+      - designation: 研究生研究助理
+        start: 2021年2月
+        # don't provide end date if you are currently working there. It will be replaced by "Present"
+        # end: Dec 2020
+        # give some points about what was your responsibilities at the company.
+        responsibilities:
+          - 负责研发CAD2CAV项目。CAD2CAV是一个致力于解决未知环境中的多机器人定位与导航问题的项目。使用平台为 F1/10 赛车。
+          - 设计并实现了基于图的多机器人轨迹规划算法，实现平台为ROS和C++。实现方法包括车辆路径问题 (Vehicle Routing Problem) 的蚁群算法求解器，谱聚类 (Spectral Clustering) 算法，以及图分割 (k-Way Graph Partitioning) 算法。
+          - 实现了基于FMT*的实时避障规划模块，使得F1/10赛车能够在真实环境中测试运行。
+
+      # - designation: Junior Software Engineer
+      #   start: Nov 2017
+      #   end: Oct 2019
+      #   responsibilities:
+      #     - Implement and test xyz feature for abc tool.
+      #     - Support client for abc tool.
+      #     - Learn k,d,w technology for xyz.
+
+  - company:
+      name: 图森未来
+      url: "https://www.tusimple.com/"
+      location: 美国加州圣地亚哥 (远程工作)
+      overview: 图森未来 (TuSimple) 是一个无人驾驶卡车品牌，创立初衷在于以L4级别（SAE标准）的无人驾驶卡车技术为全球物流运输行业赋能。
+    positions:
+      - designation: 路径规划算法工程师
+        start: 2021年5月
+        end: 2021年8月
+        responsibilities:
+          - 设计并实现与卡车自动驾驶有关的决策与路径规划系统模块。
+
+  - company:
+      name: Interactive Sensing and Computing (ISC) Lab, 密歇根大学
+      url: "http://www.alansonsample.com/"
+      location: 美国密歇根州安娜堡
+      overview: ISC Lab是一个致力于研究人机交互算法的嵌入式系统实验室，导师为Prof. Alanson Sample.
+    positions:
+      - designation: 本科生研究助理
+        start: 2019年1月
+        end: 2019年12月
+        responsibilities:
+          - 打造了一个基于STM32及松下GridEye 8x8红外传感器的室内热成像可视化嵌入式平台。
+          - 为松下GridEye 8x8红外传感器构建了一个可扩展的的C语言API。
+          - 用C语言实现了直接数字合成 (DDS) 算法并打造了一个基于STM32和超声波传感器的从39kHz到41kHz的超声扫描波发生器。
+          - 设计并实现了包括FMCW和相位的两种不同的超声波测距算法。
