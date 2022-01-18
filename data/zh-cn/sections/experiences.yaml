@@ -26,6 +26,7 @@ experiences:
           - 负责研发CAD2CAV项目。CAD2CAV是一个致力于解决未知环境中的多机器人定位与导航问题的项目。使用平台为 F1/10 赛车。
           - 设计并实现了基于图的多机器人轨迹规划算法，实现平台为ROS和C++。实现方法包括车辆路径问题 (Vehicle Routing Problem) 的蚁群算法求解器，谱聚类 (Spectral Clustering) 算法，以及图分割 (k-Way Graph Partitioning) 算法。
           - 实现了基于FMT*的实时避障规划模块，使得F1/10赛车能够在真实环境中测试运行。
+          - 开发了一套完整的从Autodesk Revit楼房平面设计图模型到ROS Occupancy Map的工具。
 
       # - designation: Junior Software Engineer
       #   start: Nov 2017

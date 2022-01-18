@@ -24,8 +24,10 @@ experiences:
         # give some points about what was your responsibilities at the company.
         responsibilities:
           - Working on Project CAD2CAV, an unknown environment exploration and mapping project for multiple vehicles.
-          - Wrote graph-based multi-agent path planner in ROS and C++ with Ant Colony Optimization solver for Capacitated Vehicle Routing Problem, Spectral Clustering, and k-Way Graph Partitioning.
-          - Implemented FMT* for real-time obstacle avoidance and Pure Pursuit as the controller for F1/10 autonomous racing vehicles.
+          - Wrote graph-based multi-agent route planner in ROS and C++ with Ant Colony Optimization solver for Capacitated Vehicle Routing Problem, Spectral Clustering, and k-Way Graph Partitioning.
+          - Implemented FMT* planning algorithm for real-time obstacle avoidance as low-level planner.
+          - Integrated Pure Pursuit algorithm as the waypoint tracker and controller for F1/10 autonomous racing vehicles.
+          - Developed data import utilities from Autodesk Revit 3D building model to ROS occupancy map.
 
       # - designation: Junior Software Engineer
       #   start: Nov 2017
