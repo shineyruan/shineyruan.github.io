@@ -12,7 +12,7 @@ tags: ["Basic", "Multi-lingual"]
 categories: ["Basic"]
 ---
 
-Welcome to my personal website! I am a first-year robotics master's student at the University of Pennsylvania. Prior to Penn, I received my B.S. degree in computer science engineering (CSE) at the University of Michigan, with a second B.S. degree in electrical and computer engineering (ECE) at Shanghai Jiao Tong University. 
+Welcome to my personal website! I am a second-year robotics master's student at the University of Pennsylvania. Prior to Penn, I received my B.S. degree in computer science engineering (CSE) at the University of Michigan, with a second B.S. degree in electrical and computer engineering (ECE) at Shanghai Jiao Tong University. 
 
 <!-- more -->
 
