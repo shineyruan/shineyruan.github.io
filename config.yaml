@@ -60,7 +60,7 @@ params:
       enable: true
     # Show/hide credentials section in the footer. Default is "true".
     credentials:
-      enable: false
+      enable: true
 
   # Provide newsletter configuration. This feature hasn't been implemented yet.
   # Currently, you can just hide it from the footer.
