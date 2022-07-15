@@ -35,6 +35,40 @@ projects:
         "robotics",
         "autonomous-driving",
         "motion planning",
+        "multiagent-systems",
+      ]
+
+  - name: Vehicle Routing in Python
+    # logo: /images/sections/projects/tensorflow.png
+    role: Developer
+    timeline: "Jan 2022 - May 2022"
+    repo: https://github.com/lb-robotics/python-vehicle-routing
+    #url: ""
+    summary: Python implementation of various Dynamic Vehicle Routing (DVR) algorithms.
+    tags:
+      [
+        "academic",
+        "robotics",
+        "multiagent-systems",
+        "motion-planning",
+        "vehicle-routing",
+      ]
+
+  - name: DevDAgger
+    # logo: /images/sections/projects/kubernetes.png
+    role: Developer
+    timeline: "Oct 2021 - Dec 2021"
+    repo: https://github.com/lb-robotics/dev-dagger # If your project is a public repo on GitHub, then provide this link. it will show star count.
+    #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+    summary: Data Efficient Visual Imitation Learning Through Variational Autoencoders and Gaussian Process
+    tags:
+      [
+        "academic",
+        "robotics",
+        "dagger",
+        "deep-learning",
+        "pytorch",
+        "gaussian-process",
       ]
 
   - name: F1Tenth Labs

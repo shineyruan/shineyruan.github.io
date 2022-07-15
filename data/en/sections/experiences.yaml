@@ -11,6 +11,15 @@ section:
 # Your experiences
 experiences:
   - company:
+      name: TuSimple, Inc.
+      url: "https://www.tusimple.com/"
+      location: San Diego, CA
+    positions:
+      - designation: Planning Research Engineer
+        start: July 2022
+        responsibilities:
+          - Developed motion planning softwares and algorithms for autonomous driving trucks.
+  - company:
       name: xLab, University of Pennsylvania
       url: "https://mlab-upenn.github.io/lab_website/"
       location: Philadelphia, PA
@@ -19,6 +28,7 @@ experiences:
     positions:
       - designation: Graduate Research Assistant
         start: Feb 2021
+        end: May 2022
         # don't provide end date if you are currently working there. It will be replaced by "Present"
         # end: Dec 2020
         # give some points about what was your responsibilities at the company.

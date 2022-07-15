@@ -17,17 +17,27 @@ degrees:
       url: "https://www.upenn.edu/"
     grade:
       scale: GPA
-      achieved: 4.0
+      achieved: 3.9
       outOf: 4.0
     takenCourses:
       # if true, the courses will be rendered as a table otherwise it will render as a list and the grades will be hidden.
       showGrades: false
       courses:
+        - name: MEAM 624 Distributed Robotic Algorithms
+          achieved: 4
+          outOf: 4
+        - name: MEAM 620 Advanced Robotics
+          achieved: 4
+          outOf: 4
         - name: CIS 700 Probabilistic Methods in Machine Learning
+          achieved: 4
+          outOf: 4
         - name: CIS 565 GPU Programming & Architecture
           achieved: 3
           outOf: 4
         - name: ESE 514 Graph Neural Networks
+          achieved: 4
+          outOf: 4
         - name: ESE 605 Modern Convex Optimization
           achieved: 4
           outOf: 4

@@ -8,11 +8,11 @@ section:
   template: sections/about.html
 
 # your designation
-designation: Robotics M.S.E. '22
+designation: Research Engineer
 # your company information
 company:
-  name: University of Pennsylvania
-  url: "https://www.grasp.upenn.edu/"
+  name: TuSimple, Inc.
+  url: "https://www.tusimple.com/"
 
 # your resume. this file path should be relative to you "static" directory
 resume: "files/cv.pdf"
