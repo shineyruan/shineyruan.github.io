@@ -58,7 +58,7 @@ It was really wonderful for me to find that, during the summer, the town of Ann 
 
 *A dancer is doing street dancing to attract people's attention. He was particularly dancing to me at that instant to show off his dancing skills.*
 
-## Força, Barça! 
+## Força, Barça
 
 In August, FC Barcelona came to Michigan Stadium and had a match with S.S.C. Napoli. Why having a soccer match at Michigan? I would say, it was definitely because Michigan Stadium is the largest stadium in the US, the third largest stadium across the world! Although it was not an important match for the two soccer clubs, it was still really exciting. With no surprise, FC Barcelona finally won the game.
 
@@ -71,6 +71,7 @@ In August, FC Barcelona came to Michigan Stadium and had a match with S.S.C. Nap
 *FC Barcelona &mdash; goal!*
 
 ## "Blue Hour" in Ann Arbor
+
 As I always finish my classes in the late afternoon, witnessing the beauty of the blue hour every day has been one of my favorite things. When the summer comes and the sky becomes clear, I finally got some chance to capture the romantic feelings in the blue hour.
 
 ![](RZH8715post.jpg)

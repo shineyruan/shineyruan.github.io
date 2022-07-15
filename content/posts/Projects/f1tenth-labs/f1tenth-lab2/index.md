@@ -20,28 +20,32 @@ math: true
 ***All my source codes can be accessed [here](https://github.com/shineyruan/F1Tenth_Labs).***
 
 **Previous post:**
+
 - [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab1/index.md" >}})
 
 <!-- more -->
 
-## Overview 
+## Overview
+
 This lab focuses on implementing an AEB (Automatic Emergency Braking) in ROS node for F1/10 racing cars. AEB is widely used in autonomous vehicles as a basic safety guarantee to avoid collisions with objects.
 
-The lab materials can be accessed [here](https://f1tenth-coursekit.readthedocs.io/en/stable/assignments/labs/lab2.html#). A PDF version is also attached [here](/files/f110_lab2.pdf). 
+The lab materials can be accessed [here](https://f1tenth-coursekit.readthedocs.io/en/stable/assignments/labs/lab2.html#). A PDF version is also attached [here](/files/f110_lab2.pdf).
 
 {{< embed-pdf url="/files/f110_lab2.pdf" >}}
 
 The lab was built on the *F1Tenth Simulator*, which can be accessed [here](https://f1tenth.readthedocs.io/en/stable/going_forward/simulator/sim_install.html).
 
 ## Demo
+
 {{< youtube vVHXqJv6NbY >}}
 
 ## Time-To-Collision
-TTC (Time-To-Collision) is the time it would take for the vehicle to collide with an obstacle given its current heading and velocity. TTC can be calculated with the following format: 
+
+TTC (Time-To-Collision) is the time it would take for the vehicle to collide with an obstacle given its current heading and velocity. TTC can be calculated with the following format:
 $$
-TTC = \frac{r}{[-\dot{r}]_+} 
+TTC = \frac{r}{[-\dot{r}]_+}
 $$
-where $r$ is the distance between vehicle and obstacle, $\dot{r}$ is its 1st derivative with respect to time, and the symbol $[x] _+$ denotes $\max(0,x)$.
+where $r$ is the distance between vehicle and obstacle, $\dot{r}$ is its 1st derivative with respect to time, and the symbol $[x]_+$ denotes $\max(0,x)$.
 
 In practice, we use LiDAR results to calculate TTC for each beam. Specifically, we project the current vehicle velocity onto the direction of each beam as $\dot{r}$, namely $\dot{r}=v\cos(\theta)$.
 
@@ -52,6 +56,7 @@ We also have `float32[] ranges` in each `LaserScan` message, which gives us the 
 Given the above information, it is not difficult for us to write our AEB ROS node.
 
 ## References
+
 F1/10 Autonomous Racing Lecture recordings:
 
 {{< youtube jZR3tk9IWlY >}}

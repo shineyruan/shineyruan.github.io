@@ -13,7 +13,7 @@ menu:
     weight: 10
 ---
 
-Simultaneous Localization And Mapping, also known as SLAM, is a set of very important techniques in robotics, and it's still in active research. It aims at developing different algorithms for figuring out the position of the robot in the real world by the robot itself. 
+Simultaneous Localization And Mapping, also known as SLAM, is a set of very important techniques in robotics, and it's still in active research. It aims at developing different algorithms for figuring out the position of the robot in the real world by the robot itself.
 
 <!--more-->
 
@@ -23,7 +23,7 @@ Think about a scenario where you were led to an unknown building, and you were s
 
 Although it might seem natural for readers as you to get familiar with an unknown environment by looking and walking around, this process is actually complicated when it comes to applying it on a robot. In the field of robotics, this process is called **SLAM (Simultaneous Localization And Mapping)**. So far, there have been a number of different models that accomplish this task, with one of the most basic model called *Markov Localization*.
 
-In the fall of 2019, I took the course [*Autonomous Robotics (EECS 467)*](https://web.eecs.umich.edu/~kuipers/teaching/eecs467-F19.html), in which I implemented a complete SLAM algorithm with occupancy grid mapping and Markov Localization for a robot car with 3 other teammates [Gregory Meyer](https://github.com/Gregory-Meyer), [Nathan Brown](https://github.com/nlbrown2), and [Martin Deegan](https://github.com/martindeegan). 
+In the fall of 2019, I took the course [*Autonomous Robotics (EECS 467)*](https://web.eecs.umich.edu/~kuipers/teaching/eecs467-F19.html), in which I implemented a complete SLAM algorithm with occupancy grid mapping and Markov Localization for a robot car with 3 other teammates [Gregory Meyer](https://github.com/Gregory-Meyer), [Nathan Brown](https://github.com/nlbrown2), and [Martin Deegan](https://github.com/martindeegan).
 
 ## Demo Videos
 

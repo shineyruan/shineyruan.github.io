@@ -20,6 +20,7 @@ math: true
 ***All my source codes can be accessed [here](https://github.com/shineyruan/F1Tenth_Labs).***
 
 **Previous post:**
+
 - [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab1/index.md" >}})
 - [My F1TENTH Journey — Lab 2, Automatic Emergency Braking]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab2/index.md" >}})
 - [My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab3/index.md" >}})
@@ -27,11 +28,13 @@ math: true
 
 <!-- more -->
 
-## Overview 
+## Overview
+
 In autonomous driving development, recording waypoints for future testing is very important. One way to record waypoints efficiently is only remembering the x, y, z coordinates of the vehicle regularly for some constant time gap. However, as ground vehicles are generally *non-holonomic* (i.e., the vehicle cannot make a turn in place), it is non-trivial to control an autonomous vehicle to exactly follow these pre-recorded waypoints. Hence, we need to design a path tracker (waypoint tracker) so that it can calculate and send commands to the vehicle to make it follow the pre-recorded waypoints. That is how "Pure Pursuit" algorithm comes into place.
 
 ## The Pure Pursuit Algorithm
-The Pure Pursuit algorithm accounts for the non-holonomic constraints and the speed of the vehicle when it follows the waypoints. Given the current position of the vehicle, what it does is to always steer towards the next appropriate waypoint according to some lookahead distance $L$. In real practice, Pure Pursuit algorithm is often used with localization methods, i.e., a particle filter. 
+
+The Pure Pursuit algorithm accounts for the non-holonomic constraints and the speed of the vehicle when it follows the waypoints. Given the current position of the vehicle, what it does is to always steer towards the next appropriate waypoint according to some lookahead distance $L$. In real practice, Pure Pursuit algorithm is often used with localization methods, i.e., a particle filter.
 
 But since the vehicle is non-holonomic, how can we steer towards the next waypoint properly? Setting the exact direction of the next waypoint from the current vehicle position is not feasible, as the vehicle is always in high speed and might overshoot the desired goal. One alternative option tries to interpolate the trajectory by finding an arc between the current position and the next waypoint (goal), which can be showed as the figure below.
 
@@ -42,18 +45,22 @@ $$r=\frac{L^2}{2|y|}$$
 
 {{< figure src="f1tenth-lab6-steer.jpg" caption="Finding the steering angle from the arc interpolation." >}}
 
-Finally, we can simply set the steering angle proportional to the curvature of the arc: 
+Finally, we can simply set the steering angle proportional to the curvature of the arc:
+
 ```cpp
 double steering_angle = K_p * curvature;
 ```
+
 `K_p` works exactly the same as a P controller and its value can also be tuned using PID tuning theory.
 
 In summary, the Pure Pursuit algorithm can be implemented in the following steps:
+
 1. Find the next waypoint (goal) from the current position and the list of all waypoints.
 2. Interpolate an arc between current position and goal, and calculate its radius & curvature.
 3. Set the steering angle proportional to the curvature.
 
 ## Actual Implementation
+
 This section summarizes a list of issues when I was implementing the pure pursuit algorithm in ROS and C++.
 
 1. **Running the particle filter**.
@@ -65,6 +72,7 @@ It is worth mentioning that this particle filter provides several options for la
 2. **Choosing the goal waypoint from current position and lookahead distance.**
 
 In general, there are multiple ways to choose the goal waypoint for the vehicle. Some options include choosing the waypoint in the list that has distance closest to $L$ from the current vehicle position, interpolating a waypoint with distance exactly equal to $L$ from the closest waypoint in the range and out of the range, and choosing the waypoint closest to $L$ from those out of the range. As for my implementation, I chose to implement in the following way:
+
 - Starting from the current position, pick the first waypoint that has a distance larger than $L$ from the current position.
 
 Notice that my implementation is current not the best option, as it has not incorporate the current orientation of the car and it might cause troubles when the next goal is somewhere behind the vehicle.
@@ -77,8 +85,8 @@ As the curvature calculation assumes that our vehicle is always facing in the po
 
 In real practice the next waypoint could be either in the front-left or front-right of the vehicle, resulting in the fact that the curvature could either be concave or convex. Hence it is important for us to consider the sign of the curvature so that we can steer our car in the correct direction.
 
-
 ## Demo Videos
+
 The Pure Pursuit algorithm with the vehicle running in 5m/s. Green trajectory is the pre-recorded waypoints; red dot is the goal waypoint for the vehicle; blue dot is the current position of the vehicle (using ground truth position in simulator).
 {{< youtube Qs2StzvzXHw >}}
 
@@ -86,6 +94,6 @@ The Pure Pursuit algorithm was also successfully run in the real world. The foll
 {{<youtube t9NOFv8BmfY>}}
 
 ## References
+
 F1/10 Autonomous Racing Lecture: Pure Pursuit
 {{< youtube r_FEKkeN_fg >}}
-

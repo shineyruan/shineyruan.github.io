@@ -57,6 +57,7 @@ As a photographer, I have the feeling that it is my responsibility to record her
 *[Xiangzhou District (Chinese: 香洲区)](https://en.wikipedia.org/wiki/Xiangzhou_District,_Zhuhai). An old small alley among the buildings. Xiangzhou District is one of the oldest area in Zhuhai, which originates from a tiny village 40 years ago. It is still the political, financial and cultural center of Zhuhai. Just like the countless other alleys, most of the food stalls here have a very long history, and any of them is able to satisfy your appetite.*
 
 ## Zhuhai, By the Sea
+
 Zhuhai, as a coastal city, has a really pretty seaside view. Although I cannot guarantee that it is as gorgeous and magnificent as those world-class famous tourism spots such as Maldives, Phuket, Miami, etc., **it actually reflects the exact feeling of "living by the sea."**
 
 The city of Zhuhai is built on several fishing villages. Before the "reform and opening-up" policy in China in 1978, Zhuhai is still a small fishing village. The dwellers at that time still made their living mainly by hunting fish. As Zhuhai develops, although more and more elements of modern cities have been added to this place (such as malls, amusement parks, etc.), what still remains unchanged is the way of living &mdash; Zhuhai citizens still love to hang out by the sea. Lovers love to start their stories by the sea. Beaches are always crowded on weekends and holidays. Fish markets are always the busiest among all markets in the city. Even the landmark of Zhuhai, as I mentioned in my [self-introduction post](https://zhihaoruan.xyz/about/) &mdash; is about fish!
@@ -78,4 +79,3 @@ As a result, besides constructing more and more shopping malls in the city, the 
 ![](RZH6751post.jpg)
 
 *City view and the Xianglu Bay in the evening. The sky had not yet become completely dark, and the lights in the city were just lit up.*
-

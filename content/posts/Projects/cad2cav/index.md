@@ -13,49 +13,59 @@ hero: /images/posts/cad2cav/cad2cav-overview.png
 math: true
 ---
 
-CAD2CAV is a project focusing on multi-agent exploration in unknown environments. It attempts to build a complete system from perception to planning and control, exploring a designated unknown environments with multiple autonomous vehicles. It is built in [xLab at the University of Pennsylvania](https://mlab-upenn.github.io/lab_website/), on multiple [F1TENTH race cars](https://f1tenth.readthedocs.io/en/latest/). 
+CAD2CAV is a project focusing on multi-agent exploration in unknown environments. It attempts to build a complete system from perception to planning and control, exploring a designated unknown environments with multiple autonomous vehicles. It is built in [xLab at the University of Pennsylvania](https://mlab-upenn.github.io/lab_website/), on multiple [F1TENTH race cars](https://f1tenth.readthedocs.io/en/latest/).
 
 Useful documents:
+
 * [GitHub link](https://github.com/mlab-upenn/ISP2021-cad2cav)
 * [Spring 2021 Final Report (not complete)](/files/CAD2CAV_Project_Report.pdf)
 
 ## Demo
+
 This is a sample scenario of a single F1TENTH race car exploring the 2nd floor of Levine Hall at the University of Pennsylvania, right outside xLab.
 
 {{<youtube CMwnMAKMueA>}}
 
 ## Motivation
-Autonomous robots have been widely used in a great number of aspects in our daily life. Specifically, mobile robots have demonstrated great help in unknown environment exploration, i.e., rescue robots exploring debris of a building after an earthquake, scientific robots exploring the world under the sea, etc. We are particularly interested in developing a fleet of mobile robots based on the dynamics of a normal self-driving vehicle (i.e., F1TENTH race cars) that helps people explore normal in-use buildings, or buildings that are still under construction. 
+
+Autonomous robots have been widely used in a great number of aspects in our daily life. Specifically, mobile robots have demonstrated great help in unknown environment exploration, i.e., rescue robots exploring debris of a building after an earthquake, scientific robots exploring the world under the sea, etc. We are particularly interested in developing a fleet of mobile robots based on the dynamics of a normal self-driving vehicle (i.e., F1TENTH race cars) that helps people explore normal in-use buildings, or buildings that are still under construction.
 
 {{<figure src="f1tenth_NX.png" width="400" caption="Sample image of an F1TENTH race car.">}}
 
 Normally, one would quickly think of SLAM (Simultaneous Localization and Mapping) when it comes to robotic exploration (for more details, see my [SLAM project]({{< ref "/posts/Projects/467Proj-slam/index.md" >}})). Yes, that is one of the most straightforward and simplest solution for a normal robotic exploration task. However, under the assumption of exploring a known building, we are actually given the access an extra layer of structural information for the target environment, i.e. the *floor plan* of the building. How to exploit that information and set up a multi-agent exploration task efficiently? That becomes the main goal for this project.
 
 ## Technical Details
+
 ### Overview
-The general structure of this project is divided into 3 modules: a central ROS server, a building renderer/simulator, and the F1TENTH race car onboard computing platform. 
+
+The general structure of this project is divided into 3 modules: a central ROS server, a building renderer/simulator, and the F1TENTH race car onboard computing platform.
 
 {{<figure src="cad2cav-overview.png" caption="A diagram for the system design of CAD2CAV.">}}
 
-The figure above demonstrates the general relationship among the 3 modules. Given the prior knowledge of the building's floor plan (which is assumed to come from [Autodesk Revit](https://www.autodesk.com/products/revit/overview?term=1-YEAR&tab=subscription)), the building renderer would parse and construct a rendered 3D model our of it for visualization; the central ROS server would extract necessary structural information and construct 2D occupancy map for motion planning & mapping nodes. As soon as the central ROS server generates a balanced multi-agent routing scheme, it would pass the plan to each F1TENTH race car and the race car would then execute the drive node to drive the car and follow the high-level routing scheme in the real world. 
+The figure above demonstrates the general relationship among the 3 modules. Given the prior knowledge of the building's floor plan (which is assumed to come from [Autodesk Revit](https://www.autodesk.com/products/revit/overview?term=1-YEAR&tab=subscription)), the building renderer would parse and construct a rendered 3D model our of it for visualization; the central ROS server would extract necessary structural information and construct 2D occupancy map for motion planning & mapping nodes. As soon as the central ROS server generates a balanced multi-agent routing scheme, it would pass the plan to each F1TENTH race car and the race car would then execute the drive node to drive the car and follow the high-level routing scheme in the real world.
 
 As the race car is driving in the environment, its perception module would try to localize itself in the occupancy map and update the perceived objects in the map. The map then gets updated in the central ROS server and the server would also pass the updated map to the building renderer. The building renderer would finally render everything and visualize the building in the software.
 
 ### Building Renderer
-As mentioned above, we need a building renderer to render 3D models and visualize everything on the screen. Our current choice is to use Unreal Engine 4. UE4 has a popular plugin called Unreal Datasmith compatible with most of the mainstream model designing softwares, i.e., Autodesk Revit, Cinema 4D (C4D), Rhino, etc. 
+
+As mentioned above, we need a building renderer to render 3D models and visualize everything on the screen. Our current choice is to use Unreal Engine 4. UE4 has a popular plugin called Unreal Datasmith compatible with most of the mainstream model designing softwares, i.e., Autodesk Revit, Cinema 4D (C4D), Rhino, etc.
 
 Users can install and try the plugin by following the tutorial of [Exporting Datasmith Content from Revit](https://docs.unrealengine.com/4.27/en-US/WorkingWithContent/Importing/Datasmith/SoftwareInteropGuides/Revit/ExportingDatasmithContentfromRevit/) and [Importing Datasmith Content into Unreal Engine 4](https://docs.unrealengine.com/4.27/en-US/WorkingWithContent/Importing/Datasmith/HowTo/ImportingContent/). We also hosted a pre-imported model of Levine Hall 4th floor on [GitHub](https://github.com/shineyruan/unreal_levine_4).
 
 {{<youtube wf6D9ydkIpc>}}
 
 #### Other Options
-We are also looking into trying out different options that are more friendly to robotics application development than UE4. One of them is the [Nvidia Isaac Sim](https://developer.nvidia.com/isaac-sim) powered by the newly-announced Nvidia Omniverse platform. 
+
+We are also looking into trying out different options that are more friendly to robotics application development than UE4. One of them is the [Nvidia Isaac Sim](https://developer.nvidia.com/isaac-sim) powered by the newly-announced Nvidia Omniverse platform.
 
 ### Central ROS Server
+
 The central ROS server is responsible for: 1) parsing floor plan from Revit and constructing initial occupancy grid; 2) generating high-level balanced multi-agent routing scheme from occupancy map; 3) updating occupancy map from the perception data; 4) sending occupancy map information over to building renderer. Each of these tasks is a sub-problem in different fields of robotics, in the general sense.
 
 #### Initial Map Construction from Revit
+
 Revit models are encoded in a unique format special to the software. Hence, the only way for us to extract information from a general Revit model is through the [Revit API](https://www.revitapidocs.com/2022/). Revit API is initially written in C\#, while it has been recently transferred to Python by an open-source project called [pyRevit](https://github.com/eirannejad/pyRevit). By following the official installation tutorials of pyRevit, I have managed to create a pyRevit plugin for the project to specifically export the 2D geometry information of all the main elements in a building floor plan. The current supported elements and their geometric representations are:
+
 1. Walls, represented as 2D line segments;
 2. Doors, represented as 2D points with orientation;
 3. Windows, represented as 2D points with orientation.
@@ -73,14 +83,15 @@ window,-0.915,-3.4125,0.9,0.0,0.0,0.0,3.1416,1.05,1.35
 
 ```
 
-Users are supposed to save the console outputs into a CSV file and put it manually in the ROS codebase. 
+Users are supposed to save the console outputs into a CSV file and put it manually in the ROS codebase.
 
-In the CSV format: 
-- `Type` is a string describing the object type; 
-- `x_1`, `y_1`, `z_1` is the 3D Cartesian coordinate of the 1<sup>st</sup> endpoint of the line segment, or the position of the oriented point; 
-- `x_2`, `y_2`, `z_2` is the 3D Cartesian coordinate of the 2<sup>nd</sup> endpoint of the line segment, or left blank if the type is an oriented point; 
-- `Orientation` is the orientation of the point, or left blank if the type is a line segment; 
-- `Width` and `Height` are the actual width and height of the doors and windows in the Revit model, and are left blank for the walls.
+In the CSV format:
+
+* `Type` is a string describing the object type;
+* `x_1`, `y_1`, `z_1` is the 3D Cartesian coordinate of the 1<sup>st</sup> endpoint of the line segment, or the position of the oriented point;
+* `x_2`, `y_2`, `z_2` is the 3D Cartesian coordinate of the 2<sup>nd</sup> endpoint of the line segment, or left blank if the type is an oriented point;
+* `Orientation` is the orientation of the point, or left blank if the type is a line segment;
+* `Width` and `Height` are the actual width and height of the doors and windows in the Revit model, and are left blank for the walls.
 
 {{<youtube 6ka9pvTfP-U>}}
 
@@ -91,6 +102,7 @@ After we have the necessary structural information in a floor plan contained in 
 | ![](revit_floorplan_levine2.png) | ![](map_floorplan_levine2.png) |
 
 #### Waypoint Identification and Registration
+
 To generate a high-level routing scheme for multiple vehicles to explore, it is important to know which set of locations or areas that the exploration needs to cover. While we're still exploring other options[^2], for simplicity we provide an interface for users to select and register waypoints on the map in a pop-up window. As soon as the waypoints are registered, the server would construct a graph out of all the waypoints, and the routing algorithms will be performed with the scope of an abstract graph.
 
 [^2]: Other options include the algorithm of extracting a Voronoi skeleton out of a general occupancy map. This work was initially proposed by Lau et al. in the IROS 2010 paper ["Improved updating of euclidean distance maps and Voronoi diagrams"](http://ais.informatik.uni-freiburg.de/publications/papers/lau10iros.pdf).
@@ -98,9 +110,11 @@ To generate a high-level routing scheme for multiple vehicles to explore, it is 
 {{<figure src="user_waypoint_registration.png" width="600" caption="A screenshot of a sample user waypoint registration interface.">}}
 
 #### Graph Planning and Routing
-All the high-level routing algorithms are conducted on an abstract graph. In this task we're interested in assign an exploration route for each vehicle, such that all vehicles gets an exploration path of equal or similar cost to each other. 
+
+All the high-level routing algorithms are conducted on an abstract graph. In this task we're interested in assign an exploration route for each vehicle, such that all vehicles gets an exploration path of equal or similar cost to each other.
 
 ##### The Capacitated Vehicle Routing Problem (CVRP)
+
 Vehicle Routing Problem (VRP) is a famous set of combinatorial optimization problems widely used in operations research. It is essentially a generalization to the famous Travelling Salesman Problem (TSP), which only focuses on computing the cheapest transportation loop for one single agent. The VRP can be described as the following:[^3]
 
 [^3]: From Wikipedia: [Vehicle Routing Problem](https://en.wikipedia.org/wiki/Vehicle_routing_problem).
@@ -111,11 +125,12 @@ From an optimization problem point of view, VRP essentially tries to minimize th
 
 > Each vehicle has a fixed *capacity* defining the maximum number of nodes it could visit in one run. Once the vehicle has visited the maximum number of nodes after it leaves the depot, it must return to the depot immediately.
 
-The formulation of CVRP in our project would be simply minimizing the total Euclidean distance of the set of routes over the graph of waypoints in Revit coordinates. By tuning the capacity of the vehicle as a hyperparameter, we are able to generate a set of routes that covers all waypoints and minimizes the total travelled distance in the same time, for a fixed number of vehicles. 
+The formulation of CVRP in our project would be simply minimizing the total Euclidean distance of the set of routes over the graph of waypoints in Revit coordinates. By tuning the capacity of the vehicle as a hyperparameter, we are able to generate a set of routes that covers all waypoints and minimizes the total travelled distance in the same time, for a fixed number of vehicles.
 
-Solving the CVRP problem in our project involves the use of [Any Colony Optimization](https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms) (ACO) algorithm. As the general CVRP problem is NP-hard, ACO is used as an approximation to the optimal solution that runs in polynomial time. 
+Solving the CVRP problem in our project involves the use of [Any Colony Optimization](https://en.wikipedia.org/wiki/Ant_colony_optimization_algorithms) (ACO) algorithm. As the general CVRP problem is NP-hard, ACO is used as an approximation to the optimal solution that runs in polynomial time.
 
 A general description of ACO algorithm can be described in the pseudo-code:
+
 ```python
 procedure ACO_MetaHeuristic is
     while not terminated do
@@ -135,9 +150,11 @@ Our implementation of ACO algorithm also involves a timeout variable for termina
 |       ![](vrp-1.png)        |       ![](vrp-2.png)        |
 
 ##### Spectral Clustering
+
 Another way to tackle this multi-agent routing task is to divide the entire graph into several partitions. In each partition, we find a TSP path that connects all nodes in the subgraph and minimizes the travel cost. **The advantage of this method is that vehicles are *not* required to start off from one common depot anymore, which makes the algorithm suitable for replanning at any time during the exploration.**
 
 Spectral clustering is an intuitive way to group graph nodes together based on spectral coordinates. This algorithm initially comes from the theory of unsupervised learning. The spectral coordinates of a graph is defined to be the row vectors of the eigenvector matrix of the Laplacian of the graph. We can obtain the spectral coordinates for each graph node in the following way:
+
 1. Construct an adjacency matrix $W$ for the graph;
 2. Compute the degree matrix $D$ by summing up all elements per row of $W$ and make it a diagonal matrix.
 3. Compute the graph Laplacian $L$ by $L=D-W$.
@@ -150,13 +167,14 @@ After obtaining the spectral coordinates for each node, we then apply a simple c
 
 Spectral clustering tends to group similar nodes together. The definition of similarity lies in the definition of the weight of the edges. That is, the lower the edge weight is between two nodes, the higher chances that they are grouped together. This property of spectral clustering aligns perfectly with our desire, i.e., nodes in the neighborhood form a subpart of the graph. Hence, we could directly apply spectral clustering to our graph partitioning task and generate TSP loop within each graph partition.
 
-The application of spectral clustering implicitly assume that the graph is complete, i.e., every two nodes are connected. Hence, it cannot generalize to all situations, especially those incomplete graphs generated from some special floor plans. 
+The application of spectral clustering implicitly assume that the graph is complete, i.e., every two nodes are connected. Hence, it cannot generalize to all situations, especially those incomplete graphs generated from some special floor plans.
 
 | Spectral Clustering for Vehicle 1 | Spectral Clustering for Vehicle 2 |
 | :-------------------------------: | :-------------------------------: |
 |        ![](spectral-1.png)        |        ![](spectral-2.png)        |
 
 ##### Multi-level $k$-Way Graph Partitioning
+
 Another way of partitioning the graph is to formulate a $k$-way graph partitioning problem. Traditional graph partitioning problems aims to find a minimum cut to divide the graph subject to the constraint that all resulting subparts are as evenly partitioned as possible. One handy multi-level $k$-way partitioning algorithm[^4] for this builds upon the [Kernighan-Lin heuristic](https://en.wikipedia.org/wiki/Kernighan%E2%80%93Lin_algorithm). For simplicity, we directly incorporated [METIS](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview) to perform the graph partitioning task. We then generate TSP loops in each graph subpart using [Google OR-Tools](https://developers.google.com/optimization).
 
 [^4]: See [METIS](http://glaros.dtc.umn.edu/gkhome/metis/metis/overview) and ["Multilevel k-way partitioning scheme for irregular graphs"](https://www.sciencedirect.com/science/article/pii/S0743731597914040).
@@ -166,24 +184,28 @@ Another way of partitioning the graph is to formulate a $k$-way graph partitioni
 |         ![](partitioning-1.png)          |         ![](partitioning-2.png)          |
 
 ##### Graph Planning Summary and Demo
+
 We explored 3 different ways of distributing different routes to each vehicles based on abstract graphs in the graph planning task in our project. One of them requires a common starting point (initial depot) and the others are based on graph partitioning. All of these methods tries to find a set of routes that covers all the floor plan with minimum overlap and complete loops. Although we have implemented all 3 methods in our code base, our default and most up-to-date choice would be the application of METIS and multi-level $k$-way partitioning algorithm.
 
 {{<youtube ufkgAVptQT8>}}
 
 ### F1TENTH Onboard Computing Platform
-The latest version of F1TENTH race car is equipped with a nice Nvidia Xavier NX Development Board as the onboard computing platform, which contains both an ARMv8 CPU and a CUDA-enabled GPU. It runs a complete but special Ubuntu system developed and shipped by Nvidia. In general, it is capable of performing part of the computationally heavy tasks in our project. In our design, we run the low-level planning and control node as well as the localization and mapping node onboard. 
+
+The latest version of F1TENTH race car is equipped with a nice Nvidia Xavier NX Development Board as the onboard computing platform, which contains both an ARMv8 CPU and a CUDA-enabled GPU. It runs a complete but special Ubuntu system developed and shipped by Nvidia. In general, it is capable of performing part of the computationally heavy tasks in our project. In our design, we run the low-level planning and control node as well as the localization and mapping node onboard.
 
 #### Obstacle-Avoiding Planning and Control
-After we have a complete route for each vehicle, we need to design an algorithm for the vehicle to actually reach those waypoints in the real world. Hence, the algorithm is required to be fast, accurate, and responsive. In this task, we choose to apply the [Fast Marching Tree (FMT*)](https://arxiv.org/abs/1306.3532) algorithm as a low-level planner to generate real-time trajectories for each vehicle. As a sampling-based planning algorithm, FMT* is fast enough to replan in a very short amount of time so that the vehicle is able to avoid obstacles. 
+
+After we have a complete route for each vehicle, we need to design an algorithm for the vehicle to actually reach those waypoints in the real world. Hence, the algorithm is required to be fast, accurate, and responsive. In this task, we choose to apply the [Fast Marching Tree (FMT*)](https://arxiv.org/abs/1306.3532) algorithm as a low-level planner to generate real-time trajectories for each vehicle. As a sampling-based planning algorithm, FMT* is fast enough to replan in a very short amount of time so that the vehicle is able to avoid obstacles.
 
 As a general overview, FMT* combines the properties of two different sampling-based planning categories: [PRM (Probabilistic Road Map)](https://en.wikipedia.org/wiki/Probabilistic_roadmap) and [RRT (Rapidly-exploring Random Trees)](https://en.wikipedia.org/wiki/Rapidly-exploring_random_tree). It first samples a set of points from the planning space (or configuration space), and tries to grow a tree from the start to the end in an RRT-style. It defines an unvisited set $V_\text{unvisited}$, an open set $V_\text{open}$ and a closed set $V_\text{closed}$. As the following figure shows, it involves the following steps:
+
 1. Add the starting point to $V_\text{closed}$.
 2. Add all of the neighboring points of the starting point to $V_\text{open}$. All the other points are in $V_\text{unvisited}$.
 3. Select the lowest cost node $z\in V_\text{open}$ and finds its neighbors $\mathcal{N}(z)\subseteq V_\text{unvisited}$.
 4. Given a node $x\in\mathcal{N}(z)$, find the optimal 1-step connection to its neighboring nodes $\mathcal{N}(x)$ in $V_\text{open}$.
 5. Check collision on all newly-added connections and apply penalties for violations (i.e., remove all the collision connections);
 6. Add all successful connected nodes to $V_\text{open}$, and move $z$ to $V_\text{closed}$.
-7. Repeat the operations from Step 3 until the goal is reached. 
+7. Repeat the operations from Step 3 until the goal is reached.
 
 {{<figure src="fmt_star.png" width="600" caption="FMT* algorithm cited from the paper.">}}
 
@@ -191,11 +213,12 @@ FMT* works as a low-level planner on the vehicle and generates trajectory toward
 
 As for the control algorithm, we currently run the traditional pure-pursuit algorithm to drive the vehicle to follow the trajectory points. For a more detailed overview of the pure-pursuit algorithm please checkout [my F1TENTH Lab 6 report]({{< ref "/posts/Projects/f1tenth-labs/f1tenth-lab6/index.md" >}}).
 
-Future work on the control algorithm involves developing a [model predictive control (MPC)](https://en.wikipedia.org/wiki/Model_predictive_control) algorithm, but for the sake of simplicity we still stick to pure-pursuit for the moment. 
+Future work on the control algorithm involves developing a [model predictive control (MPC)](https://en.wikipedia.org/wiki/Model_predictive_control) algorithm, but for the sake of simplicity we still stick to pure-pursuit for the moment.
 
 {{< youtube XoU88reSlNA >}}
 
 #### Localization
+
 In a real-world experiment, each vehicle needs to know where it is in the map. Hence, it is very important for the vehicle to have a localization module onboard. Common localization algorithms in general robotics include all kinds of filtering algorithms, from Bayes filer, [Kalman filter (KF)](https://en.wikipedia.org/wiki/Kalman_filter) and its variations ([EKF](https://en.wikipedia.org/wiki/Extended_Kalman_filter), [UKF](https://groups.seas.harvard.edu/courses/cs281/papers/unscented.pdf), etc.), and [particle filter](https://en.wikipedia.org/wiki/Particle_filter). We choose to use particle filter as a starting point and incorporated a CUDA-accelerated package of particle filter[^5] from the MIT race car team.
 
 [^5]: See [mit-racecar/particle_filter](https://github.com/mit-racecar/particle_filter).
@@ -207,39 +230,45 @@ In a real-world experiment, each vehicle needs to know where it is in the map. H
 > Thanks to my project partner Shumin for her work on the localization module. **The rest of this section is reposted from** [**Shumin's article**](https://shumin326.github.io/shumin.github.io/jekyll/update/2021/12/21/IndependentStudy.html).
 
 ##### Overview
-Mapping and localization algorithms require a manual walkthrough and capture of the environment. Upon loop closure they are ready to navigate with algorithms like SLAM. This project’s goal is to improve this process for indoor spaces with two steps: 
 
-1. Cheap initial navigable map, e.g. floor plans. Use architectural maps to slow the cost and increase the speed of the initial map capture by eliminating the manual walkthrough. We aim to accomplish this by transforming the building’s blueprint into a 3D navigable world with occupancy map and semantic landmarks within which we do path planning and localization. 
+Mapping and localization algorithms require a manual walkthrough and capture of the environment. Upon loop closure they are ready to navigate with algorithms like SLAM. This project’s goal is to improve this process for indoor spaces with two steps:
+
+1. Cheap initial navigable map, e.g. floor plans. Use architectural maps to slow the cost and increase the speed of the initial map capture by eliminating the manual walkthrough. We aim to accomplish this by transforming the building’s blueprint into a 3D navigable world with occupancy map and semantic landmarks within which we do path planning and localization.
 2. Landmark detection: We implemented a landmark detection model so that robot can recognize landmarks in real world navigation. Those landmarks are further utilized to improve localization performance.
 
-This independent study developed a complete pipeline for robots navigation under indoor environments, e.g. hospitals and offices, with only an architectural map. 
+This independent study developed a complete pipeline for robots navigation under indoor environments, e.g. hospitals and offices, with only an architectural map.
 
 The overall workflow is shown in the figure below. Given a building blueprint, e.g. floor plans, the Auto Mapping module converts the floor plan into an occupancy map and a list of landmarks with accurate location and orientation. The planning module determines a navigation strategy for robots to navigate and has the potential to apply onto multi-agent navigation applications. It first lets the user manually determine a set of sparse waypoints in order to make sure that LiDAR scans cover every corner of the building. Then it uses a Pure Pursuit controller and FMT* path planner to navigate among those waypoints. Graph partitioning algorithm and closed TSP solution are used to make sure all waypoints are visited only once. The landmark detection module detects landmarks and also shares this information in the format of labeled bounding boxes with the localization module. The Localization module uses particle filter to fuse sensor data, i.e. lidar scan, odometry and landmarks, and obtain an estimated pose.
 
 {{<figure src="https://i.ibb.co/5cpPZ1V/system-overview.png" alt="system-overview">}}
 
 ##### Localization
+
 The localization part is the main focus of this project. It aims at providing a robust and accurate pose estimate for other modules (planning and control, etc) to function properly. The localization module takes as input the laser scans, noisy odometry and landmarks, and fuses them with a particle filter (alg. 1). There are mainly three updates happening inside the loop:
+
 1. Motion model update using odometry. This step updates the particle poses by dead reckoning the odometry data and will have accumulated error overtime. Since the odometry used in onboard is quite noisy, the motion model update was manually added some gaussian noise.
-2. Sensor update with laser scan. This step updates the particle weights by comparing the obtained ranges from laser scan with the ray marching ranges computed by RangeLibc and the reference map. 
+2. Sensor update with laser scan. This step updates the particle weights by comparing the obtained ranges from laser scan with the ray marching ranges computed by RangeLibc and the reference map.
 3. Sensor update with landmarks. This step updates the particle weights by doing a landmark projection and matching(shown in Alg.2) algorithm which compares the observed landmarks with reference landmarks. More details will be provided in the next section.
 
 {{<figure src="https://i.ibb.co/68YNY9z/algo1.png" alt="algo1">}}
 
 ##### Landmark Detection
+
 The landmark detection is developed using a well known, high performance and highly customizable object detection model: YOLO. Since our indoor environment is vastly different from its training dataset environments where images are collected mostly outdoors and from a human perspective, a customized dataset was created for fine-tuning the YOLO model. The trained model can perform very robust and fast indoor landmark detection which is exactly what we needed for this project.
 
 {{<figure src="https://i.ibb.co/KWFN2sT/landmark-detection.png" alt="landmark-detection">}}
 
 ##### Landmark Projection and Matching
+
 The detected landmarks as bounding boxes can be used to further enhance the localization performance because we already have certain landmarks positions and orientations embedded in the floor maps, e.g. doors and windows. Thus, this section introduces the landmark projection and matching algorithm (alg. 2) that uses reference landmarks of floor maps and detect landmark in real time to update particle weights and improve the robustness of localization module especially at low-feature places such as the narrow hallway.
 
 {{<figure src="https://i.ibb.co/GJHNcCd/alg2.png" alt="alg2">}}
 
 Determining the “seeable” landmarks is to check whether a landmark satisfies the three conditions (also shown in the figure below).  
-1. It’s not blocked by any obstacle 
+
+1. It’s not blocked by any obstacle
 2. It’s within camera’s sight distance
-3. It’s within the camera’s field of view (FOV). 
+3. It’s within the camera’s field of view (FOV).
 
 The first requirement is ensured by comparing the ray marching result from robot to the landmark and the actual distance between them two. If they’re equal(with some tolerance) then the landmark is not blocked by obstacles. The second and third requirements are ensured by computing the distance and angles between robot and landmark and compare with sight distance as well as camera FOV.
 
@@ -272,15 +301,18 @@ $$
 Note that in order to make the computation less stressful so it can be run in real time, the particle filter algorithm is vectorized instead of doing a loop for each particle, the latter is just to make the algorithm easier to understand.
 
 ##### Code and Demo Videos
+
 The [mLab github](https://github.com/mlab-upenn) contains the repos for all the modules including localization, landmark detection, as well as planning module and Auto-mapping module. They're for the whole project "CAD2CAV: From Building Blueprints to Scalable Multi-robot navigation".
 
 in specific, the repos for my independent study project are:
+
 1. [Localization module](https://github.com/shineyruan/particle_filter).
 2. [Landmark detection module](https://github.com/Shumin326/darknet_ros). It also contains instructions on fine tuning as well as a link to my model.
 
 The demo videos can be viewed in the repos(listed above) README as well as this [youtube video list](https://www.youtube.com/playlist?list=PL8Fip0E9YRSuZok9umO4fMpGWx_UsfoaL).
 
 ## References
+
 * [eirannejad/pyRevit](https://github.com/eirannejad/pyRevit).
 * [mit-racecar/particle_filter](https://github.com/mit-racecar/particle_filter).
 * [google/or-tools](https://github.com/google/or-tools).
@@ -288,14 +320,13 @@ The demo videos can be viewed in the repos(listed above) README as well as this 
 * [ben-strasser/fast-cpp-csv-parser](https://github.com/ben-strasser/fast-cpp-csv-parser).
 * [leggedrobotics/darknet_ros](https://github.com/leggedrobotics/darknet_ros).
 * A. Y. Ng, M. I. Jordan, and Y. Weiss, "On spectral clustering: Analysis and an algorithm," in Proceedings of the 14th International Conference on Neural Information Processing Systems: Natural and Synthetic, ser. NIPS’01. Cambridge, MA, USA: MIT Press, 2001, p. 849–856.
-* B. Lau, C. Sprunk, and W. Burgard, "Improved updating of euclidean distance maps and Voronoi diagrams," in Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems, Taipei, Taiwan, 2010. [Online]. Available: http://ais.informatik.uni-freiburg.de/publications/papers/lau10iros.pdf
+* B. Lau, C. Sprunk, and W. Burgard, "Improved updating of euclidean distance maps and Voronoi diagrams," in Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems, Taipei, Taiwan, 2010. [Online]. Available: <http://ais.informatik.uni-freiburg.de/publications/papers/lau10iros.pdf>
 * B. W. Kernighan and S. Lin, "An efficient heuristic procedure for partitioning graphs," The Bell System Technical Journal, vol. 49, no. 2, pp. 291–307, 1970.
-* C. Johnson, "Topological mapping and navigation in real-world environments," Ph.D. dissertation, University of Michigan, 2018. Available: https://deepblue.lib.umich.edu/handle/2027.42/144014
+* C. Johnson, "Topological mapping and navigation in real-world environments," Ph.D. dissertation, University of Michigan, 2018. Available: <https://deepblue.lib.umich.edu/handle/2027.42/144014>
 * D. Arthur and S. Vassilvitskii, "K-means++: The advantages of careful seeding," in Proceedings of the Eighteenth Annual ACM-SIAM Symposium on Discrete Algorithms, ser. SODA ’07. USA: Society for Industrial and Applied Mathematics, 2007, p. 1027–1035.
 * E. Olson, "AprilTag: A robust and flexible visual fiducial system," 2011 IEEE International Conference on Robotics and Automation, 2011, pp. 3400-3407, doi: 10.1109/ICRA.2011.5979561.
-* G. Karypis and V. Kumar, "Multilevel k-way partitioning scheme for irregular graphs," Journal of Parallel and Distributed Computing, vol. 48, no. 1, pp. 96–129, 1998. [Online]. Available: https://www.sciencedirect.com/science/article/pii/S0743731597914040
+* G. Karypis and V. Kumar, "Multilevel k-way partitioning scheme for irregular graphs," Journal of Parallel and Distributed Computing, vol. 48, no. 1, pp. 96–129, 1998. [Online]. Available: <https://www.sciencedirect.com/science/article/pii/S0743731597914040>
 * J. Wang and E. Olson, "AprilTag 2: Efficient and robust fiducial detection," 2016 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2016, pp. 4193-4198, doi: 10.1109/IROS.2016.7759617.
 * L. Janson, E. Schmerling, A. Clark, and M. Pavone, "Fast marching tree: a fast marching sampling-based method for optimal motion planning in many dimensions," 2015.
 * S. L. Bowman, N. Atanasov, K. Daniilidis and G. J. Pappas, "Probabilistic data association for semantic SLAM," 2017 IEEE International Conference on Robotics and Automation (ICRA), 2017, pp. 1722-1729, doi: 10.1109/ICRA.2017.7989203.
-* Yang, Zhong & Yao, Baozhen. (2009). "An Improved Ant Colony Optimization for Vehicle Routing Problem." European Journal of Operational Research. 196. 171-176. 10.1016/j.ejor.2008.02.028. 
-
+* Yang, Zhong & Yao, Baozhen. (2009). "An Improved Ant Colony Optimization for Vehicle Routing Problem." European Journal of Operational Research. 196. 171-176. 10.1016/j.ejor.2008.02.028.

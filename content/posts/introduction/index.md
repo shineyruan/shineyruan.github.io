@@ -12,7 +12,7 @@ tags: ["Basic", "Multi-lingual"]
 categories: ["Basic"]
 ---
 
-Welcome to my personal website! I am a second-year robotics master's student at the University of Pennsylvania. Prior to Penn, I received my B.S. degree in computer science engineering (CSE) at the University of Michigan, with a second B.S. degree in electrical and computer engineering (ECE) at Shanghai Jiao Tong University. 
+Welcome to my personal website! I am a second-year robotics master's student at the University of Pennsylvania. Prior to Penn, I received my B.S. degree in computer science engineering (CSE) at the University of Michigan, with a second B.S. degree in electrical and computer engineering (ECE) at Shanghai Jiao Tong University.
 
 <!-- more -->
 
@@ -37,6 +37,7 @@ With the advantage of being enrolled in a dual-degree program, I have taken a li
 * Operating Systems
 
 As a robotics master's student, I continue to explore a variety of areas closely related to robotics, include but not limited to
+
 * Deep Computer Vision &mdash; for robotic perception
 * Computer Graphics, GPU Programming & Architecture &mdash; for robotic simulation & visualization
 * Linear Programming & Optimization, Modern Convex Optimization &mdash; for robotic algorithm development
@@ -79,7 +80,7 @@ I have recorded a number of my own projects [here](https://zhihaoruan.xyz/catego
 
 ## My Gallery
 
-Besides computer science, I'm also fond of photography as well as travelling around the world. I love to write travel journals to commemorate those precious moments. 
+Besides computer science, I'm also fond of photography as well as travelling around the world. I love to write travel journals to commemorate those precious moments.
 
 When I was travelling, a question that I have been constantly thinking about is "what kind of pictures could represent a city's culture?" Although a city might have different faces and it sounds impossible for me to reflect all of them in one single picture, I would try to use a series to document them. In my point of view, every single city/town on the earth has its unique culture. Only when one gets really close to the city dwellers can he/she really feels the unique culture of the place.
 

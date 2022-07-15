@@ -38,4 +38,3 @@ London is famous for its theaters at West End. Along with New York City's Broadw
 {{<figure src="DSC01796postruanzh.jpg" width="500" caption="London musicals at West End">}}
 
 ![](DSC01808postruanzh.jpg)
-

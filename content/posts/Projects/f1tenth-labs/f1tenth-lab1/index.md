@@ -21,11 +21,13 @@ categories: ["Projects"]
 <!-- more -->
 
 ## Overview
-In Spring 2021 I finally got a chance to join the F1/10 Autonomous Racing Car Lab at Penn, supervised by [Prof. Rahul Mangharam](https://www.seas.upenn.edu/~rahulm/). To start my autonomous racing journey, I followed the [official tutorials](https://f1tenth-coursekit.readthedocs.io/en/stable/index.html) and studied the labs & projects there. 
+
+In Spring 2021 I finally got a chance to join the F1/10 Autonomous Racing Car Lab at Penn, supervised by [Prof. Rahul Mangharam](https://www.seas.upenn.edu/~rahulm/). To start my autonomous racing journey, I followed the [official tutorials](https://f1tenth-coursekit.readthedocs.io/en/stable/index.html) and studied the labs & projects there.
 
 ROS (Robotics Operating System), is a robotics project development platform widely-used all across the world. Although it is called an "operating system", it is actually a chain of build tools that can be used to build mixed C++/Python projects as well as provide nice & convenient communication functionalities between processes. F1/10 Autonomous Racing Car dev stack is built upon ROS and C++. **Lab 1 also mainly focuses on introducing ROS as well as providing some small hands-on exercises for ROS coding.**
 
 ## Lab Materials
+
 The lab specs can be access [here](https://f1tenth-coursekit.readthedocs.io/en/latest/assignments/labs/lab1.html). A copy of PDF is also shown [here](/files/f110_lab1.pdf).
 
 {{< embed-pdf url="/files/f110_lab1.pdf" >}}
@@ -33,16 +35,20 @@ The lab specs can be access [here](https://f1tenth-coursekit.readthedocs.io/en/l
 The lab was built on the *F1Tenth Simulator*, which can be accessed [here](https://f1tenth.readthedocs.io/en/stable/going_forward/simulator/sim_install.html).
 
 ## Workspaces and Packages
+
 This section mainly uses the official ROS tutorials to create a Catkin workspace and a ROS package. I followed the tutorials in ROS C++, set up my workspace, and created a package.
 
 ### Answers to Section 3 Written Questions
+
 - **What is a CMakeList? Is it related to a make file used for compiling C++ objects? If yes then what is the difference between the two?**
 
-A CMakeList is a script offering instructions on how to build a CMake workspace. With a proper CMakeList, we can use CMake to build the workspace by 
+A CMakeList is a script offering instructions on how to build a CMake workspace. With a proper CMakeList, we can use CMake to build the workspace by
+
 ```bash
 cmake ..
 make && make install
 ```
+
 As for its relationship to a Makefile, CMakeLists can be viewed as a *high-level wrapper* of Makefile. In Unix systems, a CMakeList will produce a Makefile.
 
 - **Are you using CMakeList.txt for Python in ROS? Is there a executable object being created for Python?**
@@ -54,15 +60,18 @@ CMakeList for Python in ROS does not compile anything. It just imports Catkin ma
 `catkin_make` should be run in Catkin workspaces, aka. `catkin_ws`.
 
 - **The following commands were used in the tutorial**
+
 ```bash
 source /opt/ros/kinetic(melodic)/setup.bash
 source devel/setup.bash
 ```
+
 **Why do we need to source `setup.bash`? What does it do? Why do we have to different `setup.bash` files here and what is the difference?**
 
 `/opt/ros/kinetic(melodic)/setup.bash` provides necessary Catkin commands & env variables across workspaces, such as `catkin_make`, `catkin_init_workspace`, etc. `devel/setup.bash` provides workspace-specific environment variables, such as the Python libraries it builds, the ROS packages it creates, etc.
 
 ## Publishers and Subscribers
+
 In this section I wrote a simple subscriber to subscribe the LiDAR message broadcasted from F1Tenth simulator. The ROS message was a `sensor_msgs/LaserScan` it was published on channel `/scan`.
 
 What's more, I also processed the LiDAR data and found out its maximum/minimum range through a simple linear search, and published the messages on `/closest_point` and `/farthest_point` with data type `std_msgs::Float64`. I also tried to wrap up the processor in a C++ class. The entire code is shown below.
@@ -131,26 +140,31 @@ int main(int argc, char** argv) {
 ```
 
 ### Answers to Section 4 Written Questions
+
 - **What is a nodehandle object? Can we have more than one nodehandle objects in a single node?**
 
 A `ros::NodeHandle` is an extra layer in C++ that provides RAII-style startup & shutdown of the ROS node. It also offers extra functionalities for the node, such as sending/receiving ROS messages, waiting on a specific ROS message, etc. We can indeed have multiple `NodeHandle`s in a single node for creating different namespaces, but they all refer to the same ROS node.
 
 - **What is `ros::spinOnce()`? How is it different from `ros::spin()`?**
 
-`ros::spinOnce()` iterates the loop once more while keeping the node active, while `ros::spin()` puts the entire node into sleep and only handles data from callback functions. 
+`ros::spinOnce()` iterates the loop once more while keeping the node active, while `ros::spin()` puts the entire node into sleep and only handles data from callback functions.
 
 - **What is `ros::rate()`?**
 
 `ros::Rate` specifies the rate of spinning loop of this ROS node.
 
 ## Implementing Custom Messages
+
 In this section I focused on implementing a custom ROS message type `scan_range`, which includes the min/max range in the laser scan. According to the [tutorials of creating custom ROS messages](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv), I created the following ROS message `scan_range.msg`:
+
 ```text
 std_msgs/Header header
 std_msgs/Float64 range_min
 std_msgs/Float64 range_max
 ```
+
 After resolving all Catkin package dependencies in CMakeList & ROS package manifest file (`package.xml`), I finally reached the following output.
+
 ```bash
 > rosmsg show lab1/scan_range
 std_msgs/Header header
@@ -164,6 +178,7 @@ std_msgs/Float64 range_max
 ```
 
 ### Answers to Section 5 Written Questions
+
 - **Why did you include the header file of the message file instead of the message file itself?**
 
 According to ROS mechanisms, any customized ROS messages will be generated into a templated message header file to be included in the C++ code. The message file itself is not part of standard C++ and it cannot be parsed by C++ compilers.
@@ -172,14 +187,16 @@ According to ROS mechanisms, any customized ROS messages will be generated into 
 
 The `Header` provides information on the sequential order, the timestamp, and the frame ID of the instant when the message is published. It is very useful when one would like to make use of time information of the messages received. The header file has been included in my custom ROS message.
 
-
 ## Recording and Publishing Bag Files
-This section aims at playing with `rosbag` and bag files in ROS. ROS bag files are a certain kind of files that targets at recording ROS messages, so that it can be replayed elsewhere afterwards. ROS Bag is extremely helpful when one would like to collect data in real-world experiments. 
+
+This section aims at playing with `rosbag` and bag files in ROS. ROS bag files are a certain kind of files that targets at recording ROS messages, so that it can be replayed elsewhere afterwards. ROS Bag is extremely helpful when one would like to collect data in real-world experiments.
 
 ### Answers to Section 6 Written Questions
+
 - **Where does the bag file get saved? How can you change where it is saved?**
 
 By default the bag file is saved at the current directory. We can also change the directory by adding `-o` such as:
+
 ```bash
 rosbag record -o ../bagfiles/my_rosbag_recordings.bag
 ```
@@ -189,6 +206,7 @@ rosbag record -o ../bagfiles/my_rosbag_recordings.bag
 By default the bag file is saved at the current directory. We can also change the directory by appending `args=../bagfiles/my_rosbag_recordings.bag` to the corresponding node in the launch file.
 
 ## References
+
 F1/10 Autonomous Racing Lecture: Course Introduction
 
 {{< youtube zENhppcxwzY >}}
@@ -196,6 +214,3 @@ F1/10 Autonomous Racing Lecture: Course Introduction
 F1/10 Autonomous Racing Lecture: Using the Simulator
 
 {{< youtube Q71OKxztppA >}}
-
-
-

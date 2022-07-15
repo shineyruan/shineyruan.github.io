@@ -46,9 +46,9 @@ To my great surprise, street performing seems to be a very popular activity in D
 
 ![](RZH418626.jpg)
 
-
 ## Cork
-Along with Dublin, I also visited the second-largest city in Ireland, Cork, and the famous Cliffs of Moher, during my trip to Ireland last summer. 
+
+Along with Dublin, I also visited the second-largest city in Ireland, Cork, and the famous Cliffs of Moher, during my trip to Ireland last summer.
 
 Although Cork has been the second largest city of Ireland, it is still relatively small and looks more like a peaceful town. In Cork there is a famous English market where all kinds of Atlantic seefood, meat, fruits, and flowers are sold. The city was small but really peaceful, with a small river passing through the city center.
 

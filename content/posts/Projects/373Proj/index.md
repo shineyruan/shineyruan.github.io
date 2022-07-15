@@ -218,9 +218,9 @@ We can see that it consists of 8 buttons: Up, Down, Left, Right, Select, Start, 
 For more details, [a document that I have referred to](http://uzebox.org/files/NES-controller-Hydra-Ch6All-v1.0.pdf) when programming the NES controller says that:
 
 > The Nintendo Entertainment System or NES, also known as the Nintendo Family Computer (Famicom) was released in Japan in 1983 and shortly after in the USA in 1985. The system was even more successful than the Atari 2600 and more or less put the last stake in the heart of Atari home consoles forever. The NES sold more than 60,000,000 units worldwide in its heyday and still sells to this day (I just bought 4 of them from eStarland.com)! There are over 200 clones of the system in circulation and the word "Nintendo" is used in many cultures as a youth slang term with many "varied" meanings.
-> 
+>
 > The system itself was nothing compared to the Propeller chip’s computing power, the NES was powered by the 8-bit 6502 running at 1.79 MHz, but the NES did have quite a bit of dedicated graphics hardware making it quite a contender in the 8-bit era, it sported multiple tile maps, graphics planes, sprites, sound, and a lot more.
-> 
+>
 > — <cite><i>"Game Programming for the Propeller Powered HYDRA"</i>, pp. 95</cite>
 
 #### Interfacing the Nintendo NES controller
@@ -248,7 +248,7 @@ The states of the 8 buttons (pressed/not pressed) will be provided at the `data_
 5. Read the bits in from `data_out` line. The first bit will be available after the latching process.
 6. Pulse `clock` line 7 times to read the remaining bits.
 
-***Note. The bits are inverted from the data line (LOW for pressed, HIGH for not pressed).*** 
+***Note. The bits are inverted from the data line (LOW for pressed, HIGH for not pressed).***
 
 Based on the above rules, we can create a logic in Verilog that keeps reading the button states of the NES controller in the background. To keep things simple, we use APB interface to interact with the C coding parts, and we organize the 8 button states to be in the form of an 8-bit integer in a specific APB address that can be accessed with C code.
 
@@ -325,7 +325,7 @@ always @(posedge PCLK) begin
             data_in[1] <= data_in[0];
             data_in[0] <= ~data;
             read_count <= read_count + 1;
-            
+
             if (read_count == 3'd7) begin
                 // latch the last data
                 finish     <= 1;
