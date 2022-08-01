@@ -1,6 +1,6 @@
 ---
 title: "CAD2CAV: Computer Aided Design for Cooperative Autonomous Vehicles"
-date: 2021-12-27T23:12:37Z
+date: 2021-12-27T23:12:37+00:00
 menu:
   sidebar:
     name: CAD2CAV

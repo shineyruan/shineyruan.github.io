@@ -1,6 +1,6 @@
 ---
 title: "CUDA Path Tracer with À-Trous Denoiser"
-date: 2021-12-27T00:43:29Z
+date: 2021-12-27T00:43:29+00:00
 menu:
   sidebar:
     name: CUDA Path Tracer

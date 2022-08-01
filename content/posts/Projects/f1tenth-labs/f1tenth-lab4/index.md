@@ -1,6 +1,6 @@
 ---
 title: My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance
-date: 2021-01-27 23:48:30
+date: 2021-01-27T23:48:30-04:00
 description: F1Tenth Course Lab 4
 hero: /images/posts/f1tenth-lab4/f1tenth-lab4.png
 theme: Toha

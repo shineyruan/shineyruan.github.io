@@ -1,6 +1,6 @@
 ---
 title: My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker)
-date: 2021-01-29 19:52:14
+date: 2021-01-29T19:52:14-04:00
 description: F1Tenth Course Lab 6
 hero: /images/posts/f1tenth-lab6/f1tenth-lab6-cover.png
 theme: Toha

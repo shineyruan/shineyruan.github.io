@@ -1,6 +1,6 @@
 ---
 title: My F1TENTH Journey — Lab 1, Introduction to ROS
-date: 2021-01-24 15:56:44
+date: 2021-01-24T19:56:44-04:00
 description: F1Tenth Course Lab 1
 theme: Toha
 hero: /images/posts/f1tenth-lab1/f1tenth-lab1.png

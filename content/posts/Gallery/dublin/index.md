@@ -1,6 +1,6 @@
 ---
 title: Ireland
-date: 2020-02-28 16:36:02
+date: 2020-02-28T20:36:02-04:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
 hero: /images/posts/ireland/RZH403524.jpg

@@ -1,6 +1,6 @@
 ---
 title: SLAM — Simultaneous Localization And Mapping
-date: 2020-01-13 21:47:27
+date: 2020-01-13T23:47:27-04:00
 tags: ["robotics", "Multi-lingual"]
 categories: ["Projects"]
 theme: Toha

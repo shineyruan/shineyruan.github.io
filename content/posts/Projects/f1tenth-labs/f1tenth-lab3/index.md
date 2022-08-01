@@ -1,6 +1,6 @@
 ---
 title: My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower
-date: 2021-01-27 00:34:21
+date: 2021-01-27T04:34:21-04:00
 description: F1Tenth Course Lab 3
 theme: Toha
 menu:

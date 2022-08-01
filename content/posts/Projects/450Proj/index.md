@@ -1,6 +1,6 @@
 ---
 title: Real-Time On-Device Flow Statistics Detection and Prediction
-date: 2020-08-29 13:40:39
+date: 2020-08-29T17:40:39-04:00
 tags: ["computer vision", "raspberry pi", "Multi-lingual"]
 categories: ["Projects"]
 math: true

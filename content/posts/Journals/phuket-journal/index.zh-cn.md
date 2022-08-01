@@ -2,7 +2,7 @@
 title: 'Phuket, Thailand — Sea and Sunshine! 前往普吉，感受海岸和阳光'
 tags: ["Photography", "Travel Journal", "Multi-lingual"]
 categories: ["Travel Journals"]
-date: 2020-01-14 16:12:17
+date: 2020-01-14T20:12:17-04:00
 hero: /images/posts/phuket-journal/RZH6667post.jpg
 menu:
   sidebar:

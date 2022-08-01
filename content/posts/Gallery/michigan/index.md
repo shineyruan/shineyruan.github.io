@@ -1,6 +1,6 @@
 ---
 title: Michigan, USA
-date: 2020-05-17 16:17:36
+date: 2020-05-17T20:17:36-04:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
 hero: /images/posts/michigan/CZQ190818DSC02076.jpg

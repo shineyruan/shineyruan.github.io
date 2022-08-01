@@ -1,6 +1,6 @@
 ---
 title: "An Interactive Game — Step On the White Tiles!"
-date: 2019-05-03T17:55:23Z
+date: 2019-05-03T21:55:23-04:00
 hero: /images/posts/373Proj/373_diagram.png
 description: EECS 373 Final Project
 theme: Toha

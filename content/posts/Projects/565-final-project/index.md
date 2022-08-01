@@ -1,6 +1,6 @@
 ---
 title: "Volume Rendered ReSTIR in Vulkan"
-date: 2021-12-27T02:41:46Z
+date: 2021-12-27T02:41:46+00:00
 menu:
   sidebar:
     name: Volume Rendered ReSTIR

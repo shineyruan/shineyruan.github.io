@@ -1,6 +1,6 @@
 ---
 title: ¡HOLA! Puerto Rico — 波多黎各：逃离大雪的海边度假计划
-date: 2020-03-13 18:45:19
+date: 2020-03-13T22:45:19-04:00
 description: Zhihao's travel journal to Puerto Rico
 hero: /images/posts/puerto-rico-journal/PR-cover.jpg
 menu:

@@ -2,7 +2,7 @@
 title: 'Hong Kong, China'
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
-date: 2020-05-24 00:38:02
+date: 2020-05-24T04:38:02-04:00
 hero: /images/posts/hong-kong/DSC00851.jpg
 menu:
   sidebar:

@@ -1,6 +1,6 @@
 ---
 title: My F1TENTH Journey — Lab 2, Automatic Emergency Braking
-date: 2021-01-25 23:32:28
+date: 2021-01-25T23:32:28-04:00
 description: F1Tenth Course Lab 2
 theme: Toha
 hero: /images/posts/f1tenth-lab2/f1tenth-lab2.png

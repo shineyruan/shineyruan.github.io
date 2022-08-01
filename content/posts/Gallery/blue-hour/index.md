@@ -1,6 +1,6 @@
 ---
 title: Capturing the "Blue Hour"
-date: 2020-05-25 16:23:20
+date: 2020-05-25T20:23:20-04:00
 tags: ["photography", "blue hour"]
 categories: ["My Gallery"]
 hero: /images/posts/blue-hour/RZH8702post.jpg

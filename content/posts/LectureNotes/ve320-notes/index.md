@@ -1,6 +1,6 @@
 ---
 title: Introduction to Semiconductor Devices
-date: 2020-06-17 21:27:13
+date: 2020-06-17T23:27:13-04:00
 tags: ["semiconductor devices", "latex", "Multi-lingual"]
 categories: ["Lecture notes"]
 math: true

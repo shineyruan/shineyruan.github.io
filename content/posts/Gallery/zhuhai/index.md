@@ -1,6 +1,6 @@
 ---
 title: Zhuhai, China — Home, Sweet Home
-date: 2019-03-05 00:16:40
+date: 2019-03-05T20:16:40-04:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
 hero: /images/posts/zhuhai/DSC00222.jpg
