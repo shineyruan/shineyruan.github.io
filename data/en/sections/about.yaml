@@ -15,7 +15,7 @@ company:
   url: "https://www.tusimple.com/"
 
 # your resume. this file path should be relative to you "static" directory
-resume: "files/cv.pdf"
+resume: "files/Resume.pdf"
 
 # a summary about you
 summary: "Greetings! I am a robotics student passionate about the autonomous driving (AD) industry. My main area of focus lies in motion planning and machine learning. I also have a lot of experience in robotics perception, such as computer vision and LiDAR. Hope to see you in the future! <br/> <br/> ***Note: Personal travel journals are available in the Chinese page.***"
