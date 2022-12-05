@@ -11,6 +11,15 @@ section:
 # Your experiences
 experiences:
   - company:
+    name: 图森未来
+    url: "https://www.tusimple.com/"
+    location: 美国加州圣地亚哥
+    positions:
+      - designation: 规划算法工程师
+        start: 2022年7月
+        responsibilities:
+          - 设计并实现与卡车自动驾驶有关的决策与路径规划系统模块。
+  - company:
       name: xLab, 宾夕法尼亚大学
       url: "https://mlab-upenn.github.io/lab_website/"
       location: 美国宾夕法尼亚州费城
@@ -19,6 +28,7 @@ experiences:
     positions:
       - designation: 研究生研究助理
         start: 2021年2月
+        end: 2022年5月
         # don't provide end date if you are currently working there. It will be replaced by "Present"
         # end: Dec 2020
         # give some points about what was your responsibilities at the company.

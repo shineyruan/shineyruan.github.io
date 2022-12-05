@@ -18,7 +18,7 @@ company:
 resume: "files/cv.pdf"
 
 # a summary about you
-summary: "很高兴认识你！我在美国宾夕法尼亚大学攻读机器人硕士学位。机器人学是个非常有意思的学科。它涉及感知、导航、控制等多个领域的算法。我主要的兴趣在于自动驾驶的决策与规划领域，同时对感知方面也稍有涉猎。希望能在未来的某天遇见你！<br/> <br/> ***注：本中文页面仅记录个人旅行日记。如需阅读个人专业相关项目简介，请移步英文页面。***"
+summary: "热衷于动手创造实物的机器人工程师。<br/> <br/> ***注：本中文页面仅记录个人旅行日记。如需阅读个人专业相关项目简介，请移步英文页面。***"
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -33,7 +33,7 @@ socialLinks:
 
   - name: LinkedIn
     icon: "fab fa-linkedin"
-    url: "https://www.linkedin.com/in/zhihao-ruan-29b29a13a/"
+    url: "https://www.linkedin.com/in/zhihaoruan/"
 # your soft skills
 # give the percentage between 50 to 100 with 5 intervals.
 # currently supported colors: blue, yellow, pink, green, sky, orange

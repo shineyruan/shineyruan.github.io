@@ -18,7 +18,7 @@ company:
 resume: "files/Resume.pdf"
 
 # a summary about you
-summary: "Greetings! I am a robotics student passionate about the autonomous driving (AD) industry. My main area of focus lies in motion planning and machine learning. I also have a lot of experience in robotics perception, such as computer vision and LiDAR. Hope to see you in the future! <br/> <br/> ***Note: Personal travel journals are available in the Chinese page.***"
+summary: "Robotics student with a main area of focus in motion planning and machine learning. Interested in building AI-empowered physical objects for the future. <br/> <br/> ***Note: Personal travel journals are available in the Chinese page.***"
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -33,7 +33,7 @@ socialLinks:
 
   - name: LinkedIn
     icon: "fab fa-linkedin"
-    url: "https://www.linkedin.com/in/zhihao-ruan-29b29a13a/"
+    url: "https://www.linkedin.com/in/zhihaoruan/"
 # your soft skills
 # give the percentage between 50 to 100 with 5 intervals.
 # currently supported colors: blue, yellow, pink, green, sky, orange
