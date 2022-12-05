@@ -15,7 +15,7 @@ company:
   url: "https://www.grasp.upenn.edu/"
 
 # your resume. this file path should be relative to you "static" directory
-resume: "files/cv.pdf"
+resume: "files/Resume.pdf"
 
 # a summary about you
 summary: "热衷于动手创造实物的机器人工程师。<br/> <br/> ***注：本中文页面仅记录个人旅行日记。如需阅读个人专业相关项目简介，请移步英文页面。***"
