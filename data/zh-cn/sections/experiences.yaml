@@ -11,11 +11,11 @@ section:
 # Your experiences
 experiences:
   - company:
-    name: 图森未来
-    url: "https://www.tusimple.com/"
-    location: 美国加州圣地亚哥
+      name: 图森未来
+      url: "https://www.tusimple.com/"
+      location: 美国加州圣地亚哥
     positions:
-      - designation: 规划算法工程师
+      - designation: 决策/轨迹规划算法工程师
         start: 2022年7月
         responsibilities:
           - 设计并实现与卡车自动驾驶有关的决策与路径规划系统模块。
@@ -52,7 +52,7 @@ experiences:
       location: 美国加州圣地亚哥 (远程工作)
       overview: 图森未来 (TuSimple) 是一个无人驾驶卡车品牌，创立初衷在于以L4级别（SAE标准）的无人驾驶卡车技术为全球物流运输行业赋能。
     positions:
-      - designation: 路径规划算法工程师
+      - designation: 决策/轨迹规划算法工程师（实习）
         start: 2021年5月
         end: 2021年8月
         responsibilities:
