@@ -15,7 +15,7 @@ My F1TENTH Journey — Lab 1, Introduction to ROS My F1TENTH Journey — Lab 2, 
 All my source codes can be accessed here.
 Previous post:
 My F1TENTH Journey — Lab 1, Introduction to ROS My F1TENTH Journey — Lab 2, Automatic Emergency Braking Lab Materials The lab materials can be accessed here. A PDF version is also attached here.
-Previous Next &amp;nbsp; &amp;nbsp; Page: / The lab was built on the F1Tenth Simulator, which can be accessed here.</description></item><item><title>My F1TENTH Journey — Lab 2, Automatic Emergency Braking</title><link>https://zhihaoruan.xyz/posts/projects/f1tenth-labs/f1tenth-lab2/</link><pubDate>Mon, 25 Jan 2021 23:32:28 -0400</pubDate><guid>https://zhihaoruan.xyz/posts/projects/f1tenth-labs/f1tenth-lab2/</guid><description>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.
+Previous Next Page: / The lab was built on the F1Tenth Simulator, which can be accessed here.</description></item><item><title>My F1TENTH Journey — Lab 2, Automatic Emergency Braking</title><link>https://zhihaoruan.xyz/posts/projects/f1tenth-labs/f1tenth-lab2/</link><pubDate>Mon, 25 Jan 2021 23:32:28 -0400</pubDate><guid>https://zhihaoruan.xyz/posts/projects/f1tenth-labs/f1tenth-lab2/</guid><description>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.
 All my source codes can be accessed here.
 Previous post:
 My F1TENTH Journey — Lab 1, Introduction to ROS Overview This lab focuses on implementing an AEB (Automatic Emergency Braking) in ROS node for F1/10 racing cars. AEB is widely used in autonomous vehicles as a basic safety guarantee to avoid collisions with objects.
