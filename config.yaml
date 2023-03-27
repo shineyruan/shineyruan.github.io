@@ -48,8 +48,110 @@ params:
   # specify whether you want to write some blog posts or not
   enableBlogPost: true
 
-  # specify whether you want to show Table of Contents in reading page
-  enableTOC: true
+  # Configure various features of this theme
+  features:
+    # Enable dark theme
+    darkMode:
+      enable: true
+      services:
+        darkreader:
+          defaultColorScheme: system # options are 'system', 'dark', 'light'
+          fixes:
+            invert: ['img[src$=".svg"]'] # inverts svg colors.
+          theme:
+            brightness: 100
+            contrast: 100
+            sepia: 0
+
+    # Enable and configure portfolio
+    portfolio:
+      enable: true
+
+    # Enable and configure blog posts
+    blog:
+      enable: true
+      # Share post on different social media
+      shareButtons:
+        facebook: true
+        twitter: true
+        linkedin: true
+        reddit: true
+        whatsapp: true
+        email: true
+        # tumblr: true
+        # pocket: true
+        # diaspora: true
+        # mastodon: true
+
+    # Enable & configure "Notes" features
+    notes:
+      enable: false
+
+    # Specify whether to show flag in the language selector. Default is true.
+    flags:
+      enable: true
+      # # If you want to use different country flag for a language, specify them here.
+      flagOverwrites:
+        - languageCode: zh-cn
+          countryCode: cn
+
+    # Enable this to use `embed-pdf` shortcode.
+    embedpdf:
+      enable: true
+
+    # specify whether you want to show Table of Contents in reading page
+    toc:
+      enable: true
+
+    # Enable this to create mathematic expressions using `$$` blocks
+    math:
+      enable: true
+      services:
+        # https://katex.org/docs/autorender.html#api for more configurations
+        katex:
+          delimiters:
+            - left: $$
+              right: $$
+              display: true
+            - left: \\[
+              right: \\]
+              display: true
+            - left: $
+              right: $
+              display: false
+            - left: \\(
+              right: \\)
+              display: false
+
+    # Enable to use custom syntax highlight
+    # Please note, Hugo comes with it's own html based syntax highlighter.
+    # Your code block will still be syntax highlighted by hugo.
+    # For more details: https://gohugo.io/content-management/syntax-highlighting/
+    # To disable Hugo's builtin syntax highlight,
+    # see: https://gohugo.io/getting-started/configuration-markup#highlight
+    # ```
+    # # config.yaml
+    # markup:
+    #   # this disables hugo's syntax highlighting.
+    #   codeFences: false
+    # ```
+    syntaxHighlight:
+      enable: true
+      services:
+        hljs:
+          # see: https://highlightjs.readthedocs.io/en/latest/api.html#configure
+          noHighlightRe: /^no-highlight$/i
+
+    # Enable to use `video-player` shortcode
+    videoPlayer:
+      enable: true
+      services:
+        # convert .js-player class into video player via https://plyr.io/
+        # Can play HTML5 Video, Audio, Youtube, Vimeo.
+        # For more info on setup: https://github.com/sampotts/plyr#quick-setup
+        plyr:
+          # options doc: https://github.com/sampotts/plyr#options
+          # fullscreen: true
 
   # Provide footer configuration.
   footer:
