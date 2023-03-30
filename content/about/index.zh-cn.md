@@ -1,8 +1,8 @@
 ---
-title: "About Author"
+title: "关于作者"
 subtitle: ""
-date: 2023-03-30T00:24:00-07:00
-lastmod: 2023-03-30T00:24:00-07:00
+date: 2023-03-30T01:19:22-07:00
+lastmod: 2023-03-30T01:19:22-07:00
 draft: false
 author: "Zhihao Ruan"
 authorLink: ""
@@ -27,13 +27,13 @@ linkToMarkdown: true
 rssFullText: false
 
 toc:
-  enable: false
+  enable: true
   auto: true
 code:
   copy: true
   maxShownLines: 50
 math:
-  enable: true
+  enable: false
   # ...
 mapbox:
   # ...
@@ -41,7 +41,7 @@ share:
   enable: true
   # ...
 comment:
-  enable: false
+  enable: true
   # ...
 library:
   css:
@@ -59,4 +59,4 @@ seo:
   # ...
 ---
 
-Zhihao Ruan is a robotics student with a main area of focus in motion planning and machine learning. Interested in building AI-empowered physical objects for the future.
+热衷于动手创造实物的机器人工程师。<br/> <br/> ***注：本中文页面仅记录个人旅行日记。如需阅读个人专业相关项目简介，请移步英文页面。***
