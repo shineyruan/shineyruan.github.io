@@ -32,61 +32,69 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
 # Author config
 [author]
-name = "Zhihao Ruan"
+name  = "Zhihao Ruan"
 email = "shineyruan@gmail.com"
-link = ""
+link  = ""
 
 # Menu config
 [menu]
 [[menu.main]]
-weight = 1
+weight     = 1
 identifier = "projects"
 # you can add extra information before the name (HTML format is supported), such as icons
 pre = ""
 # you can add extra information after the name (HTML format is supported), such as icons
 post = ""
 name = "Projects"
-url = "/categories/projects/"
+url  = "/categories/projects/"
 # title will be shown when you hover on this menu link
 title = ""
 [[menu.main]]
-weight = 2
+weight     = 2
 identifier = "my-gallery"
 # you can add extra information before the name (HTML format is supported), such as icons
 pre = ""
 # you can add extra information after the name (HTML format is supported), such as icons
 post = ""
 name = "My Gallery"
-url = "/categories/my-gallery/"
+url  = "/categories/my-gallery/"
 # title will be shown when you hover on this menu link
 title = ""
 [[menu.main]]
-weight = 3
+weight     = 3
 identifier = "posts"
 # you can add extra information before the name (HTML format is supported), such as icons
 pre = ""
 # you can add extra information after the name (HTML format is supported), such as icons
 post = ""
 name = "Posts"
-url = "/posts/"
+url  = "/posts/"
 # title will be shown when you hover on this menu link
 title = ""
 [[menu.main]]
-weight = 4
+weight     = 4
 identifier = "tags"
-pre = ""
-post = ""
-name = "Tags"
-url = "/tags/"
-title = ""
+pre        = ""
+post       = ""
+name       = "Tags"
+url        = "/tags/"
+title      = ""
 [[menu.main]]
-weight = 5
+weight     = 5
 identifier = "categories"
-pre = ""
-post = ""
-name = "Categories"
-url = "/categories/"
-title = ""
+pre        = ""
+post       = ""
+name       = "Categories"
+url        = "/categories/"
+title      = ""
+[[menu.main]]
+weight     = 6
+identifier = "about"
+pre        = ""
+post       = ""
+name       = "About"
+url        = "/about/"
+title      = ""
 
 [params]
 # site default theme ["auto", "light", "dark"]
@@ -193,8 +201,8 @@ highlightTag = "em"
 #  whether to use the absolute URL based on the baseURL in search index
 absoluteURL = false
 [params.search.algolia]
-index = ""
-appID = ""
+index     = ""
+appID     = ""
 searchKey = ""
 
 # Home page config
@@ -229,81 +237,81 @@ defaultHiddenFromHomePage = false
 
 # Social config about the author
 [params.social]
-GitHub = "shineyruan"
-Linkedin = "zhihaoruan/"
-Twitter = ""
-Instagram = ""
-Facebook = ""
-Telegram = ""
-Medium = ""
-Gitlab = ""
-Youtubelegacy = ""
-Youtubecustom = ""
+GitHub         = "shineyruan"
+Linkedin       = "zhihaoruan/"
+Twitter        = ""
+Instagram      = ""
+Facebook       = ""
+Telegram       = ""
+Medium         = ""
+Gitlab         = ""
+Youtubelegacy  = ""
+Youtubecustom  = ""
 Youtubechannel = ""
-Tumblr = ""
-Quora = ""
-Keybase = ""
-Pinterest = ""
-Reddit = ""
-Codepen = ""
-FreeCodeCamp = ""
-Bitbucket = ""
-Stackoverflow = ""
-Weibo = ""
-Odnoklassniki = ""
-VK = ""
-Flickr = ""
-Xing = ""
-Snapchat = ""
-Soundcloud = ""
-Spotify = ""
-Bandcamp = ""
-Paypal = ""
-Fivehundredpx = ""
-Mix = ""
-Goodreads = ""
-Lastfm = ""
-Foursquare = ""
-Hackernews = ""
-Kickstarter = ""
-Patreon = ""
-Steam = ""
-Twitch = ""
-Strava = ""
-Skype = ""
-Whatsapp = ""
-Zhihu = ""
-Douban = ""
-Angellist = ""
-Slidershare = ""
-Jsfiddle = ""
-Deviantart = ""
-Behance = ""
-Dribbble = ""
-Wordpress = ""
-Vine = ""
-Googlescholar = ""
-Researchgate = ""
-Mastodon = ""
-Thingiverse = ""
-Devto = ""
-Gitea = ""
-XMPP = ""
-Matrix = ""
-Bilibili = ""
-Discord = ""
-DiscordInvite = ""
-Lichess = ""
-ORCID = ""
-Pleroma = ""
-Kaggle = ""
-MediaWiki = ""
-Plume = ""
-HackTheBox = ""
-RootMe = ""
-Phone = ""
-Email = "shineyruan@gmail.com"
-RSS = false                    #
+Tumblr         = ""
+Quora          = ""
+Keybase        = ""
+Pinterest      = ""
+Reddit         = ""
+Codepen        = ""
+FreeCodeCamp   = ""
+Bitbucket      = ""
+Stackoverflow  = ""
+Weibo          = ""
+Odnoklassniki  = ""
+VK             = ""
+Flickr         = ""
+Xing           = ""
+Snapchat       = ""
+Soundcloud     = ""
+Spotify        = ""
+Bandcamp       = ""
+Paypal         = ""
+Fivehundredpx  = ""
+Mix            = ""
+Goodreads      = ""
+Lastfm         = ""
+Foursquare     = ""
+Hackernews     = ""
+Kickstarter    = ""
+Patreon        = ""
+Steam          = ""
+Twitch         = ""
+Strava         = ""
+Skype          = ""
+Whatsapp       = ""
+Zhihu          = ""
+Douban         = ""
+Angellist      = ""
+Slidershare    = ""
+Jsfiddle       = ""
+Deviantart     = ""
+Behance        = ""
+Dribbble       = ""
+Wordpress      = ""
+Vine           = ""
+Googlescholar  = ""
+Researchgate   = ""
+Mastodon       = ""
+Thingiverse    = ""
+Devto          = ""
+Gitea          = ""
+XMPP           = ""
+Matrix         = ""
+Bilibili       = ""
+Discord        = ""
+DiscordInvite  = ""
+Lichess        = ""
+ORCID          = ""
+Pleroma        = ""
+Kaggle         = ""
+MediaWiki      = ""
+Plume          = ""
+HackTheBox     = ""
+RootMe         = ""
+Phone          = ""
+Email          = "shineyruan@gmail.com"
+RSS            = true                   #
 
 #  Page global config
 [params.page]
@@ -337,10 +345,10 @@ auto = true
 [params.page.math]
 enable = true
 #  default inline delimiter is $ ... $ and \( ... \)
-inlineLeftDelimiter = ""
+inlineLeftDelimiter  = ""
 inlineRightDelimiter = ""
 #  default block delimiter is $$ ... $$, \[ ... \], \begin{equation} ... \end{equation} and some other functions
-blockLeftDelimiter = ""
+blockLeftDelimiter  = ""
 blockRightDelimiter = ""
 # KaTeX extension copy_tex
 copyTex = true
@@ -370,30 +378,30 @@ scale = true
 fullscreen = true
 #  social share links in post page
 [params.page.share]
-enable = true
-Twitter = true
-Facebook = true
-Linkedin = false
-Whatsapp = false
-Pinterest = false
-Tumblr = false
-HackerNews = true
-Reddit = false
-VK = false
-Buffer = false
-Xing = false
-Line = true
-Instapaper = false
-Pocket = false
-Flipboard = false
-Weibo = true
-Blogger = false
-Baidu = false
+enable        = true
+Twitter       = true
+Facebook      = true
+Linkedin      = false
+Whatsapp      = false
+Pinterest     = false
+Tumblr        = false
+HackerNews    = true
+Reddit        = false
+VK            = false
+Buffer        = false
+Xing          = false
+Line          = true
+Instapaper    = false
+Pocket        = false
+Flipboard     = false
+Weibo         = true
+Blogger       = false
+Baidu         = false
 Odnoklassniki = false
-Evernote = false
-Skype = false
-Trello = false
-Mix = false
+Evernote      = false
+Skype         = false
+Trello        = false
+Mix           = false
 #  Comment config
 [params.page.comment]
 enable = false
@@ -406,26 +414,26 @@ shortname = ""
 # Gitalk comment config
 [params.page.comment.gitalk]
 #
-enable = false
-owner = ""
-repo = ""
-clientId = ""
+enable       = false
+owner        = ""
+repo         = ""
+clientId     = ""
 clientSecret = ""
 # Valine comment config
 [params.page.comment.valine]
-enable = false
-appId = ""
-appKey = ""
+enable      = false
+appId       = ""
+appKey      = ""
 placeholder = ""
-avatar = "mp"
-meta = ""
-pageSize = 10
+avatar      = "mp"
+meta        = ""
+pageSize    = 10
 # automatically adapt the current theme i18n configuration when empty
-lang = ""
-visitor = true
-recordIP = true
-highlight = true
-enableQQ = false
+lang       = ""
+visitor    = true
+recordIP   = true
+highlight  = true
+enableQQ   = false
 serverURLs = ""
 #  emoji data file name, default is "google.yml"
 # ["apple.yml", "google.yml", "facebook.yml", "twitter.yml"]
@@ -435,19 +443,19 @@ serverURLs = ""
 emoji = ""
 # Facebook comment config
 [params.page.comment.facebook]
-enable = false
-width = "100%"
+enable   = false
+width    = "100%"
 numPosts = 10
-appId = ""
+appId    = ""
 # automatically adapt the current theme i18n configuration when empty
 languageCode = ""
 #  Telegram comments config
 [params.page.comment.telegram]
-enable = false
-siteID = ""
-limit = 5
-height = ""
-color = ""
+enable   = false
+siteID   = ""
+limit    = 5
+height   = ""
+color    = ""
 colorful = true
 dislikes = false
 outlined = false
@@ -458,28 +466,28 @@ enable = false
 [params.page.comment.utterances]
 enable = false
 # owner/repo
-repo = ""
-issueTerm = "pathname"
-label = ""
+repo       = ""
+issueTerm  = "pathname"
+label      = ""
 lightTheme = "github-light"
-darkTheme = "github-dark"
+darkTheme  = "github-dark"
 # giscus comment config (https://giscus.app/)
 [params.page.comment.giscus]
 # You can refer to the official documentation of giscus to use the following configuration.
-enable = false
-repo = ""
-repoId = ""
-category = "Announcements"
+enable     = false
+repo       = ""
+repoId     = ""
+category   = "Announcements"
 categoryId = ""
 # automatically adapt the current theme i18n configuration when empty
-lang = ""
-mapping = "pathname"
+lang             = ""
+mapping          = "pathname"
 reactionsEnabled = "1"
-emitMetadata = "0"
-inputPosition = "bottom"
-lazyLoading = false
-lightTheme = "light"
-darkTheme = "dark"
+emitMetadata     = "0"
+inputPosition    = "bottom"
+lazyLoading      = false
+lightTheme       = "light"
+darkTheme        = "dark"
 #  Third-party library config
 [params.page.library]
 [params.page.library.css]
@@ -498,7 +506,7 @@ darkTheme = "dark"
 images = []
 # Publisher info
 [params.page.seo.publisher]
-name = ""
+name    = ""
 logoUrl = ""
 
 #  TypeIt config
@@ -514,11 +522,11 @@ duration = -1
 
 # Site verification code config for Google/Bing/Yandex/Pinterest/Baidu
 [params.verification]
-google = ""
-bing = ""
-yandex = ""
+google    = ""
+bing      = ""
+yandex    = ""
 pinterest = ""
-baidu = ""
+baidu     = ""
 
 #  Site SEO config
 [params.seo]
@@ -554,7 +562,7 @@ enable = true
 [params.cookieconsent.content]
 message = ""
 dismiss = ""
-link = ""
+link    = ""
 
 #  CDN config for third-party library files
 [params.cdn]
@@ -576,9 +584,9 @@ objectFit = false
 [markup]
 # Syntax Highlighting
 [markup.highlight]
-codeFences = true
-guessSyntax = true
-lineNos = true
+codeFences         = true
+guessSyntax        = true
+lineNos            = true
 lineNumbersInTable = true
 # false is a necessary configuration
 # (https://github.com/dillonzq/LoveIt/issues/158)
@@ -587,25 +595,25 @@ noClasses = false
 [markup.goldmark]
 [markup.goldmark.extensions]
 definitionList = true
-footnote = true
-linkify = true
-strikethrough = true
-table = true
-taskList = true
-typographer = true
+footnote       = true
+linkify        = true
+strikethrough  = true
+table          = true
+taskList       = true
+typographer    = true
 [markup.goldmark.renderer]
 # whether to use HTML tags directly in the document
 unsafe = true
 # Table Of Contents settings
 [markup.tableOfContents]
 startLevel = 2
-endLevel = 6
+endLevel   = 6
 
 # Sitemap config
 [sitemap]
 changefreq = "weekly"
-filename = "sitemap.xml"
-priority = 0.5
+filename   = "sitemap.xml"
+priority   = 0.5
 
 # Permalinks config
 [Permalinks]
@@ -629,15 +637,15 @@ suffixes = ["md"]
 
 # Options to make output .md files
 [outputFormats.MarkDown]
-mediaType = "text/plain"
+mediaType   = "text/plain"
 isPlainText = true
-isHTML = false
+isHTML      = false
 
 # Options to make hugo output files
 [outputs]
 #
-home = ["HTML", "RSS", "JSON"]
-page = ["HTML", "MarkDown"]
-section = ["HTML", "RSS"]
-taxonomy = ["HTML", "RSS"]
+home         = ["HTML", "RSS", "JSON"]
+page         = ["HTML", "MarkDown"]
+section      = ["HTML", "RSS"]
+taxonomy     = ["HTML", "RSS"]
 taxonomyTerm = ["HTML"]
