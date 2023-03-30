@@ -1,10 +1,10 @@
 ---
-title: "{{ replace .TranslationBaseName "-" " " | title }}"
+title: "About Author"
 subtitle: ""
-date: {{ .Date }}
-lastmod: {{ .Date }}
+date: 2023-03-30T00:24:00-07:00
+lastmod: 2023-03-30T00:24:00-07:00
 draft: true
-author: ""
+author: "Zhihao Ruan"
 authorLink: ""
 description: ""
 license: ""
@@ -27,13 +27,13 @@ linkToMarkdown: true
 rssFullText: false
 
 toc:
-  enable: true
+  enable: false
   auto: true
 code:
   copy: true
   maxShownLines: 50
 math:
-  enable: false
+  enable: true
   # ...
 mapbox:
   # ...
@@ -41,7 +41,7 @@ share:
   enable: true
   # ...
 comment:
-  enable: true
+  enable: false
   # ...
 library:
   css:
@@ -59,4 +59,4 @@ seo:
   # ...
 ---
 
-<!--more-->
+Zhihao Ruan is a robotics student with a main area of focus in motion planning and machine learning. Interested in building AI-empowered physical objects for the future.
