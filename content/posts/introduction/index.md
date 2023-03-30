@@ -2,14 +2,51 @@
 title: "Introduction"
 date: 2020-06-08T08:06:25+06:00
 description: Introduction to Zhihao Ruan
-hero: /images/posts/introduction/RZH8697post.jpg
-menu:
-  sidebar:
-    name: Introduction
-    identifier: introduction
-    weight: 100
+featuredImage: /images/posts/introduction/RZH8697post.jpg
 tags: ["Basic", "Multi-lingual"]
 categories: ["Basic"]
+
+hiddenFromHomePage: false
+hiddenFromSearch: false
+twemoji: false
+lightgallery: false
+ruby: false
+fraction: false
+fontawesome: true
+linkToMarkdown: true
+rssFullText: false
+
+toc:
+  enable: true
+  auto: true
+code:
+  copy: true
+  maxShownLines: 50
+math:
+  enable: true
+  # ...
+mapbox:
+  # ...
+share:
+  enable: true
+  # ...
+comment:
+  enable: false
+  # ...
+library:
+  css:
+    # someCSS = "some.css"
+    # located in "assets/"
+    # Or
+    # someCSS = "https://cdn.example.com/some.css"
+  js:
+    # someJS = "some.js"
+    # located in "assets/"
+    # Or
+    # someJS = "https://cdn.example.com/some.js"
+seo:
+  images: []
+  # ...
 ---
 
 Welcome to my personal website! I am a second-year robotics master's student at the University of Pennsylvania. Prior to Penn, I received my B.S. degree in computer science engineering (CSE) at the University of Michigan, with a second B.S. degree in electrical and computer engineering (ECE) at Shanghai Jiao Tong University.
@@ -80,16 +117,16 @@ I have recorded a number of my own projects [here](https://zhihaoruan.xyz/catego
 
 ## My Gallery
 
-Besides computer science, I'm also fond of photography as well as travelling around the world. I love to write travel journals to commemorate those precious moments.
+Besides computer science, I'm also fond of photography as well as traveling around the world. I love to write travel journals to commemorate those precious moments.
 
-When I was travelling, a question that I have been constantly thinking about is "what kind of pictures could represent a city's culture?" Although a city might have different faces and it sounds impossible for me to reflect all of them in one single picture, I would try to use a series to document them. In my point of view, every single city/town on the earth has its unique culture. Only when one gets really close to the city dwellers can he/she really feels the unique culture of the place.
+When I was traveling, a question that I have been constantly thinking about is "what kind of pictures could represent a city's culture?" Although a city might have different faces and it sounds impossible for me to reflect all of them in one single picture, I would try to use a series to document them. In my point of view, every single city/town on the earth has its unique culture. Only when one gets really close to the city dwellers can he/she really feels the unique culture of the place.
 
-The following posts are chapters of my travelling journals. Some of them record what I'm seeing in daily life, while the others might be trying to discover the city's culture. Hope you would enjoy my work.
+The following posts are chapters of my traveling journals. Some of them record what I'm seeing in daily life, while the others might be trying to discover the city's culture. Hope you would enjoy my work.
 
-* [Hong Kong, China]({{< ref "/posts/Gallery/hong-kong/index.md" >}})
-* [Michigan, USA]({{< ref "/posts/Gallery/michigan/index.md" >}})
-* [Ireland]({{< ref "/posts/Gallery/dublin/index.md" >}})
-* [Ann Arbor, MI]({{< ref "/posts/Gallery/ann-arbor/index.md" >}})
-* [Zhuhai, China &mdash; Home, Sweet Home]({{< ref "/posts/Gallery/zhuhai/index.md" >}})
+* [Hong Kong, China]({{< ref "/posts/hong-kong/index.md" >}})
+* [Michigan, USA]({{< ref "/posts/michigan/index.md" >}})
+* [Ireland]({{< ref "/posts/dublin/index.md" >}})
+* [Ann Arbor, MI]({{< ref "/posts/ann-arbor/index.md" >}})
+* [Zhuhai, China &mdash; Home, Sweet Home]({{< ref "/posts/zhuhai/index.md" >}})
 
 **--- *End of Introduction* ---**
