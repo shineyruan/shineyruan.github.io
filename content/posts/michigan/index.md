@@ -4,7 +4,6 @@ date: 2020-05-17T20:17:36-04:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
 featuredImage: /images/posts/michigan/CZQ190818DSC02076.jpg
-img: /images/posts/michigan/CZQ190818DSC02076.jpg
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
