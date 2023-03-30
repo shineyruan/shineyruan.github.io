@@ -311,7 +311,7 @@ HackTheBox     = ""
 RootMe         = ""
 Phone          = ""
 Email          = "shineyruan@gmail.com"
-RSS            = true                   #
+RSS            = false                  #
 
 #  Page global config
 [params.page]
@@ -644,8 +644,8 @@ isHTML      = false
 # Options to make hugo output files
 [outputs]
 #
-home         = ["HTML", "RSS", "JSON"]
+home         = ["HTML", "JSON"]
 page         = ["HTML", "MarkDown"]
-section      = ["HTML", "RSS"]
-taxonomy     = ["HTML", "RSS"]
+section      = ["HTML"]
+taxonomy     = ["HTML"]
 taxonomyTerm = ["HTML"]
