@@ -10,8 +10,8 @@ description: ""
 license: ""
 images: []
 
-tags: ["My Gallery"]
-categories: ["photography", "nature", "flowers", "california"]
+categories: ["My Gallery"]
+tags: ["photography", "nature", "flowers", "california"]
 
 featuredImage: "rzhpost-2796.jpg"
 featuredImagePreview: ""
