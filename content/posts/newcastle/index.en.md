@@ -56,16 +56,16 @@ seo:
 
 ![](_RZH4534postruanzh.jpg "The two iconic bridges.")
 
-![](_RZH4530postruanzh.jpg "Tunnel view")
+![](_RZH4530postruanzh.jpg " ")
 
-![](_RZH4468postruanzh.jpg "Street corner")
+![](_RZH4468postruanzh.jpg " ")
 
 ![](_RZH4465postruanzh.jpg "A giant shadow by sunlight")
 
-![](_RZH4458postruanzh.jpg "Street view")
+![](_RZH4458postruanzh.jpg " ")
 
-![](_RZH4456postruanzh.jpg "Street view")
+![](_RZH4456postruanzh.jpg " ")
 
-![](_RZH4544postruanzh.jpg "Street view")
+![](_RZH4544postruanzh.jpg " ")
 
-![](_RZH4553postruanzh.jpg "Street view")
+![](_RZH4553postruanzh.jpg " ")
