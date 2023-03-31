@@ -5,25 +5,25 @@ In this winter, I finally got a chance to visit and spend a nice Christmas holid
 
 <!-- more -->
 
-{{<figure src="_RZH3662postruanzh.jpg">}}
+![](_RZH3662postruanzh.jpg " ")
 
-{{<figure src="_RZH3468postruanzh.jpg">}}
+![](_RZH3468postruanzh.jpg " ")
 
-{{<figure src="_RZH3518postruanzh.jpg">}}
+![](_RZH3518postruanzh.jpg " ")
 
-{{<figure src="_RZH3606postruanzh.jpg" caption="Trafalgar Square">}}
+![](_RZH3606postruanzh.jpg "Trafalgar Square")
 
-{{<figure src="_RZH3718postruanzh.jpg">}}
+![](_RZH3718postruanzh.jpg " ")
 
-{{<figure src="_RZH3710postruanzh.jpg" caption="Tower Bridge">}}
+![](_RZH3710postruanzh.jpg "Tower Bridge")
 
-{{<figure src="DSC01785postruanzh.jpg" caption="Christmas at Regent Street">}}
+![](DSC01785postruanzh.jpg "Christmas at Regent Street")
 
-{{<figure src="_RZH3814postruanzh.jpg">}}
+![](_RZH3814postruanzh.jpg " ")
 
 London is famous for its theaters at West End. Along with New York City's Broadway theatre, West End theatre is usually considered to represent the highest level of commercial theatre in the English-speaking world. Seeing a West End show is a common tourist activity in London.
 
-{{<figure src="DSC01796postruanzh.jpg" width="500" caption="London musicals at West End">}}
+![](DSC01796postruanzh.jpg "London musicals at West End")
 
-{{<figure src="DSC01808postruanzh.jpg">}}
+![](DSC01808postruanzh.jpg " ")
 

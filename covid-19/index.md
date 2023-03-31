@@ -8,11 +8,7 @@ As COVID-19 virus spread around the world causing serious pandemic and deaths, i
 
 ## Ann Arbor, MI
 
-{{<figure src="RZH8556post.jpg">}}
+![](RZH8556post.jpg " ")
 
-*One of the most significant changes in my life is the wide use of face masks. An N95 mask seems to be disposed on the grass.*
-
-{{<figure src="RZH8648post.jpg">}}
-
-*As the pandemic spreads, ambulances are frequently rushing along one of the main street in Ann Arbor, MI, day and night.*
+![](RZH8648post.jpg " ")
 
