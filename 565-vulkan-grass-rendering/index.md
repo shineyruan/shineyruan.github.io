@@ -13,8 +13,6 @@ This project implements physically-based grass rendering & culling with Vulkan c
 * 3 different culling tests: orientation culling, view-frustum culling, distance culling;
 * Tessellating Bezier curves into grass blades with GLSL tessellation shader
 
-A detailed instruction of this project can be found [here](INSTRUCTION.md).
-
 ### Vulkan
 
 [Vulkan](https://vulkan-tutorial.com/) is considered as the next-generation graphics API developed by [Khronos group](https://www.khronos.org/), in replacement for the old OpenGL. It is fast, high-performance, and cross-platform. However, the downside of this API is that it exposes all details of GPU hardware to users for possible customization, so that it generally takes a significantly large amount of code for users to set up the rendering pipeline than OpenGL.
