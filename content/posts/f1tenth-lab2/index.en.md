@@ -74,9 +74,9 @@ The lab was built on the *F1Tenth Simulator*, which can be accessed [here](https
 ## Time-To-Collision
 
 TTC (Time-To-Collision) is the time it would take for the vehicle to collide with an obstacle given its current heading and velocity. TTC can be calculated with the following format:
-$$
-TTC = \frac{r}{[-\dot{r}]_+}
-$$
+
+$$ TTC = \frac{r}{[-\dot{r}]_+} $$
+
 where $r$ is the distance between vehicle and obstacle, $\dot{r}$ is its 1st derivative with respect to time, and the symbol $[x]_+$ denotes $\max(0,x)$.
 
 In practice, we use LiDAR results to calculate TTC for each beam. Specifically, we project the current vehicle velocity onto the direction of each beam as $\dot{r}$, namely $\dot{r}=v\cos(\theta)$.
