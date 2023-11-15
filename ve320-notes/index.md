@@ -251,6 +251,7 @@ $$
 
 - When $T$ is very high, $n_i\gg N_d^+$. Therefore $n_0=n_i=\sqrt{N_cN_v}\exp\left(\dfrac{-E_g}{2kT}\right)$;
 - When $T$ is not high:
+
 $$
 n_0=N_d^+=N_d\left(1-\frac{1}{1+\dfrac{1}{2}\exp\left(\dfrac{E_d-E_F}{kT}\right)}\right)
 $$
