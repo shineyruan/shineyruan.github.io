@@ -98,6 +98,7 @@ Culling tests are conducted in the compute shader so that the number of grass bl
 ### Visual Effects
 
 The following images demonstrates effects due to different culling operations:
+
 |            Orientation Culling             |            View-Frustum Culling             |            Distance Culling             |
 | :----------------------------------------: | :-----------------------------------------: | :-------------------------------------: |
 | {{<figure src="orientation_culling.gif">}} | {{<figure src="view_frustum_culling.gif">}} | {{<figure src="distance_culling.gif">}} |
