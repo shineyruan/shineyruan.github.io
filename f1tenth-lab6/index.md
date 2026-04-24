@@ -12,7 +12,7 @@
 - [My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower]({{< ref "/posts/f1tenth-lab3/index.md" >}})
 - [My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance]({{< ref "/posts/f1tenth-lab4/index.md" >}})
 
-<!-- more -->
+<!--more-->
 
 ## Overview
 

@@ -3,6 +3,8 @@
 
 * Tested on: Windows 10 Home 21H1 Build 19043.1288, Ryzen 7 3700X @ 3.59GHz 48GB, RTX 2060 Super 8GB
 
+<!--more-->
+
 {{<figure src="overall.gif">}}
 
 ### Highlights
@@ -50,6 +52,7 @@ Culling tests are conducted in the compute shader so that the number of grass bl
 ### Visual Effects
 
 The following images demonstrates effects due to different culling operations:
+
 |            Orientation Culling             |            View-Frustum Culling             |            Distance Culling             |
 | :----------------------------------------: | :-----------------------------------------: | :-------------------------------------: |
 | {{<figure src="orientation_culling.gif">}} | {{<figure src="view_frustum_culling.gif">}} | {{<figure src="distance_culling.gif">}} |

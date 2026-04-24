@@ -4,7 +4,7 @@
 
 This post contains my lecture notes of taking the course *VE320: Introduction to Semiconductor Devices* at UM-SJTU Joint Institute.
 
-<!-- more -->
+<!--more-->
 
 ## Chapter 1: The Crystal Structure of Solids
 

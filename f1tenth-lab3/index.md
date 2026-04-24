@@ -10,7 +10,7 @@
 - [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/f1tenth-lab1/index.md" >}})
 - [My F1TENTH Journey — Lab 2, Automatic Emergency Braking]({{< ref "/posts/f1tenth-lab2/index.md" >}})
 
-<!-- more -->
+<!--more-->
 
 ## Lab Materials
 

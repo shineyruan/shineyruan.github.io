@@ -7,7 +7,7 @@ As a photographer, I have the feeling that it is my responsibility to record her
 
 ![](RZH5858post.jpg "A view of Zhuhai from where I live.")
 
-<!-- more -->
+<!--more-->
 
 ## Zhuhai, in the City
 

@@ -9,7 +9,7 @@
 
 - [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/f1tenth-lab1/index.md" >}})
 
-<!-- more -->
+<!--more-->
 
 ## Overview
 

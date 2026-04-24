@@ -5,7 +5,7 @@
 
 ***All my source codes can be accessed [here](https://github.com/shineyruan/F1Tenth_Labs).***
 
-<!-- more -->
+<!--more-->
 
 ## Overview
 

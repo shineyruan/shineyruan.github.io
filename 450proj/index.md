@@ -3,9 +3,9 @@
 
 ***This project was served as the Undergraduate Major Design Experience at UM-SJTU Joint Institute, Shanghai Jiao Tong University.***
 
-{{<youtube kMHzTvTi0Lc>}}
+<!--more-->
 
-<!-- more -->
+{{<youtube kMHzTvTi0Lc>}}
 
 ## Background: The Impact of COVID-19
 
