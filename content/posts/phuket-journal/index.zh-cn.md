@@ -3,6 +3,7 @@ title: 'Phuket, Thailand — Sea and Sunshine! 前往普吉，感受海岸和阳
 tags: ["Photography", "Travel Journal", "Multi-lingual"]
 categories: ["Travel Journals"]
 date: 2020-01-14T20:12:17-04:00
+author: "Zhihao Ruan"
 featuredImage: /images/posts/phuket-journal/RZH6667post.jpg
 
 hiddenFromHomePage: false
@@ -53,7 +54,7 @@ seo:
 
 普吉岛有三大经典景观：海，沙滩，和泰国夜市。来自印度洋的碧蓝海水自然不必多说，洁白如丝绸般细腻的沙子也是大自然用海浪长年累月精雕细琢出来的杰作。然而其中最有趣的当属泰国夜市。每当夜幕降临，原本空荡荡的街道便迅速换上另一幅热闹非凡的景象。大大小小的流动摊位在路两旁卖力地招呼着熙熙攘攘的游客，酒吧里人们跟着音乐尽情跳舞。普吉岛，正是由于它白天的无敌海景和晚上的热情，成为了泰国最南端的一颗璀璨的明珠。
 
-<!-- more -->
+<!--more-->
 
 安娜堡的冬天太冷了。每一个风雪交加的日子阴沉沉，都容易让人抑郁。寒假一到，身边的同学接二连三地离开安娜堡，都在寻找一个温暖的地方度圣诞。也不知道吃了谁的安利，爸妈脑子一热，就趁我刚好寒假回了家，决定拉我出来普吉岛度假。
 

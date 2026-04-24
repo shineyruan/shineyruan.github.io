@@ -3,6 +3,7 @@ title: Real-Time On-Device Flow Statistics Detection and Prediction
 date: 2020-08-29T17:40:39-04:00
 tags: ["computer vision", "raspberry pi", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 
 featuredImage: /images/posts/450Proj/450_MorphologicalAnalysis.png
 
@@ -51,9 +52,9 @@ seo:
 
 ***This project was served as the Undergraduate Major Design Experience at UM-SJTU Joint Institute, Shanghai Jiao Tong University.***
 
-{{<youtube kMHzTvTi0Lc>}}
+<!--more-->
 
-<!-- more -->
+{{<youtube kMHzTvTi0Lc>}}
 
 ## Background: The Impact of COVID-19
 

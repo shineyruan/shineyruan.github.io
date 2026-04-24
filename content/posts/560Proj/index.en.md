@@ -3,6 +3,7 @@ title: Minecraft Game Programming
 date: 2020-12-09T18:30:11-04:00
 tags: ["computer graphics", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 
 featuredImage: /images/posts/560Proj/560-screenshot.png
 
@@ -55,7 +56,7 @@ In the fall of 2020, I finally had a chance to explore the field of computer gra
 
 {{<youtube l_YViGj6_Qc>}}
 
-<!-- more -->
+<!--more-->
 
 ## Overview
 

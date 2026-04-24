@@ -2,6 +2,7 @@
 title: 'Hong Kong, China'
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
+author: "Zhihao Ruan"
 date: 2020-05-24T04:38:02-04:00
 featuredImage: /images/posts/hong-kong/DSC00851.jpg
 
@@ -56,7 +57,7 @@ Hong Kong is also extremely crowded and busy. It is a tiny piece of land filled 
 
 ![](DSC00804.jpg " ")
 
-<!-- more -->
+<!--more-->
 
 ![](DSC00816.jpg "Nathan Rd (Chinese: 佐敦道)")
 

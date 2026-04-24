@@ -3,6 +3,7 @@ title: Capturing the "Blue Hour"
 date: 2020-05-25T20:23:20-04:00
 tags: ["photography", "blue hour"]
 categories: ["My Gallery"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/blue-hour/RZH8702post.jpg
 
 hiddenFromHomePage: false
@@ -54,7 +55,7 @@ seo:
 
 ![](RZH8702post.jpg " ")
 
-<!-- more -->
+<!--more-->
 
 ## Blue Hour in Ann Arbor, MI
 

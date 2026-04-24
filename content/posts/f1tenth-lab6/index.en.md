@@ -5,6 +5,7 @@ description: F1Tenth Course Lab 6
 featuredImage: /images/posts/f1tenth-lab6/f1tenth-lab6-cover.png
 tags: ["F1Tenth", "F1Tenth Racing", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
@@ -60,7 +61,7 @@ seo:
 - [My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower]({{< ref "/posts/f1tenth-lab3/index.md" >}})
 - [My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance]({{< ref "/posts/f1tenth-lab4/index.md" >}})
 
-<!-- more -->
+<!--more-->
 
 ## Overview
 

@@ -3,6 +3,7 @@ title: Ireland
 date: 2020-02-28T20:36:02-04:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/ireland/RZH403524.jpg
 
 hiddenFromHomePage: false
@@ -50,7 +51,7 @@ seo:
 
 Last summer, I went to Ireland for a trip. As a fan of the Irish boy band Westlife, I was really lucky to be able to get a ticket to their concert at Croke Park in Dublin. Meanwhile, I also had a chance to explore Dublin, a city with bars and Irish folk music.
 
-<!-- more -->
+<!--more-->
 
 ## Street Performers in Downtown Dublin
 

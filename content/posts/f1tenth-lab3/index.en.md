@@ -4,6 +4,7 @@ date: 2021-01-27T04:34:21-04:00
 description: F1Tenth Course Lab 3
 tags: ["F1Tenth", "F1Tenth Racing", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/f1tenth-lab3/f1tenth-lab3-car.png
 
 hiddenFromHomePage: false
@@ -58,7 +59,7 @@ seo:
 - [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/f1tenth-lab1/index.md" >}})
 - [My F1TENTH Journey — Lab 2, Automatic Emergency Braking]({{< ref "/posts/f1tenth-lab2/index.md" >}})
 
-<!-- more -->
+<!--more-->
 
 ## Lab Materials
 

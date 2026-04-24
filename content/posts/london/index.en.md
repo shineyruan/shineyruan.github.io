@@ -3,6 +3,7 @@ title: "London, UK"
 date: 2021-12-26T20:52:13+00:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/london/_RZH3468postruanzh.jpg
 draft: false
 
@@ -51,7 +52,7 @@ seo:
 
 In this winter, I finally got a chance to visit and spend a nice Christmas holiday in UK.
 
-<!-- more -->
+<!--more-->
 
 ![](_RZH3662postruanzh.jpg " ")
 

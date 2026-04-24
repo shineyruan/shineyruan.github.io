@@ -5,6 +5,7 @@ description: F1Tenth Course Lab 4
 featuredImage: /images/posts/f1tenth-lab4/f1tenth-lab4.png
 tags: ["F1Tenth", "F1Tenth Racing", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
@@ -59,7 +60,7 @@ seo:
 - [My F1TENTH Journey — Lab 2, Automatic Emergency Braking]({{< ref "/posts/f1tenth-lab2/index.md" >}})
 - [My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower]({{< ref "/posts/f1tenth-lab3/index.md" >}})
 
-<!-- more -->
+<!--more-->
 
 ## Overview
 

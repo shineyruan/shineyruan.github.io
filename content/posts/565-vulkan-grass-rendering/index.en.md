@@ -3,6 +3,7 @@ title: "Vulkan Grass Rendering"
 date: 2021-12-27T00:54:07+00:00
 tags: ["computer graphics", "rendering", "vulkan", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/565-vulkan-grass-rendering/blade_upstraight.png
 draft: false
 
@@ -50,6 +51,8 @@ seo:
 ---
 
 * Tested on: Windows 10 Home 21H1 Build 19043.1288, Ryzen 7 3700X @ 3.59GHz 48GB, RTX 2060 Super 8GB
+
+<!--more-->
 
 {{<figure src="overall.gif">}}
 
