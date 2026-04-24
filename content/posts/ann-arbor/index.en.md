@@ -3,7 +3,7 @@ title: Ann Arbor, MI
 date: 2019-04-09T22:08:00-04:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
-author: "Zhihao Ruan"
+
 
 featuredImage: /images/posts/ann-arbor/RZH4586A190807.jpg
 featuredImagePreview: ""

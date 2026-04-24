@@ -3,7 +3,7 @@ title: Zhuhai, China — Home, Sweet Home
 date: 2019-03-05T20:16:40-04:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
-author: "Zhihao Ruan"
+
 featuredImage: /images/posts/zhuhai/DSC00222.jpg
 
 hiddenFromHomePage: false

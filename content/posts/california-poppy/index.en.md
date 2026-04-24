@@ -4,7 +4,7 @@ subtitle: ""
 date: 2023-03-31T02:02:13-07:00
 lastmod: 2023-03-31T02:02:13-07:00
 draft: false
-author: "Zhihao Ruan"
+
 authorLink: ""
 description: ""
 license: ""

@@ -6,7 +6,7 @@ description: EECS 373 Final Project
 draft: false
 tags: ["Embedded Systems", "Multi-lingual"]
 categories: ["Projects"]
-author: "Zhihao Ruan"
+
 
 hiddenFromHomePage: false
 hiddenFromSearch: false

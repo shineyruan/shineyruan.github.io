@@ -3,7 +3,7 @@ title: "Volume Rendered ReSTIR in Vulkan"
 date: 2021-12-27T02:41:46+00:00
 tags: ["computer graphics", "ray tracing", "restir", "volume rendering", "vulkan", "Multi-lingual"]
 categories: ["Projects"]
-author: "Zhihao Ruan"
+
 featuredImage: /images/posts/565-final-project/bunny.png
 
 hiddenFromHomePage: false

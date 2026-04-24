@@ -30,12 +30,6 @@ enableEmoji = true
 # ignore some build errors
 ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
-# Author config
-[author]
-name  = "Zhihao Ruan"
-email = "shineyruan@gmail.com"
-link  = ""
-
 # Menu config
 [menu]
 [[menu.main]]
@@ -112,6 +106,12 @@ title = "Ryan's Blog"
 description = "Yet another documentation of life."
 # website images for Open Graph and Twitter Cards
 images = ["/logo.png"]
+
+# Author config
+[params.author]
+name  = "Zhihao Ruan"
+email = "shineyruan@gmail.com"
+link  = ""
 
 # Header config
 [params.header]

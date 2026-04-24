@@ -3,7 +3,7 @@ title: 'Phuket, Thailand — Sea and Sunshine! 前往普吉，感受海岸和阳
 tags: ["Photography", "Travel Journal", "Multi-lingual"]
 categories: ["Travel Journals"]
 date: 2020-01-14T20:12:17-04:00
-author: "Zhihao Ruan"
+
 featuredImage: /images/posts/phuket-journal/RZH6667post.jpg
 
 hiddenFromHomePage: false
