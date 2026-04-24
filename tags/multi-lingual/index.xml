@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Multi-Lingual - Tag - Ryan's Blog</title><link>https://zhihaoruan.xyz/tags/multi-lingual/</link><description>Multi-Lingual - Tag - Ryan's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 27 Dec 2021 23:12:37 +0000</lastBuildDate><atom:link href="https://zhihaoruan.xyz/tags/multi-lingual/" rel="self" type="application/rss+xml"/><item><title>CAD2CAV: Computer Aided Design for Cooperative Autonomous Vehicles</title><link>https://zhihaoruan.xyz/cad2cav/</link><pubDate>Mon, 27 Dec 2021 23:12:37 +0000</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/cad2cav/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Multi-Lingual - Tag - Ryan's Blog</title><link>https://zhihaoruan.xyz/tags/multi-lingual/</link><description>Multi-Lingual - Tag - Ryan's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>shineyruan@gmail.com (Zhihao Ruan)</managingEditor><webMaster>shineyruan@gmail.com (Zhihao Ruan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 27 Dec 2021 23:12:37 +0000</lastBuildDate><atom:link href="https://zhihaoruan.xyz/tags/multi-lingual/" rel="self" type="application/rss+xml"/><item><title>CAD2CAV: Computer Aided Design for Cooperative Autonomous Vehicles</title><link>https://zhihaoruan.xyz/cad2cav/</link><pubDate>Mon, 27 Dec 2021 23:12:37 +0000</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/cad2cav/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/cad2cav/cad2cav-overview.png" referrerpolicy="no-referrer">
             </div><p>CAD2CAV is a project focusing on multi-agent exploration in unknown environments. It attempts to build a complete system from perception to planning and control, exploring a designated unknown environments with multiple autonomous vehicles. It is built in <a href="https://mlab-upenn.github.io/lab_website/" target="_blank" rel="noopener noreffer ">xLab at the University of Pennsylvania</a>, on multiple <a href="https://f1tenth.readthedocs.io/en/latest/" target="_blank" rel="noopener noreffer ">F1TENTH race cars</a>.</p>
 <p>Useful documents:</p>
@@ -7,7 +7,7 @@
 <li><a href="/files/CAD2CAV_Project_Report.pdf" rel="">Spring 2021 Final Report (not complete)</a></li>
 </ul>
 <h2 id="demo">Demo</h2>
-<p>This is a sample scenario of a single F1TENTH race car exploring the 2nd floor of Levine Hall at the University of Pennsylvania, right outside xLab.</p>]]></description></item><item><title>Volume Rendered ReSTIR in Vulkan</title><link>https://zhihaoruan.xyz/565-final-project/</link><pubDate>Mon, 27 Dec 2021 02:41:46 +0000</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/565-final-project/</guid><description><![CDATA[<div class="featured-image">
+<p>This is a sample scenario of a single F1TENTH race car exploring the 2nd floor of Levine Hall at the University of Pennsylvania, right outside xLab.</p>]]></description></item><item><title>Volume Rendered ReSTIR in Vulkan</title><link>https://zhihaoruan.xyz/565-final-project/</link><pubDate>Mon, 27 Dec 2021 02:41:46 +0000</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/565-final-project/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/565-final-project/bunny.png" referrerpolicy="no-referrer">
             </div><p>This is a project of a Vulkan implementation of Fast Volume Rendering with Spatiotemporal Reservoir Resampling. It achieves the following:</p>
 <ul>
@@ -20,15 +20,15 @@
 <li>Zhihao Ruan (<a href="mailto:ruanzh@seas.upenn.edu" rel="">ruanzh@seas.upenn.edu</a>), Shubham Sharma (<a href="mailto:sshubh@seas.upenn.edu" rel="">sshubh@seas.upenn.edu</a>), Raymond Yang (<a href="mailto:rayyang@seas.upenn.edu" rel="">rayyang@seas.upenn.edu</a>)</li>
 <li>Tested on: Windows 10 Home 21H1 Build 19043.1288, Ryzen 7 3700X @ 3.59GHz 48GB, RTX 2060 Super 8GB</li>
 </ul>
-<p><strong>This project requires an RTX-compatible (Vulkan Ray Tracing KHR-compatible) graphics card to run.</strong></p>]]></description></item><item><title>Vulkan Grass Rendering</title><link>https://zhihaoruan.xyz/565-vulkan-grass-rendering/</link><pubDate>Mon, 27 Dec 2021 00:54:07 +0000</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/565-vulkan-grass-rendering/</guid><description><![CDATA[<div class="featured-image">
+<p><strong>This project requires an RTX-compatible (Vulkan Ray Tracing KHR-compatible) graphics card to run.</strong></p>]]></description></item><item><title>Vulkan Grass Rendering</title><link>https://zhihaoruan.xyz/565-vulkan-grass-rendering/</link><pubDate>Mon, 27 Dec 2021 00:54:07 +0000</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/565-vulkan-grass-rendering/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/565-vulkan-grass-rendering/blade_upstraight.png" referrerpolicy="no-referrer">
             </div><ul>
 <li>Tested on: Windows 10 Home 21H1 Build 19043.1288, Ryzen 7 3700X @ 3.59GHz 48GB, RTX 2060 Super 8GB</li>
-</ul>]]></description></item><item><title>CUDA Path Tracer with À-Trous Denoiser</title><link>https://zhihaoruan.xyz/565-cuda-path-tracer/</link><pubDate>Mon, 27 Dec 2021 00:43:29 +0000</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/565-cuda-path-tracer/</guid><description><![CDATA[<div class="featured-image">
+</ul>]]></description></item><item><title>CUDA Path Tracer with À-Trous Denoiser</title><link>https://zhihaoruan.xyz/565-cuda-path-tracer/</link><pubDate>Mon, 27 Dec 2021 00:43:29 +0000</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/565-cuda-path-tracer/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/565-cuda-path-tracer/cornell.2021-10-09_18-44-15z.5000samp.png" referrerpolicy="no-referrer">
             </div><ul>
 <li>Tested on: Ubuntu 20.04 LTS, Ryzen 3700X @ 2.22GHz 48GB, RTX 2060 Super @ 7976MB</li>
-</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker)</title><link>https://zhihaoruan.xyz/f1tenth-lab6/</link><pubDate>Fri, 29 Jan 2021 19:52:14 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/f1tenth-lab6/</guid><description><![CDATA[<div class="featured-image">
+</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker)</title><link>https://zhihaoruan.xyz/f1tenth-lab6/</link><pubDate>Fri, 29 Jan 2021 19:52:14 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/f1tenth-lab6/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/f1tenth-lab6/f1tenth-lab6-cover.png" referrerpolicy="no-referrer">
             </div><p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
 <p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>
@@ -38,7 +38,7 @@
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab2/" rel="">My F1TENTH Journey — Lab 2, Automatic Emergency Braking</a></li>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab3/" rel="">My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower</a></li>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab4/" rel="">My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance</a></li>
-</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance</title><link>https://zhihaoruan.xyz/f1tenth-lab4/</link><pubDate>Wed, 27 Jan 2021 23:48:30 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/f1tenth-lab4/</guid><description><![CDATA[<div class="featured-image">
+</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance</title><link>https://zhihaoruan.xyz/f1tenth-lab4/</link><pubDate>Wed, 27 Jan 2021 23:48:30 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/f1tenth-lab4/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/f1tenth-lab4/f1tenth-lab4.png" referrerpolicy="no-referrer">
             </div><p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
 <p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>
@@ -47,7 +47,7 @@
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab1/" rel="">My F1TENTH Journey — Lab 1, Introduction to ROS</a></li>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab2/" rel="">My F1TENTH Journey — Lab 2, Automatic Emergency Braking</a></li>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab3/" rel="">My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower</a></li>
-</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower</title><link>https://zhihaoruan.xyz/f1tenth-lab3/</link><pubDate>Wed, 27 Jan 2021 04:34:21 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/f1tenth-lab3/</guid><description><![CDATA[<div class="featured-image">
+</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower</title><link>https://zhihaoruan.xyz/f1tenth-lab3/</link><pubDate>Wed, 27 Jan 2021 04:34:21 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/f1tenth-lab3/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/f1tenth-lab3/f1tenth-lab3-car.png" referrerpolicy="no-referrer">
             </div><p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
 <p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>
@@ -55,17 +55,17 @@
 <ul>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab1/" rel="">My F1TENTH Journey — Lab 1, Introduction to ROS</a></li>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab2/" rel="">My F1TENTH Journey — Lab 2, Automatic Emergency Braking</a></li>
-</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 2, Automatic Emergency Braking</title><link>https://zhihaoruan.xyz/f1tenth-lab2/</link><pubDate>Mon, 25 Jan 2021 23:32:28 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/f1tenth-lab2/</guid><description><![CDATA[<div class="featured-image">
+</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 2, Automatic Emergency Braking</title><link>https://zhihaoruan.xyz/f1tenth-lab2/</link><pubDate>Mon, 25 Jan 2021 23:32:28 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/f1tenth-lab2/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/f1tenth-lab2/f1tenth-lab2.png" referrerpolicy="no-referrer">
             </div><p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
 <p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>
 <p><strong>Previous post:</strong></p>
 <ul>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab1/" rel="">My F1TENTH Journey — Lab 1, Introduction to ROS</a></li>
-</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 1, Introduction to ROS</title><link>https://zhihaoruan.xyz/f1tenth-lab1/</link><pubDate>Sun, 24 Jan 2021 19:56:44 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/f1tenth-lab1/</guid><description><![CDATA[<div class="featured-image">
+</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 1, Introduction to ROS</title><link>https://zhihaoruan.xyz/f1tenth-lab1/</link><pubDate>Sun, 24 Jan 2021 19:56:44 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/f1tenth-lab1/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/f1tenth-lab1/f1tenth-lab1.png" referrerpolicy="no-referrer">
             </div><p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
-<p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>]]></description></item><item><title>Minecraft Game Programming</title><link>https://zhihaoruan.xyz/560proj/</link><pubDate>Wed, 09 Dec 2020 18:30:11 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/560proj/</guid><description><![CDATA[<div class="featured-image">
+<p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>]]></description></item><item><title>Minecraft Game Programming</title><link>https://zhihaoruan.xyz/560proj/</link><pubDate>Wed, 09 Dec 2020 18:30:11 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/560proj/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/560Proj/560-screenshot.png" referrerpolicy="no-referrer">
             </div><p>In the fall of 2020, I finally had a chance to explore the field of computer graphics at University of Pennsylvania, and did a very interesting course project which builds a simplified Minecraft from scratch. This game is built on OpenGL 3.2 with Qt 5.15.0. Through building this game, I learned a lot about OpenGL rendering pipeline, game engine &amp; texture mapping.</p>
 <h2 id="demo-video">Demo Video</h2>

@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>F1Tenth Racing - Tag - Ryan's Blog</title><link>https://zhihaoruan.xyz/tags/f1tenth-racing/</link><description>F1Tenth Racing - Tag - Ryan's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 29 Jan 2021 19:52:14 -0400</lastBuildDate><atom:link href="https://zhihaoruan.xyz/tags/f1tenth-racing/" rel="self" type="application/rss+xml"/><item><title>My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker)</title><link>https://zhihaoruan.xyz/f1tenth-lab6/</link><pubDate>Fri, 29 Jan 2021 19:52:14 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/f1tenth-lab6/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>F1Tenth Racing - Tag - Ryan's Blog</title><link>https://zhihaoruan.xyz/tags/f1tenth-racing/</link><description>F1Tenth Racing - Tag - Ryan's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>shineyruan@gmail.com (Zhihao Ruan)</managingEditor><webMaster>shineyruan@gmail.com (Zhihao Ruan)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 29 Jan 2021 19:52:14 -0400</lastBuildDate><atom:link href="https://zhihaoruan.xyz/tags/f1tenth-racing/" rel="self" type="application/rss+xml"/><item><title>My F1TENTH Journey — Lab 6, Pure Pursuit (Waypoint Tracker)</title><link>https://zhihaoruan.xyz/f1tenth-lab6/</link><pubDate>Fri, 29 Jan 2021 19:52:14 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/f1tenth-lab6/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/f1tenth-lab6/f1tenth-lab6-cover.png" referrerpolicy="no-referrer">
             </div><p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
 <p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>
@@ -8,7 +8,7 @@
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab2/" rel="">My F1TENTH Journey — Lab 2, Automatic Emergency Braking</a></li>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab3/" rel="">My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower</a></li>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab4/" rel="">My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance</a></li>
-</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance</title><link>https://zhihaoruan.xyz/f1tenth-lab4/</link><pubDate>Wed, 27 Jan 2021 23:48:30 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/f1tenth-lab4/</guid><description><![CDATA[<div class="featured-image">
+</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 4, Reactive Planning Methods for Obstacle Avoidance</title><link>https://zhihaoruan.xyz/f1tenth-lab4/</link><pubDate>Wed, 27 Jan 2021 23:48:30 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/f1tenth-lab4/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/f1tenth-lab4/f1tenth-lab4.png" referrerpolicy="no-referrer">
             </div><p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
 <p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>
@@ -17,7 +17,7 @@
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab1/" rel="">My F1TENTH Journey — Lab 1, Introduction to ROS</a></li>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab2/" rel="">My F1TENTH Journey — Lab 2, Automatic Emergency Braking</a></li>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab3/" rel="">My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower</a></li>
-</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower</title><link>https://zhihaoruan.xyz/f1tenth-lab3/</link><pubDate>Wed, 27 Jan 2021 04:34:21 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/f1tenth-lab3/</guid><description><![CDATA[<div class="featured-image">
+</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 3, PID-Controlled Wall Follower</title><link>https://zhihaoruan.xyz/f1tenth-lab3/</link><pubDate>Wed, 27 Jan 2021 04:34:21 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/f1tenth-lab3/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/f1tenth-lab3/f1tenth-lab3-car.png" referrerpolicy="no-referrer">
             </div><p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
 <p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>
@@ -25,14 +25,14 @@
 <ul>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab1/" rel="">My F1TENTH Journey — Lab 1, Introduction to ROS</a></li>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab2/" rel="">My F1TENTH Journey — Lab 2, Automatic Emergency Braking</a></li>
-</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 2, Automatic Emergency Braking</title><link>https://zhihaoruan.xyz/f1tenth-lab2/</link><pubDate>Mon, 25 Jan 2021 23:32:28 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/f1tenth-lab2/</guid><description><![CDATA[<div class="featured-image">
+</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 2, Automatic Emergency Braking</title><link>https://zhihaoruan.xyz/f1tenth-lab2/</link><pubDate>Mon, 25 Jan 2021 23:32:28 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/f1tenth-lab2/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/f1tenth-lab2/f1tenth-lab2.png" referrerpolicy="no-referrer">
             </div><p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
 <p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>
 <p><strong>Previous post:</strong></p>
 <ul>
 <li><a href="https://zhihaoruan.xyz/f1tenth-lab1/" rel="">My F1TENTH Journey — Lab 1, Introduction to ROS</a></li>
-</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 1, Introduction to ROS</title><link>https://zhihaoruan.xyz/f1tenth-lab1/</link><pubDate>Sun, 24 Jan 2021 19:56:44 -0400</pubDate><author>xxxx</author><guid>https://zhihaoruan.xyz/f1tenth-lab1/</guid><description><![CDATA[<div class="featured-image">
+</ul>]]></description></item><item><title>My F1TENTH Journey — Lab 1, Introduction to ROS</title><link>https://zhihaoruan.xyz/f1tenth-lab1/</link><pubDate>Sun, 24 Jan 2021 19:56:44 -0400</pubDate><author>shineyruan@gmail.com (Zhihao Ruan)</author><guid>https://zhihaoruan.xyz/f1tenth-lab1/</guid><description><![CDATA[<div class="featured-image">
                 <img src="/images/posts/f1tenth-lab1/f1tenth-lab1.png" referrerpolicy="no-referrer">
             </div><p><em><strong>This series of blogs marks the journey of my F1/10 Autonomous Racing Cars.</strong></em></p>
 <p><em><strong>All my source codes can be accessed <a href="https://github.com/shineyruan/F1Tenth_Labs" target="_blank" rel="noopener noreffer ">here</a>.</strong></em></p>]]></description></item></channel></rss>
