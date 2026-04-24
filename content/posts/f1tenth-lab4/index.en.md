@@ -5,6 +5,7 @@ description: F1Tenth Course Lab 4
 featuredImage: /images/posts/f1tenth-lab4/f1tenth-lab4.png
 tags: ["F1Tenth", "F1Tenth Racing", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 
 hiddenFromHomePage: false
 hiddenFromSearch: false

@@ -3,6 +3,7 @@ title: "CAD2CAV: Computer Aided Design for Cooperative Autonomous Vehicles"
 date: 2021-12-27T23:12:37+00:00
 tags: ["f1tenth", "motion planning", "exploration", "robotics", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/cad2cav/cad2cav-overview.png
 
 hiddenFromHomePage: false

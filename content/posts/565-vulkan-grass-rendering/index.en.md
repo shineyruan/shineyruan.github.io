@@ -3,6 +3,7 @@ title: "Vulkan Grass Rendering"
 date: 2021-12-27T00:54:07+00:00
 tags: ["computer graphics", "rendering", "vulkan", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/565-vulkan-grass-rendering/blade_upstraight.png
 draft: false
 

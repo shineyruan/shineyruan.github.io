@@ -3,6 +3,7 @@ title: SLAM — Simultaneous Localization And Mapping
 date: 2020-01-13T23:47:27-04:00
 tags: ["robotics", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 
 featuredImage: /images/posts/467ProjSlam/467-task5-map.png
 

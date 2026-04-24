@@ -3,6 +3,7 @@ title: Witnessing the COVID-19 Pandemic
 date: 2020-05-25T21:53:56-04:00
 tags: ["photography", "covid-19", "documentary"]
 categories: ["My Gallery"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/covid-19/RZH8556post.jpg
 
 hiddenFromHomePage: false
