@@ -3,6 +3,7 @@ title: Ann Arbor, MI
 date: 2019-04-09T22:08:00-04:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
+author: "Zhihao Ruan"
 
 featuredImage: /images/posts/ann-arbor/RZH4586A190807.jpg
 featuredImagePreview: ""
@@ -52,7 +53,7 @@ seo:
 
 Ann Arbor is the place for me to pursue my second bachelor's degree in the University of Michigan. It is a small but lovely town located in the south of the State of Michigan. While I was taking classes and working on the campus, I would also like to record those tiny little pieces of happiness in daily life with my lenses. These pictures help to keep my precious memories.
 
-<!-- more -->
+<!--more-->
 
 ## Story of My Daily Life
 

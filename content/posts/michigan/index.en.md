@@ -3,6 +3,7 @@ title: Michigan, USA
 date: 2020-05-17T20:17:36-04:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/michigan/CZQ190818DSC02076.jpg
 
 hiddenFromHomePage: false
@@ -50,7 +51,7 @@ seo:
 
 As a travelling enthusiast, there is no doubt that the state where I lived must somehow appear on my wishlist. During the two years in Ann Arbor, I also spent some time to explore Michigan.
 
-<!-- more -->
+<!--more-->
 
 What represents Michigan? It is very easy to think of the slogan of the State of Michigan &mdash; "Pure Michigan." However, in what way does the State of Michigan look pure? Clearly it shouldn't be the way in which Detroit and Lansing look. Although Michigan doesn't seem to be among the most popular states for tourism to foreigners, there are a lot of beautiful state parks as well as national parks in Michigan that make the state "pure." I would like to categorize these places in two sections: *the west part of Michigan (Western Michigan)* and *the north part of Michigan (Northern Michigan)*.
 

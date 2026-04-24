@@ -5,6 +5,7 @@ description: F1Tenth Course Lab 2
 featuredImage: /images/posts/f1tenth-lab2/f1tenth-lab2.png
 tags: ["F1Tenth", "F1Tenth Racing", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 
 hiddenFromHomePage: false
 hiddenFromSearch: false
@@ -57,7 +58,7 @@ seo:
 
 - [My F1TENTH Journey — Lab 1, Introduction to ROS]({{< ref "/posts/f1tenth-lab1/index.md" >}})
 
-<!-- more -->
+<!--more-->
 
 ## Overview
 

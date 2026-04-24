@@ -3,6 +3,7 @@ title: "Newcastle, UK"
 date: 2021-12-30T20:42:55+00:00
 tags: ["photography", "city representation"]
 categories: ["My Gallery"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/newcastle/newcastle.jpg
 
 hiddenFromHomePage: false
@@ -47,6 +48,8 @@ seo:
   images: []
   # ...
 ---
+
+<!--more-->
 
 ![](newcastle.jpg "An overview of the city of Newcastle.")
 

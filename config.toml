@@ -618,14 +618,14 @@ priority   = 0.5
 # Permalinks config
 [Permalinks]
 # posts = ":year/:month/:filename"
-posts = ":filename"
+posts = ":contentbasename"
 
 # Privacy config
 [privacy]
 #  privacy of the Google Analytics (replaced by params.analytics.google)
 [privacy.googleAnalytics]
 # ...
-[privacy.twitter]
+[privacy.x]
 enableDNT = true
 [privacy.youtube]
 privacyEnhanced = true
@@ -644,11 +644,10 @@ isHTML      = false
 # Options to make hugo output files
 [outputs]
 #
-home         = ["HTML", "RSS", "JSON"]
-page         = ["HTML", "MarkDown"]
-section      = ["HTML", "RSS"]
-taxonomy     = ["HTML", "RSS"]
-taxonomyTerm = ["HTML"]
+home     = ["HTML", "RSS", "JSON"]
+page     = ["HTML", "MarkDown"]
+section  = ["HTML", "RSS"]
+taxonomy = ["HTML", "RSS"]
 
 # Multilingual
 # 多语言

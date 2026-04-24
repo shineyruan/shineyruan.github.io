@@ -3,6 +3,7 @@ title: "CUDA Path Tracer with À-Trous Denoiser"
 date: 2021-12-27T00:43:29+00:00
 tags: ["CUDA", "computer graphics", "ray tracing", "Multi-lingual"]
 categories: ["Projects"]
+author: "Zhihao Ruan"
 featuredImage: /images/posts/565-cuda-path-tracer/cornell.2021-10-09_18-44-15z.5000samp.png
 draft: false
 
@@ -50,6 +51,8 @@ seo:
 ---
 
 * Tested on: Ubuntu 20.04 LTS, Ryzen 3700X @ 2.22GHz 48GB, RTX 2060 Super @ 7976MB
+
+<!--more-->
 
 ## CUDA Path Tracer
 
