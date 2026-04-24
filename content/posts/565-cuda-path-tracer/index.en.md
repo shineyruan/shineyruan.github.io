@@ -182,6 +182,7 @@ The word "À-Trous" with meaning "with holes" comes from [*Algorithme À-Trous*]
 #### Visual Results vs. Filter Size
 
 The following experiments are run with `c_phi=132.353, n_phi=0.245, p_phi=1.324`.
+
 |               Filter Size = 6               |               Filter Size = 15               |               Filter Size = 32               |               Filter Size = 100               |
 | :-----------------------------------------: | :------------------------------------------: | :------------------------------------------: | :-------------------------------------------: |
 | {{<figure src="denoise.filtersize.6.png">}} | {{<figure src="denoise.filtersize.15.png">}} | {{<figure src="denoise.filtersize.32.png">}} | {{<figure src="denoise.filtersize.100.png">}} |
@@ -191,6 +192,7 @@ From the results we can see that the visual results does not vary uniformly with
 #### Visual Results vs. Material Type
 
 The following experiments are run with `c_phi=132.353, n_phi=0.245, p_phi=1.324, filter_size=100`.
+
 |                Diffuse                 |               Reflective                |                Refractive                 |
 | :------------------------------------: | :-------------------------------------: | :---------------------------------------: |
 | {{<figure src="denoise-diffuse.png">}} | {{<figure src="denoise-specular.png">}} | {{<figure src="denoise-refraction.png">}} |
@@ -200,6 +202,7 @@ From the results we can see that the filter works best with diffuse materials, r
 #### Visual Results vs. Light Conditions
 
 The following experiments are run with `c_phi=132.353, n_phi=0.245, p_phi=1.324, filter_size=100`.
+
 |              Cornell Box               |            Cornell Box with Large Lights             |
 | :------------------------------------: | :--------------------------------------------------: |
 | {{<figure src="denoise-cornell.png">}} | {{<figure src="denoise-cornell-ceiling-light.png">}} |
@@ -222,6 +225,7 @@ which is a reasonably fast denoising time.
 #### Number of Iterations Needed for a Smooth Image
 
 The following experiments are run with `c_phi=132.353, n_phi=0.245, p_phi=1.324, filter_size=100`.
+
 |             Iteration = 1             |             Iteration = 10             |             Iteration = 25             |
 | :-----------------------------------: | :------------------------------------: | :------------------------------------: |
 | {{<figure src="denoise-iter-1.png">}} | {{<figure src="denoise-iter-10.png">}} | {{<figure src="denoise-iter-25.png">}} |
@@ -235,6 +239,7 @@ From the results we can see that subjectively, with the parameters specified abo
 #### Denoising Runtime vs. Resolution, Filter Size
 
 The following experiments are run with `c_phi=132.353, n_phi=0.245, p_phi=1.324`. For varying resolution, `filter_size = 100`; for varying filter size, `resolution = 800x800`.
+
 |              Runtime vs. Resolution               |              Runtime vs. Filter Size               |
 | :-----------------------------------------------: | :------------------------------------------------: |
 | {{<figure src="denoise_runtime_resolution.png">}} | {{<figure src="denoise_runtime_filter_size.png">}} |
