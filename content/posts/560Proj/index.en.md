@@ -55,7 +55,7 @@ In the fall of 2020, I finally had a chance to explore the field of computer gra
 
 {{<youtube l_YViGj6_Qc>}}
 
-<!-- more -->
+<!--more-->
 
 ## Overview
 

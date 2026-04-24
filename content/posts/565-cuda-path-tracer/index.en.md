@@ -51,6 +51,8 @@ seo:
 
 * Tested on: Ubuntu 20.04 LTS, Ryzen 3700X @ 2.22GHz 48GB, RTX 2060 Super @ 7976MB
 
+<!--more-->
+
 ## CUDA Path Tracer
 
 {{<figure src="cornell.2021-10-09_18-44-15z.5000samp.png">}}

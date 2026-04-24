@@ -54,7 +54,7 @@ seo:
 
 ![](RZH8702post.jpg " ")
 
-<!-- more -->
+<!--more-->
 
 ## Blue Hour in Ann Arbor, MI
 

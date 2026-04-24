@@ -51,7 +51,7 @@ seo:
 
 In this winter, I finally got a chance to visit and spend a nice Christmas holiday in UK.
 
-<!-- more -->
+<!--more-->
 
 ![](_RZH3662postruanzh.jpg " ")
 

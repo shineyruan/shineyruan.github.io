@@ -56,7 +56,7 @@ Hong Kong is also extremely crowded and busy. It is a tiny piece of land filled 
 
 ![](DSC00804.jpg " ")
 
-<!-- more -->
+<!--more-->
 
 ![](DSC00816.jpg "Nathan Rd (Chinese: 佐敦道)")
 

@@ -51,6 +51,8 @@ seo:
 
 * Tested on: Windows 10 Home 21H1 Build 19043.1288, Ryzen 7 3700X @ 3.59GHz 48GB, RTX 2060 Super 8GB
 
+<!--more-->
+
 {{<figure src="overall.gif">}}
 
 ### Highlights
